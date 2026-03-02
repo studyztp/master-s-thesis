@@ -22,7 +22,7 @@
 \BOOKMARK [1][-]{section.4.4}{Nugget Creation}{chapter.4}% 22
 \BOOKMARK [2][-]{subsection.4.4.1}{Markers}{section.4.4}% 23
 \BOOKMARK [2][-]{subsection.4.4.2}{Overhead of Hooks}{section.4.4}% 24
-\BOOKMARK [1][-]{section.4.5}{Sample Validating}{chapter.4}% 25
+\BOOKMARK [1][-]{section.4.5}{Sample Validation}{chapter.4}% 25
 \BOOKMARK [0][-]{chapter.5}{Evaluation}{}% 26
 \BOOKMARK [1][-]{section.5.1}{Interval Analysis Efficiency \(Goal 1\)}{chapter.5}% 27
 \BOOKMARK [2][-]{subsection.5.1.1}{Comparison with Functional Simulation}{section.5.1}% 28
@@ -39,3 +39,7 @@
 \BOOKMARK [2][-]{subsection.6.1.2}{Results}{section.6.1}% 39
 \BOOKMARK [1][-]{section.6.2}{Model Accuracy Evaluation}{chapter.6}% 40
 \BOOKMARK [0][-]{chapter.7}{Conclusion}{}% 41
+\BOOKMARK [1][-]{section.7.1}{LoopPoint Full-System Evaluation}{chapter.7}% 42
+\BOOKMARK [1][-]{section.7.2}{Nugget Framework Contributions}{chapter.7}% 43
+\BOOKMARK [1][-]{section.7.3}{Limitations}{chapter.7}% 44
+\BOOKMARK [1][-]{section.7.4}{Future Work}{chapter.7}% 45

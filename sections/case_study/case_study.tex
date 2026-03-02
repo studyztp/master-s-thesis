@@ -1,5 +1,14 @@
 \section{Case Studies}\label{sec:case_study}
 
+The evaluation in the previous chapter showed that hook-based markers introduce runtime overhead on real hardware (Section~\ref{sec:hook_overhead}), which makes it difficult to determine whether prediction error originates from poor sample selection or from instrumentation artifacts.
+Without separating these two sources of error, users cannot confidently assess the quality of their selected samples.
+By running nuggets in simulation, where the simulator tracks interval markers directly without runtime overhead, we can isolate sampling accuracy from marker overhead.
+
+Additionally, hand-crafted microbenchmarks are labor-intensive to develop, exercise only a narrow slice of the design space, and require ongoing maintenance as architectures evolve.
+Compiler optimizations can also remove essential parts of microbenchmark code, producing misleading results.
+Nuggets, by contrast, are automatically derived from real workloads and capture the diverse instruction mix and control flow present in actual applications, making them a scalable alternative for evaluating simulation model fidelity.
+
+Together, these two case studies demonstrate that Nugget is not only a sampling framework but also a practical tool for understanding both the quality of selected samples and the accuracy of simulation models.
 In this section, we present two case studies.
 First, we separate the overhead of nugget markers from the accuracy of the sampling selection process by running the nuggets both on hardware and in simulation.
 Then, we illustrate how nuggets can serve as lightweight microbenchmarks to assess simulation model accuracy, eliminating the need to develop dedicated microbenchmark suites.

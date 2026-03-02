@@ -1,4 +1,5 @@
 \section{Conclusion}\label{sec:conclusion}
+
 In this thesis we presented Nugget: a framework for building program snippets
 that can be used for evaluating architectural ideas using full-system simulators.
 Nugget enables automatic instrumentation of a workload's binary for analysis, and for measurement.
@@ -7,3 +8,45 @@ the binaries used for measurement can be run on real hardware and simulators ali
 Lastly, Nugget allows users to leverage real hardware to evaluate how well the selected samples represent the original workload.
 
 Nugget is positioned to allow researchers to simulate workloads larger than the traditional sizes, enabling researchers to gain insights that were not possible before.
+
+\subsection{LoopPoint Full-System Evaluation}
+
+We implemented the LoopPoint methodology in gem5's full-system mode and evaluated it with the NPB benchmark suite using class~A inputs and eight threads on both x86 and Arm configurations (Section~\ref{sec:full_system_looppoint}).
+This evaluation confirmed that LoopPoint can be extended to full-system simulation, but it also highlighted three limitations that motivated the Nugget framework.
+First, interval analysis via functional simulation is time-consuming, requiring tens of thousands of times slowdown relative to native execution, which makes analyzing large workloads infeasible.
+Second, because LoopPoint constructs basic block vectors from machine-level instructions and defines region boundaries with ISA-specific (PC, count) pairs, each binary produces a different set of representative samples, leading to inconsistent prediction errors across ISAs.
+Third, validating the accuracy of the selected samples requires completing a full baseline simulation---the very bottleneck that sampling aims to avoid.
+
+\subsection{Nugget Framework Contributions}
+
+Nugget's LLVM-based interval analysis achieves an average $577\times$ speedup over functional simulation for multi-threaded workloads, with only $3\times$ overhead for single-threaded SPEC~CPU2017 benchmarks (Section~\ref{sec:interval_analysis_efficiency}).
+This efficiency enables analysis of reference-sized workloads that would otherwise take months or years to profile via simulation.
+
+Because nuggets are defined at the LLVM IR level, the same set of representative samples can be compiled and validated across different ISAs and machines without repeating the analysis (Section~\ref{sec:sampling_methodology_validation}).
+Our evaluation showed that cross-platform consistency in prediction error is a stronger indicator of sample quality than achieving low error on any single platform, underscoring the value of binary-independent, cross-platform validation.
+
+Beyond sampling validation, nuggets serve as lightweight microbenchmarks for assessing simulation model accuracy (Section~\ref{sec:model_accuracy_evaluation}).
+In a case study, we used nuggets from the NPB suite to identify a microcoding discrepancy in gem5's handling of Arm paired memory instructions---a modeling error that traditional hand-crafted microbenchmarks had failed to expose.
+
+\subsection{Limitations}
+
+The hook-based interval markers used for real-hardware validation introduce runtime overhead, particularly for multi-threaded workloads with frequent, short parallel regions (Section~\ref{sec:hook_overhead}).
+For example, the ``is'' benchmark triggers an excessive number of hook invocations because it executes only a small number of IRBBs within each parallel region, inflating prediction error.
+While hook overhead can only slow execution and thus cannot produce false-positive conclusions about sample quality, it remains a confounding factor that is difficult to isolate cleanly from other sources of error.
+
+The Random and K-means sampling methodologies evaluated in this thesis are deliberately simple and show elevated prediction errors compared to prior approaches such as SimPoint and LoopPoint (Section~\ref{sec:sampling_methodology_validation}).
+These elevated errors reflect the naivety of the selection algorithms rather than a limitation of the framework itself; Nugget is designed to support the development of more sophisticated methodologies.
+
+Validating samples that are located in later stages of a large program's execution still requires executing the program prefix up to the sample's start marker (Section~\ref{sec:verification}), which can be time-consuming for very large workloads.
+Additionally, hardware-based validation cannot bound the prediction error in simulation, because microarchitectural differences between the validation platform and the simulation model affect prediction accuracy differently (Section~\ref{sec:model_performance_evaluation}).
+
+\subsection{Future Work}
+
+To reduce validation overhead for samples located late in a program's execution, we plan to explore software checkpointing techniques such as CRIU~\cite{CRIU} or BLCR~\cite{BLCR}.
+These tools can create a checkpoint of the process state at or near a sample's start marker, allowing subsequent validation runs to resume directly from that point rather than replaying the entire prefix.
+
+Hook overhead for multi-threaded workloads is another area for improvement.
+Alternative interval marking mechanisms---for example, compiler-inserted instrumentation that avoids runtime synchronization or hardware performance counter-based approaches---could reduce or eliminate the overhead that currently inflates prediction error for workloads with frequent, short parallel regions.
+
+Finally, Nugget's fast analysis and validation cycle makes it practical to develop and iterate on more sophisticated sample selection algorithms tailored to specific workload characteristics.
+The Random and K-means approaches used in this thesis serve as baselines; future work can leverage the framework to explore phase-aware, workload-adaptive, or hybrid selection strategies and validate them at scale on real hardware.

@@ -1,6 +1,6 @@
 \section{Full-System LoopPoint}\label{sec:full_system_looppoint}
 
-Because Nugget analyzes and evaluates sampling methodologies in a full-system environment---real hardware with an operating system---we first need to understand how prior sampling methodologies behave in such an environment.
+Because Nugget analyzes and evaluates sampling methodologies in a full-system environment (real hardware with an operating system), we first need to understand how prior sampling methodologies behave in such an environment.
 LoopPoint was originally validated in user-mode simulation with Sniper~\cite{sniper}, which excludes OS-level effects such as system calls, interrupts, and context switches.
 Full-system simulation captures these effects and provides a more realistic evaluation environment, but it also introduces new challenges for sampling methodologies.
 By implementing and evaluating LoopPoint in gem5's full-system mode, we both extend LoopPoint to a setting where it has not been tested and establish a simulation-based baseline against which Nugget's real-hardware validation can be compared.

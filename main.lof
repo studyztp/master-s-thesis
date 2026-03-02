@@ -18,4 +18,3 @@
 \contentsline {figure}{\numberline {6.4}{\ignorespaces Speedup comparison between Random and K-means samples when both ISA and microarchitecture vary across simulation models. ``K'' indicates K-means samples, and ``R'' indicates Random samples.\relax }}{43}{figure.caption.24}
 \contentsline {figure}{\numberline {6.5}{\ignorespaces Comparison of the number of memory instructions for two different microcodings in gem5 vs real hardware.\relax }}{45}{figure.caption.25}
 \addvspace {10\p@ }
-\addvspace {10\p@ }

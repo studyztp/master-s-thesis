@@ -39,16 +39,3 @@
 \BOOKMARK [2][-]{subsection.6.1.2}{Results}{section.6.1}% 39
 \BOOKMARK [1][-]{section.6.2}{Model Accuracy Evaluation}{chapter.6}% 40
 \BOOKMARK [0][-]{chapter.7}{Conclusion}{}% 41
-\BOOKMARK [0][-]{appendix.A}{Artifact Appendix}{}% 42
-\BOOKMARK [1][-]{section.A.1}{Abstract}{appendix.A}% 43
-\BOOKMARK [1][-]{section.A.2}{Artifact check-list \(meta-information\)}{appendix.A}% 44
-\BOOKMARK [1][-]{section.A.3}{Description}{appendix.A}% 45
-\BOOKMARK [2][-]{subsection.A.3.1}{How to access}{section.A.3}% 46
-\BOOKMARK [2][-]{subsection.A.3.2}{Hardware dependencies}{section.A.3}% 47
-\BOOKMARK [2][-]{subsection.A.3.3}{Software dependencies}{section.A.3}% 48
-\BOOKMARK [2][-]{subsection.A.3.4}{Data sets}{section.A.3}% 49
-\BOOKMARK [2][-]{subsection.A.3.5}{Models}{section.A.3}% 50
-\BOOKMARK [1][-]{section.A.4}{Installation}{appendix.A}% 51
-\BOOKMARK [1][-]{section.A.5}{Experiment workflow}{appendix.A}% 52
-\BOOKMARK [1][-]{section.A.6}{Evaluation and expected results}{appendix.A}% 53
-\BOOKMARK [1][-]{section.A.7}{Experiment customization}{appendix.A}% 54

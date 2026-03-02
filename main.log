@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2018.1.22)  2 MAR 2026 21:47
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2018.1.22)  2 MAR 2026 21:57
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1182,24 +1182,24 @@ Package pdftex.def Info: images/gem5_fs_par_speedup.pdf used on input line 85.
 ) (./sections/nugget/nugget.tex [14 <./images/gem5_fs_err.pdf> <./images/gem5_f
 s_speedup.pdf> <./images/gem5_fs_par_speedup.pdf>]
 Chapter 4.
-[15
 
-]
 
 pdfTeX warning: pdflatex (file ./images/index_delayed_ui.pdf): PDF inclusion: f
 ound PDF version <1.7>, but at most version <1.5> allowed
-<images/index_delayed_ui.pdf, id=627, 204.7148pt x 174.46179pt>
+<images/index_delayed_ui.pdf, id=617, 204.7148pt x 174.46179pt>
 File: images/index_delayed_ui.pdf Graphic file (type pdf)
 
 <use images/index_delayed_ui.pdf>
-Package pdftex.def Info: images/index_delayed_ui.pdf used on input line 19.
+Package pdftex.def Info: images/index_delayed_ui.pdf used on input line 10.
 (pdftex.def)             Requested size: 455.30121pt x 388.06575pt.
- [16]) (./sections/nugget/unit_of_work.tex
-[17 <./images/index_delayed_ui.pdf>]) (./sections/nugget/initial_setup.tex
-[18]) (./sections/nugget/interval_analysis.tex [19] [20] [21])
-(./sections/nugget/nugget_creation.tex [22] [23])
-(./sections/nugget/verification.tex [24]) (./sections/evaluation/evaluation.tex
-[25]
+ [15
+
+] [16 <./images/index_delayed_ui.pdf>])
+(./sections/nugget/unit_of_work.tex [17]) (./sections/nugget/initial_setup.tex
+[18]) (./sections/nugget/interval_analysis.tex [19] [20])
+(./sections/nugget/nugget_creation.tex [21] [22])
+(./sections/nugget/verification.tex [23]) (./sections/evaluation/evaluation.tex
+[24]
 Chapter 5.
 
 Overfull \hbox (6.8339pt too wide) in paragraph at lines 51--52
@@ -1226,10 +1226,10 @@ Overfull \hbox (4.29005pt too wide) in paragraph at lines 60--61
 |[][]
  []
 
-[26
+[25
 
-] [27]) (./sections/evaluation/interval_analysis_overhead.tex [28]
-<images/simulation_interval_analysis_overhead_separated.pdf, id=764, 425.75348p
+] [26]) (./sections/evaluation/interval_analysis_overhead.tex [27]
+<images/simulation_interval_analysis_overhead_separated.pdf, id=759, 425.75348p
 t x 200.96654pt>
 File: images/simulation_interval_analysis_overhead_separated.pdf Graphic file (
 type pdf)
@@ -1238,16 +1238,16 @@ type pdf)
 Package pdftex.def Info: images/simulation_interval_analysis_overhead_separated
 .pdf used on input line 32.
 (pdftex.def)             Requested size: 455.30121pt x 214.91246pt.
- [29 <./images/simulation_interval_analysis_overhead_separated.pdf>]
-<images/interval_analysis_overhead_2panel.pdf, id=814, 385.92181pt x 185.21884p
+ [28 <./images/simulation_interval_analysis_overhead_separated.pdf>]
+<images/interval_analysis_overhead_2panel.pdf, id=810, 385.92181pt x 185.21884p
 t>
 File: images/interval_analysis_overhead_2panel.pdf Graphic file (type pdf)
  <use images/interval_analysis_overhead_2panel.pdf>
 Package pdftex.def Info: images/interval_analysis_overhead_2panel.pdf used on i
 nput line 57.
 (pdftex.def)             Requested size: 455.30121pt x 218.52242pt.
- [30 <./images/interval_analysis_overhead_2panel.pdf>]
-<images/class_d_overhead_analysis_2panel.pdf, id=879, 269.01526pt x 190.02556pt
+ [29 <./images/interval_analysis_overhead_2panel.pdf>]
+<images/class_d_overhead_analysis_2panel.pdf, id=875, 269.01526pt x 190.02556pt
 >
 File: images/class_d_overhead_analysis_2panel.pdf Graphic file (type pdf)
  <use images/class_d_overhead_analysis_2panel.pdf>
@@ -1261,14 +1261,14 @@ File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 91.
- [31] [32 <./images/class_d_overhead_analysis_2panel.pdf>]
+ [30] [31 <./images/class_d_overhead_analysis_2panel.pdf>]
 Overfull \hbox (3.16626pt too wide) in paragraph at lines 106--107
 []\OT1/cmr/m/n/12 By en-abling fast, binary-independent in-ter-val anal-y-sis, 
 even for large work-loads, Nugget
  []
 
 ) (./sections/evaluation/sample_and_validation.tex
-<images/prediction_error_by_machine_method_2panel.pdf, id=918, 718.3638pt x 329
+<images/prediction_error_by_machine_method_2panel.pdf, id=914, 718.3638pt x 329
 .95004pt>
 File: images/prediction_error_by_machine_method_2panel.pdf Graphic file (type p
 df)
@@ -1276,62 +1276,62 @@ df)
 Package pdftex.def Info: images/prediction_error_by_machine_method_2panel.pdf u
 sed on input line 6.
 (pdftex.def)             Requested size: 455.30121pt x 209.12828pt.
- [33 <./images/prediction_error_by_machine_method_2panel.pdf>] [34] [35]
-<images/marker_executions_2panel.pdf, id=1017, 295.06549pt x 246.31554pt>
+ [32 <./images/prediction_error_by_machine_method_2panel.pdf>] [33] [34]
+<images/marker_executions_2panel.pdf, id=1013, 295.06549pt x 246.31554pt>
 File: images/marker_executions_2panel.pdf Graphic file (type pdf)
 
 <use images/marker_executions_2panel.pdf>
 Package pdftex.def Info: images/marker_executions_2panel.pdf used on input line
  75.
 (pdftex.def)             Requested size: 455.30121pt x 380.07878pt.
- [36] [37 <./images/marker_executions_2panel.pdf>]) (./sections/case_study/case
-_study.tex [38]
+ [35] [36 <./images/marker_executions_2panel.pdf>]) (./sections/case_study/case
+_study.tex [37]
 Chapter 6.
-) (./sections/case_study/simulation.tex [39
+) (./sections/case_study/simulation.tex [38
 
-] [40]
-<images/case_study_2_jitter.pdf, id=1103, 421.21213pt x 132.81682pt>
+] [39]
+<images/case_study_2_jitter.pdf, id=1098, 421.21213pt x 132.81682pt>
 File: images/case_study_2_jitter.pdf Graphic file (type pdf)
 
 <use images/case_study_2_jitter.pdf>
 Package pdftex.def Info: images/case_study_2_jitter.pdf used on input line 120.
 
 (pdftex.def)             Requested size: 455.30121pt x 143.57376pt.
- [41]
-<images/case_study_3.pdf, id=1111, 410.72949pt x 97.1055pt>
+ [40]
+<images/case_study_3.pdf, id=1107, 410.72949pt x 97.1055pt>
 File: images/case_study_3.pdf Graphic file (type pdf)
 
 <use images/case_study_3.pdf>
 Package pdftex.def Info: images/case_study_3.pdf used on input line 145.
 (pdftex.def)             Requested size: 455.30121pt x 107.64464pt.
- [42 <./images/case_study_2_jitter.pdf> <./images/case_study_3.pdf>]
-<images/case_study_4.pdf, id=1206, 410.72949pt x 120.90108pt>
+ [41 <./images/case_study_2_jitter.pdf> <./images/case_study_3.pdf>]
+<images/case_study_4.pdf, id=1202, 410.72949pt x 120.90108pt>
 File: images/case_study_4.pdf Graphic file (type pdf)
 
 <use images/case_study_4.pdf>
 Package pdftex.def Info: images/case_study_4.pdf used on input line 162.
 (pdftex.def)             Requested size: 455.30121pt x 134.02283pt.
 
-<images/case_study_5.pdf, id=1208, 410.57893pt x 130.5271pt>
+<images/case_study_5.pdf, id=1204, 410.57893pt x 130.5271pt>
 File: images/case_study_5.pdf Graphic file (type pdf)
 
 <use images/case_study_5.pdf>
 Package pdftex.def Info: images/case_study_5.pdf used on input line 173.
 (pdftex.def)             Requested size: 455.30121pt x 144.74934pt.
- [43 <./images/case_study_4.pdf>])
-(./sections/case_study/modeling.tex [44 <./images/case_study_5.pdf>]
-<images/microcode_comp.pdf, id=1308, 498.2226pt x 142.1285pt>
+ [42 <./images/case_study_4.pdf>])
+(./sections/case_study/modeling.tex [43 <./images/case_study_5.pdf>]
+<images/microcode_comp.pdf, id=1304, 498.2226pt x 142.1285pt>
 File: images/microcode_comp.pdf Graphic file (type pdf)
 
 <use images/microcode_comp.pdf>
 Package pdftex.def Info: images/microcode_comp.pdf used on input line 41.
 (pdftex.def)             Requested size: 455.30121pt x 129.88362pt.
- [45]) (./sections/conclusion/conclusion.tex
-[46 <./images/microcode_comp.pdf>]
+ [44]) (./sections/conclusion/conclusion.tex
+[45 <./images/microcode_comp.pdf>]
 Chapter 7.
-[47
+[46
 
-] [48]) (./main.bbl [49] [50
+] [47]) (./main.bbl [48] [49
 
 ]
 Missing character: There is no â in font cmr12!
@@ -1340,15 +1340,15 @@ Missing character: There is no œ in font cmr12!
 Missing character: There is no â in font cmr12!
 Missing character: There is no € in font cmr12!
 Missing character: There is no  in font cmr12!
- [51]
+ [50]
 Missing character: There is no Ã in font cmr12!
 Missing character: There is no © in font cmr12!
- [52]
+ [51]
 Missing character: There is no Â in font cmr12!
 Missing character: There is no ® in font cmr12!
 Missing character: There is no Â in font cmr12!
 Missing character: There is no ® in font cmr12!
- [53] [54]) [55]
+ [52] [53]) [54]
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 126.
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 126.
  (./main.aux)
@@ -1364,8 +1364,8 @@ LaTeX Font Warning: Size substitutions with differences
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 126.
  ) 
 Here is how much of TeX's memory you used:
- 28635 strings out of 493029
- 560189 string characters out of 6136234
+ 28634 strings out of 493029
+ 560182 string characters out of 6136234
  572222 words of memory out of 5000000
  31537 multiletter control sequences out of 15000+600000
  14231 words of font info for 54 fonts, out of 8000000 for 9000
@@ -1383,10 +1383,10 @@ msy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.p
 fb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></u
 sr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb></usr/sha
 re/texmf/fonts/type1/public/cm-super/sfrm1200.pfb>
-Output written on main.pdf (64 pages, 1458729 bytes).
+Output written on main.pdf (63 pages, 1457889 bytes).
 PDF statistics:
- 1514 PDF objects out of 1728 (max. 8388607)
- 945 compressed objects within 10 object streams
- 187 named destinations out of 1000 (max. 500000)
+ 1508 PDF objects out of 1728 (max. 8388607)
+ 940 compressed objects within 10 object streams
+ 186 named destinations out of 1000 (max. 500000)
  448 words of extra memory for PDF output out of 10000 (max. 10000000)
 

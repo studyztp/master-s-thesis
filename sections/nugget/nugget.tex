@@ -5,15 +5,6 @@ Nugget leverages LLVM passes to statically insert annotations to analyze the pro
 By using LLVM intermediate representation (IR) to define program progress and intervals, the samples become independent of the binary and can be reused across different executable versions of the same program, since LLVM IR abstracts away details of the final binary.
 Lastly, Nugget provides a method to create portable samples to be executed on any platform, such as real hardware or simulators, so that the samples can be validated in native time with real hardware before running them on a simulator.
 
-In this section, we present an overview of Nugget as a pipeline (Figure~\ref{fig:nugget_pipeline}), describing its workflow from preparation through interval analysis, nugget creation, and finally, sample selection verification.
-It is not the focus of this thesis to introduce a new sample selection algorithm, but rather to provide a framework that can be used to implement and validate diverse sample selection methodologies that can be tailored to specific applications and workloads.
-
-\revision{We begin by defining program progress and intervals, which ensures that samples remain independent of the binary, as described in Section~\ref{sec:unit_of_work}.}
-Next, we describe the preparation required by Nugget to guarantee the LLVM IR of the program remains consistent across different binaries in Section~\ref{sec:initial_setup}.
-Then, we introduce our novel interval analysis methodology, which leverages LLVM passes, enabling comprehensive program analysis directly on real hardware without imposing hardware-specific constraints in Section~\ref{sec:interval_analysis}.
-Following that, we present the nugget creation process, which allows for the generation of portable samples that can be executed on any platform, including real hardware and simulators, in Section~\ref{sec:nugget_creation}.
-Finally, we describe the sample selection validation process, which enables efficient validation of the selected samples for specific workloads in native time, ensuring that the samples accurately represent the program's execution in Section~\ref{sec:verification}.
-
 \begin{figure}[!t]
     \centering
     \includegraphics[width=\columnwidth]{images/index_delayed_ui.pdf}
@@ -25,3 +16,13 @@ Finally, we describe the sample selection validation process, which enables effi
     \label{fig:nugget_pipeline}
 \end{figure}
 \FloatBarrier
+
+In this section, we present an overview of Nugget as a pipeline (Figure~\ref{fig:nugget_pipeline}), describing its workflow from preparation through interval analysis, nugget creation, and finally, sample selection verification.
+It is not the focus of this thesis to introduce a new sample selection algorithm, but rather to provide a framework that can be used to implement and validate diverse sample selection methodologies that can be tailored to specific applications and workloads.
+
+\revision{We begin by defining program progress and intervals, which ensures that samples remain independent of the binary, as described in Section~\ref{sec:unit_of_work}.}
+Next, we describe the preparation required by Nugget to guarantee the LLVM IR of the program remains consistent across different binaries in Section~\ref{sec:initial_setup}.
+Then, we introduce our novel interval analysis methodology, which leverages LLVM passes, enabling comprehensive program analysis directly on real hardware without imposing hardware-specific constraints in Section~\ref{sec:interval_analysis}.
+Following that, we present the nugget creation process, which allows for the generation of portable samples that can be executed on any platform, including real hardware and simulators, in Section~\ref{sec:nugget_creation}.
+Finally, we describe the sample selection validation process, which enables efficient validation of the selected samples for specific workloads in native time, ensuring that the samples accurately represent the program's execution in Section~\ref{sec:verification}.
+

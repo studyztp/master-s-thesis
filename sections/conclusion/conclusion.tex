@@ -38,15 +38,11 @@ The Random and K-means sampling methodologies evaluated in this thesis are delib
 These elevated errors reflect the naivety of the selection algorithms rather than a limitation of the framework itself; Nugget is designed to support the development of more sophisticated methodologies.
 
 Validating samples that are located in later stages of a large program's execution still requires executing the program prefix up to the sample's start marker (Section~\ref{sec:verification}), which can be time-consuming for very large workloads.
-Additionally, hardware-based validation cannot bound the prediction error in simulation, because microarchitectural differences between the validation platform and the simulation model affect prediction accuracy differently (Section~\ref{sec:model_performance_evaluation}).
 
 \subsection{Future Work}
 
 To reduce validation overhead for samples located late in a program's execution, we plan to explore software checkpointing techniques such as CRIU~\cite{CRIU} or BLCR~\cite{BLCR}.
 These tools can create a checkpoint of the process state at or near a sample's start marker, allowing subsequent validation runs to resume directly from that point rather than replaying the entire prefix.
-
-Hook overhead for multi-threaded workloads is another area for improvement.
-Alternative interval marking mechanisms---for example, compiler-inserted instrumentation that avoids runtime synchronization or hardware performance counter-based approaches---could reduce or eliminate the overhead that currently inflates prediction error for workloads with frequent, short parallel regions.
 
 Finally, Nugget's fast analysis and validation cycle makes it practical to develop and iterate on more sophisticated sample selection algorithms tailored to specific workload characteristics.
 The Random and K-means approaches used in this thesis serve as baselines; future work can leverage the framework to explore phase-aware, workload-adaptive, or hybrid selection strategies and validate them at scale on real hardware.

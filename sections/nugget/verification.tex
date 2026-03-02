@@ -1,0 +1,14 @@
+\subsection{Sample Validating}\label{sec:verification}
+
+Nugget addresses the limitations of using simulation to validate selected samples (Section~\ref{sec:validating_the_selected_samples_is_infeasible}) by generating \textit{nuggets} that can run directly on both real hardware and simulation.
+Therefore, we can validate the selected samples in real hardware, and use them for simulation.
+This approach allows for fast, scalable validation of sampling accuracy without the high overhead of simulation, even for large applications.
+
+Because nuggets are \textbf{binary-independent}, they can be validated across different systems with minimal constraints. 
+Validating the same samples on multiple platforms enhances confidence in their \textit{representativeness and robustness}. 
+As shown later in Section~\ref{sec:model_performance_evaluation}, we found that having \textit{consistent prediction error across platforms} is a stronger indicator of sample quality than achieving low error on a single platform.
+
+To run a nugget on real hardware, the system must still execute the portion of the program leading up to the sample's start marker (Section~\ref{sec:markers}).
+For samples that are in later stages of a large program's execution, this can introduce some validation overhead. 
+
+In the future, we plan to reduce this overhead further by exploring techniques such as creating software checkpoints using CRIU~\cite{CRIU} \revision{or BLCR~\cite{BLCR}} to resume execution closer to the sample start point.

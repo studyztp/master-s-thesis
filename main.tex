@@ -1,0 +1,116 @@
+\documentclass[12pt,MS]{ucdavisthesis}
+
+\usepackage{cite}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{algorithmic}
+\usepackage{graphicx}
+\usepackage{textcomp}
+\usepackage{xcolor}
+\usepackage[hyphens]{url}
+\usepackage{hyperref}
+
+\usepackage{needspace}
+\usepackage{enumitem}
+\usepackage{listings}
+\usepackage{tcolorbox}
+\usepackage{ifthen}
+\usepackage{subcaption}
+\usepackage{siunitx}
+\usepackage{makecell}
+\usepackage{placeins}
+
+\setlist[itemize]{leftmargin=11pt}
+
+\newcommand{\note}[1]{\{\textcolor{blue}{#1}\}}
+\newcommand{\holder}[1]{\{\textcolor{red}{#1}\}}
+\newcommand{\revision}[1]{\textcolor{black}{#1}}
+\newcommand{\shepherd}[1]{\textcolor{black}{#1}}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%% THESIS METADATA %%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\title{Nugget: Portable Program Snippets}
+
+\author{Zhantong Qiu}
+
+\authordegrees{B.S. (University of California Davis) 20XX}
+% TODO: Update with your actual prior degree(s) and year(s)
+
+\officialmajor{Computer Science}
+% TODO: Update with your official major as it appears on University records
+
+\graduateprogram{Computer Science}
+% TODO: Update with your official graduate program name
+
+\degreeyear{2026}
+
+\degreemonth{June}
+% TODO: Update with the month your degree will be officially conferred
+
+\committee{Jason Lowe-Power}{Committee Member Name}{Committee Member Name}
+% TODO: Update committee members (chair first, 3 total)
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\dedication{\textsl{To \ldots}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\abstract{
+Evaluating architectural ideas on realistic workloads is increasingly challenging due to the prohibitive cost of detailed simulation and the lack of portable sampling tools.
+Existing targeted sampling techniques are often tied to specific binaries, incur significant overhead, and make rapid validation across systems infeasible.
+To address these limitations, we introduce Nugget, a flexible framework that enables portable sampling across simulators, hardware, architectural differences, and libraries.
+Nugget leverages LLVM IR to perform binary-independent interval analysis, then generates lightweight, cross-platform executable snippets, \emph{nuggets}, that can be validated natively on real hardware before use in simulation.
+This approach decouples samples from specific binaries, dramatically reduces analysis overhead, and allows researchers to iterate on sampling methodologies while efficiently validating samples across diverse systems.
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\acknowledgments{
+We thank Alen Sabu, Christopher Batten, Derrick Quinn, Matthew D. Sinclair, Oscar Hernandez, and the Davis Computer Architecture Research Group for feedback used to improve this work.
+This work was supported by NSF grant 2311888, Department of Energy, Oak Ridge National Laboratory, and Los Alamos National Laboratory.
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\input{hpca-template}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%% DOCUMENT CONTENT STARTS %%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+\newcommand{\bibfont}{\singlespacing}
+
+\bibliographystyle{IEEEtranS}
+
+\makeintropages
+
+\input{sections/introduction/introduction}
+\input{sections/introduction/background_and_motivation}
+
+\input{sections/nugget/nugget}
+\input{sections/nugget/unit_of_work}
+\input{sections/nugget/initial_setup}
+\input{sections/nugget/interval_analysis}
+\input{sections/nugget/nugget_creation}
+\input{sections/nugget/verification}
+
+\input{sections/evaluation/evaluation}
+\input{sections/evaluation/interval_analysis_overhead}
+\input{sections/evaluation/sample_and_validation}
+
+\input{sections/case_study/case_study}
+\input{sections/case_study/simulation}
+\input{sections/case_study/modeling}
+
+\input{sections/conclusion/conclusion}
+
+\bibliography{refs}
+
+\input{sections/ae/ae}
+
+\end{document}

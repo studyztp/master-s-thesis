@@ -1,0 +1,22 @@
+\subsection{Unit of Work}\label{sec:unit_of_work}
+
+A unit of work defines the metric by which progress toward completing a program's execution is measured. 
+It must remain consistent across identical runs of a program with the same input. 
+While machine instructions could serve this purpose for a single binary, Nugget instead counts executed LLVM IR instructions as its unit of work. 
+This ensures a uniform measurement of program progress across all binaries of the same program with the same input.
+
+A unit of work directly determines the notion of intervals. 
+For example, if the unit of work is the number of executed instructions, then each interval corresponds to a fixed number of executed instructions during runtime. 
+A sample is a specific interval of a program's execution; thus, the unit of work also defines what constitutes a sample.
+
+The choice of unit of work influences not only how intervals are defined, but also the sample selection algorithm and the statistical models used in performance prediction. 
+Therefore, the unit of work must be defined consistently across all binaries to ensure that samples remain independent of any specific binary.
+For example, if the unit of work is the number of executed machine-level instructions, then the sample will be tied to a specific binary because any binary changes can affect the number of machine-level instructions executed, even if the control flow remains the same~\cite{cross_binary_simpoints}.
+
+LLVM~\cite{llvm} is an open-source compiler infrastructure that transforms source code into a platform-independent intermediate representation (IR) before generating machine-specific binaries.
+LLVM IR instructions abstract away the underlying machine-level instructions, so as long as the control flow remains the same at the LLVM IR level, the definition of all intervals of program execution remains consistent across different binaries.
+Since LLVM IR instructions are an abstraction of machine-level instructions, the number of executed LLVM IR instructions reflects the progress of program execution just as the number of executed machine-level instructions does.
+
+\shepherd{
+Therefore, Nugget's unit of work is suitable for applications that have stable control flow across different platforms.
+Applications such as gradient descent, where floating-point precision might affect the control flow, are not suitable for Nugget or for any sampling methodologies that rely on the application having stable control flows across microarchitectures~\cite{wavelet-based,simpoint,looppoint,cross_binary_simpoints,pacsim,barrier_point,simpoint-plus,parrot}.}

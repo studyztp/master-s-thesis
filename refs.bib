@@ -1,0 +1,824 @@
+@inproceedings{simpoint,
+author = {Sherwood, Timothy and Perelman, Erez and Hamerly, Greg and Calder, Brad},
+title = {{Automatically characterizing large scale program behavior}},
+year = {2002},
+isbn = {1581135742},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+url = {https://doi.org/10.1145/605397.605403},
+doi = {10.1145/605397.605403},
+abstract = {Understanding program behavior is at the foundation of computer architecture and program optimization. Many programs have wildly different behavior on even the very largest of scales (over the complete execution of the program). This realization has ramifications for many architectural and compiler techniques, from thread scheduling, to feedback directed optimizations, to the way programs are simulated. However, in order to take advantage of time-varying behavior, we must first develop the analytical tools necessary to automatically and efficiently analyze program behavior over large sections of execution.Our goal is to develop automatic techniques that are capable of finding and exploiting the Large Scale Behavior of programs (behavior seen over billions of instructions). The first step towards this goal is the development of a hardware independent metric that can concisely summarize the behavior of an arbitrary section of execution in a program. To this end we examine the use of Basic Block Vectors. We quantify the effectiveness of Basic Block Vectors in capturing program behavior across several different architectural metrics, explore the large scale behavior of several programs, and develop a set of algorithms based on clustering capable of analyzing this behavior. We then demonstrate an application of this technology to automatically determine where to simulate for a program to help guide computer architecture research.},
+booktitle = {Proceedings of the 10th International Conference on Architectural Support for Programming Languages and Operating Systems},
+pages = {45--57},
+numpages = {13},
+location = {San Jose, California},
+series = {ASPLOS X}
+}
+
+@inproceedings{looppoint,
+  author = {Sabu, Alen and Patil, Harish and Heirman, Wim and Carlson, Trevor E.},
+  booktitle = {2022 IEEE International Symposium on High-Performance Computer Architecture (HPCA)},
+  title = {{LoopPoint: Checkpoint-driven Sampled Simulation for Multi-threaded Applications}},
+  year = {2022},
+  volume = {},
+  number = {},
+  pages = {604--618},
+  keywords = {Data centers;Codes;Multicore processing;Computational modeling;Computer architecture;Parallel processing;Benchmark testing;checkpointing;multi-threaded;record-and-replay;sampling;simulation},
+  doi = {10.1109/HPCA53966.2022.00051}
+}
+
+@article{npb,
+author = {Bailey, D.H. and Barszcz, E. and Barton, J.T. and Browning, D.S. and Carter, R.L. and Dagum, L. and Fatoohi, R.A. and Frederickson, P.O. and Lasinski, T.A. and Schreiber, R.S. and Simon, H.D. and Venkatakrishnan, V. and Weeratunga, S.K.},
+title = {{The NAS Parallel Benchmarks}},
+year = {1991},
+issue_date = {September 1991},
+publisher = {Sage Publications, Inc.},
+address = {USA},
+volume = {5},
+number = {3},
+issn = {1094-3420},
+url = {https://doi.org/10.1177/109434209100500306},
+doi = {10.1177/109434209100500306},
+abstract = {A new set of benchmarks has been developed for the performance evaluation of highly parallel supercom puters. These consist of five "parallel kernel" bench marks and three "simulated application" benchmarks. Together they mimic the computation and data move ment characteristics of large-scale computational fluid dynamics applications. The principal distinguishing feature of these benchmarks is their "pencil and paper" specification-all details of these benchmarks are specified only algorithmically. In this way many of the difficulties associated with conventional bench- marking approaches on highly parallel systems are avoided.},
+journal = {Int. J. High Perform. Comput. Appl.},
+month = sep,
+pages = {63--73},
+numpages = {11}
+}
+
+@inproceedings{10.1109/CGO.2006.32,
+author = {Lau, Jeremy and Perelman, Erez and Calder, Brad},
+title = {{Selecting Software Phase Markers with Code Structure Analysis}},
+year = {2006},
+isbn = {0769524990},
+publisher = {IEEE Computer Society},
+address = {USA},
+url = {https://doi.org/10.1109/CGO.2006.32},
+doi = {10.1109/CGO.2006.32},
+abstract = {Most programs are repetitive, where similar behavior can be seen at different execution times. Algorithms have been proposed that automatically group similar portions of a program's execution into phases, where samples of execution in the same phase have homogeneous behavior and similar resource requirements. In this paper, we present an automated profiling approach to identify code locations whose executions correlate with phase changes. These "software phase markers" can be used to easily detect phase changes across different inputs to a program without hardware support. Our approach builds a combined hierarchical procedure call and loop graph to represent a program's execution, where each edge also tracks the max, average, and standard deviation in hierarchical execution variability on paths from that edge. We search this annotated call-loop graph for instructions in the binary that accurately identify the start of unique stable behaviors across different inputs. We show that our phase markers can be used to accurately partition execution into units of repeating homogeneous behavior by counting execution cycles and data cache hits. We also compare the use of our software markers to prior work on guiding data cache reconfiguration using datareuse markers. Finally, we show that the phase markers can be used to partition the program's execution at code transitions to pick accurately simulation points for SimPoint. When simulation points are defined in terms of phase markers, they can potentially be re-used across inputs, compiler optimizations, and different instruction set architectures for the same source code.},
+booktitle = {Proceedings of the International Symposium on Code Generation and Optimization},
+pages = {135--146},
+numpages = {12},
+series = {CGO '06}
+}
+
+@inproceedings{cross_binary_simpoints,
+  author = {Perelman, Erez and Lau, Jeremy and Patil, Harish and Jaleel, Aamer and Hamerly, Greg and Calder, Brad},
+  booktitle = {2007 IEEE International Symposium on Performance Analysis of Systems \& Software},
+  title = {{Cross Binary Simulation Points}},
+  year = {2007},
+  volume = {},
+  number = {},
+  pages = {179--189},
+  keywords = {Computational modeling;Instruction sets;Optimizing compilers;Computer architecture;Computer simulation;Computer science;Costs;Space exploration;Program processors;Clustering algorithms},
+  doi = {10.1109/ISPASS.2007.363748}
+}
+
+@article{ipc_considered_harmful,
+  author = {Alameldeen, A.R. and Wood, D.A.},
+  journal = {IEEE Micro},
+  title = {{IPC Considered Harmful for Multiprocessor Workloads}},
+  year = {2006},
+  volume = {26},
+  number = {4},
+  pages = {8--17},
+  keywords = {Computational modeling;Timing;Runtime;Computer simulation;Operating systems;Time measurement;System performance;Performance gain;Performance loss;Scheduling;Instructions per cycle;IPC;simulation;multithreaded workloads},
+  doi = {10.1109/MM.2006.73}
+}
+
+@inproceedings{basic_block_distribution_analysis,
+  author = {Sherwood, T. and Perelman, E. and Calder, B.},
+  booktitle = {Proceedings 2001 International Conference on Parallel Architectures and Compilation Techniques},
+  title = {{Basic block distribution analysis to find periodic behavior and simulation points in applications}},
+  year = {2001},
+  volume = {},
+  number = {},
+  pages = {3--14},
+  keywords = {Analytical models;Computational modeling;Fingerprint recognition;Application software;Computer simulation;Pipelines;Frequency estimation;Delay estimation;Timing;Computer science},
+  doi = {10.1109/PACT.2001.953283}
+}
+
+@book{computer_architecture_performance_evaluation_methods,
+author = {Eeckhout, Lieven},
+title = {{Computer Architecture Performance Evaluation Methods}},
+year = {2010},
+isbn = {1608454673},
+publisher = {Morgan \& Claypool Publishers},
+edition = {1st},
+abstract = {Performance evaluation is at the foundation of computer architecture research and development. Contemporary microprocessors are so complex that architects cannot design systems based on intuition and simple models only. Adequate performance evaluation methods are absolutely crucial to steer the research and development process in the right direction. However, rigorous performance evaluation is non-trivial as there are multiple aspects to performance evaluation, such as picking workloads, selecting an appropriate modeling or simulation approach, running the model and interpreting the results using meaningful metrics. Each of these aspects is equally important and a performance evaluation method that lacks rigor in any of these crucial aspects may lead to inaccurate performance data and may drive research and development in a wrong direction. The goal of this book is to present an overview of the current state-of-the-art in computer architecture performance evaluation, with a special emphasis on methods for exploring processor architectures. The book focuses on fundamental concepts and ideas for obtaining accurate performance data. The book covers various topics in performance evaluation, ranging from performance metrics, to workload selection, to various modeling approaches including mechanistic and empirical modeling. And because simulation is by far the most prevalent modeling technique, more than half the book's content is devoted to simulation. The book provides an overview of the simulation techniques in the computer designer's toolbox, followed by various simulation acceleration techniques including sampled simulation, statistical simulation, parallel simulation and hardware-accelerated simulation.}
+}
+
+@inproceedings{taskpoint,
+  author = {Grass, Thomas and Rico, Alejandro and Casas, Marc and Moreto, Miquel and Ayguadé, Eduard},
+  booktitle = {2016 IEEE International Symposium on Performance Analysis of Systems and Software (ISPASS)},
+  title = {{TaskPoint: Sampled simulation of task-based programs}},
+  year = {2016},
+  volume = {},
+  number = {},
+  pages = {296--306},
+  keywords = {Instruction sets;Benchmark testing;History;Load modeling;Computer architecture;Programming;Computational modeling},
+  doi = {10.1109/ISPASS.2016.7482104}
+}
+
+@inproceedings{PIN,
+author = {Reddi, Vijay Janapa and Settle, Alex and Connors, Daniel A. and Cohn, Robert S.},
+title = {{PIN: a binary instrumentation tool for computer architecture research and education}},
+year = {2004},
+isbn = {9781450347334},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+url = {https://doi.org/10.1145/1275571.1275600},
+doi = {10.1145/1275571.1275600},
+abstract = {Computer architecture embraces a tremendous number of ever-changing inter-connected concepts and information, yet computer architecture education is very often static, seemingly motionless. Computer architecture is commonly taught using simple piecewise methods of explaining how the hardware performs a given task, rather than characterizing the interaction of software and hardware. Visualization tools allow students to interactively explore basic concepts in computer architecture but are limited in their ability to engage students in research and design concepts. Likewise as the development of simulation models such as caches, branch predictors, and pipelines aid student understanding of architecture components, such models have limitations in the workloads that can be examined because of issues with execution time and environment. Overall, to effectively understand modern architectures, it is simply essential to experiment the characteristics of real application workloads. Likewise, understanding program behavior is necessary to effective programming, comprehension of architecture bottlenecks, and hardware design. Computer architecture education must include experience in analyzing program behavior and workload characteristics using effective tools. To explore workload characteristic analysis in computer architecture design, we propose using PIN, a binary instrumentation tool for computer architecture research and education projects.},
+booktitle = {Proceedings of the 2004 Workshop on Computer Architecture Education: Held in Conjunction with the 31st International Symposium on Computer Architecture},
+pages = {22-es},
+location = {Munich, Germany},
+series = {WCAE '04}
+}
+
+@inproceedings{pinpoints,
+author = {Patil, Harish and Cohn, Robert and Charney, Mark and Kapoor, Rajiv and Sun, Andrew and Karunanidhi, Anand},
+title = {{Pinpointing Representative Portions of Large Intel® Itanium® Programs with Dynamic Instrumentation}},
+year = {2004},
+isbn = {0769521266},
+publisher = {IEEE Computer Society},
+address = {USA},
+url = {https://doi.org/10.1109/MICRO.2004.28},
+doi = {10.1109/MICRO.2004.28},
+abstract = {Detailed modeling of the performance of commercial applications is difficult. The applications can take a very long time to run on real hardware and it is impractical to simulate them to completion on performance models. Furthermore, these applications have complex execution environments that cannot easily be reproduced on a simulator, making porting the applications to simulators difficult. We attack these problems using the well-known SimPoint methodology to find representative portions of an application to simulate, and a dynamic instrumentation framework called Pin to avoid porting altogether. Our system uses dynamic instrumentation instead of simulation to find representative portions - called Pin-Points - for simulation. Wehave developed a toolkit that automatically detects PinPoints, validates whether they are representative using hardware performance counters, and generates traces for large Itanium® programs. We compared SimPoint-based selection to random selection of simulation points. We found for 95\% of the SPEC2000 programs we tested, the PinPoints prediction was within 8\% of the actual whole-program CPI, as opposed to 18\% for random selection. We measure the end-to-end error, comparing real hardware to a performance model, and have a simple and efficient methodology to determine the step that introduced the error. Finally, we evaluate the system in the context of multiple configurations of real hardware, commercial applications, and industrial-strength performance models to understand the behavior of a complete and practical workload collection system. We have successfully used our system with many commercial Itanium® programs, some running for trillions of instructions, and have used the resulting traces for predicting performance of those applications on future Itanium processors.},
+booktitle = {Proceedings of the 37th Annual IEEE/ACM International Symposium on Microarchitecture},
+pages = {81-92},
+numpages = {12},
+location = {Portland, Oregon},
+series = {MICRO 37}
+}
+
+@inproceedings{spec2017,
+author = {Bucek, James and Lange, Klaus-Dieter and v. Kistowski, J\'{o}akim},
+title = {{SPEC CPU2017: Next-Generation Compute Benchmark}},
+year = {2018},
+isbn = {9781450356299},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+url = {https://doi.org/10.1145/3185768.3185771},
+doi = {10.1145/3185768.3185771},
+abstract = {Description of the new features of the SPEC CPU2017 industry standard benchmark and its metric calculations.},
+booktitle = {Companion of the 2018 ACM/SPEC International Conference on Performance Engineering},
+pages = {41--42},
+numpages = {2},
+keywords = {CPU, SPEC, compiler, performance},
+location = {Berlin, Germany},
+series = {ICPE '18}
+}
+
+@misc{spec2017v8,
+  author       = {{Standard Performance Evaluation Corporation (SPEC)}},
+  title        = {{SPEC CPUv8 Benchmark Suite}},
+  year         = {2025},
+  howpublished = {\url{https://www.spec.org/cpuv8/}}
+}
+
+@misc{sustainable_gem5_simulations,
+  author = {Mohammad Alian},
+  title = {{Sustainable {gem5} Simulations}},
+  howpublished = {\url{https://www.gem5.org/assets/files/workshop-isca-2023/slides/sustainable-gem5-simulations.pdf}},
+  note = {Presented at the gem5 Workshop, ISCA 2023, Accessed: 2023-10-01}
+}
+
+@inproceedings{elfie,
+  author = {Patil, Harish and Isaev, Alexander and Heirman, Wim and Sabu, Alen and Hajiabadi, Ali and Carlson, Trevor E.},
+  booktitle = {2021 IEEE/ACM International Symposium on Code Generation and Optimization (CGO)},
+  title = {{ELFies: Executable Region Checkpoints for Performance Analysis and Simulation}},
+  year = {2021},
+  volume = {},
+  number = {},
+  pages = {126--136},
+  keywords = {Analytical models;Uncertainty;Operating systems;Tools;Performance analysis;Reliability;Optimization;record and replay;dynamic program analysis;performance monitoring;simulation region selection},
+  doi = {10.1109/CGO51591.2021.9370340}
+}
+
+@inproceedings{fsa,
+  author = {Sandberg, Andreas and Nikoleris, Nikos and Carlson, Trevor E. and Hagersten, Erik and Kaxiras, Stefanos and Black-Schaffer, David},
+  booktitle = {2015 IEEE International Symposium on Workload Characterization},
+  title = {{Full Speed Ahead: Detailed Architectural Simulation at Near-Native Speed}},
+  year = {2015},
+  volume = {},
+  number = {},
+  pages = {183--192},
+  keywords = {Hardware;Software;Virtualization;Microarchitecture;Checkpointing;Java;Switches},
+  doi = {10.1109/IISWC.2015.29}
+}
+
+@article{plenty_of_room_at_the_top,
+author = {Charles E. Leiserson and Neil C. Thompson and Joel S. Emer and Bradley C. Kuszmaul and Butler W. Lampson and Daniel Sanchez and Tao B. Schardl},
+title = {{There's plenty of room at the Top: What will drive computer performance after Moore's law?}},
+journal = {Science},
+volume = {368},
+number = {6495},
+pages = {eaam9744},
+year = {2020},
+doi = {10.1126/science.aam9744},
+url = {https://www.science.org/doi/abs/10.1126/science.aam9744},
+eprint = {https://www.science.org/doi/pdf/10.1126/science.aam9744},
+abstract = {The doubling of the number of transistors on a chip every 2 years, a seemly inevitable trend that has been called Moore's law, has contributed immensely to improvements in computer performance. However, silicon-based transistors cannot get much smaller than they are today, and other approaches should be explored to keep performance growing. Leiserson et al. review recent examples and argue that the most promising place to look is at the top of the computing stack, where improvements in software, algorithms, and hardware architecture can bring the much-needed boost. Science, this issue p. eaam9744 The miniaturization of semiconductor transistors has driven the growth in computer performance for more than 50 years. As miniaturization approaches its limits, bringing an end to Moore's law, performance gains will need to come from software, algorithms, and hardware. We refer to these technologies as the “Top” of the computing stack to distinguish them from the traditional technologies at the “Bottom”: semiconductor physics and silicon-fabrication technology. In the post-Moore era, the Top will provide substantial performance gains, but these gains will be opportunistic, uneven, and sporadic, and they will suffer from the law of diminishing returns. Big system components offer a promising context for tackling the challenges of working at the Top.}
+}
+
+@inproceedings{llvm,
+author = {Lattner, Chris and Adve, Vikram},
+title = {{LLVM: A Compilation Framework for Lifelong Program Analysis \& Transformation}},
+year = {2004},
+isbn = {0769521029},
+publisher = {IEEE Computer Society},
+address = {USA},
+abstract = {This paper describes LLVM (Low Level Virtual Machine),a compiler framework designed to support transparent, lifelongprogram analysis and transformation for arbitrary programs,by providing high-level information to compilertransformations at compile-time, link-time, run-time, and inidle time between runs.LLVM defines a common, low-levelcode representation in Static Single Assignment (SSA) form,with several novel features: a simple, language-independenttype-system that exposes the primitives commonly used toimplement high-level language features; an instruction fortyped address arithmetic; and a simple mechanism that canbe used to implement the exception handling features ofhigh-level languages (and setjmp/longjmp in C) uniformlyand efficiently.The LLVM compiler framework and coderepresentation together provide a combination of key capabilitiesthat are important for practical, lifelong analysis andtransformation of programs.To our knowledge, no existingcompilation approach provides all these capabilities.We describethe design of the LLVM representation and compilerframework, and evaluate the design in three ways: (a) thesize and effectiveness of the representation, including thetype information it provides; (b) compiler performance forseveral interprocedural problems; and (c) illustrative examplesof the benefits LLVM provides for several challengingcompiler problems.},
+booktitle = {Proceedings of the International Symposium on Code Generation and Optimization: Feedback-Directed and Runtime Optimization},
+pages = {75},
+location = {Palo Alto, California},
+series = {CGO '04}
+}
+
+@article{11_gem5,
+author = {Binkert, Nathan and Beckmann, Bradford and Black, Gabriel and Reinhardt, Steven K. and Saidi, Ali and Basu, Arkaprava and Hestness, Joel and Hower, Derek R. and Krishna, Tushar and Sardashti, Somayeh and Sen, Rathijit and Sewell, Korey and Shoaib, Muhammad and Vaish, Nilay and Hill, Mark D. and Wood, David A.},
+title = {{The gem5 simulator}},
+year = {2011},
+issue_date = {May 2011},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+volume = {39},
+number = {2},
+issn = {0163-5964},
+url = {https://doi.org/10.1145/2024716.2024718},
+doi = {10.1145/2024716.2024718},
+abstract = {The gem5 simulation infrastructure is the merger of the best aspects of the M5 [4] and GEMS [9] simulators. M5 provides a highly configurable simulation framework, multiple ISAs, and diverse CPU models. GEMS complements these features with a detailed and exible memory system, including support for multiple cache coherence protocols and interconnect models. Currently, gem5 supports most commercial ISAs (ARM, ALPHA, MIPS, Power, SPARC, and x86), including booting Linux on three of them (ARM, ALPHA, and x86).The project is the result of the combined efforts of many academic and industrial institutions, including AMD, ARM, HP, MIPS, Princeton, MIT, and the Universities of Michigan, Texas, and Wisconsin. Over the past ten years, M5 and GEMS have been used in hundreds of publications and have been downloaded tens of thousands of times. The high level of collaboration on the gem5 project, combined with the previous success of the component parts and a liberal BSD-like license, make gem5 a valuable full-system simulation tool.},
+journal = {SIGARCH Comput. Archit. News},
+month = aug,
+pages = {1--7},
+numpages = {7}
+}
+
+@article{20_gem5,
+  author       = {Jason Lowe{-}Power and
+                  Abdul Mutaal Ahmad and
+                  Ayaz Akram and
+                  Mohammad Alian and
+                  Rico Amslinger and
+                  Matteo Andreozzi and
+                  Adri{\`{a}} Armejach and
+                  Nils Asmussen and
+                  Srikant Bharadwaj and
+                  Gabe Black and
+                  Gedare Bloom and
+                  Bobby R. Bruce and
+                  Daniel Rodrigues Carvalho and
+                  Jer{'{o}}nimo Castrill{'{o}}n and
+                  Lizhong Chen and
+                  Nicolas Derumigny and
+                  Stephan Diestelhorst and
+                  Wendy Elsasser and
+                  Marjan Fariborz and
+                  Amin Farmahini Farahani and
+                  Pouya Fotouhi and
+                  Ryan Gambord and
+                  Jayneel Gandhi and
+                  Dibakar Gope and
+                  Thomas Grass and
+                  Bagus Hanindhito and
+                  Andreas Hansson and
+                  Swapnil Haria and
+                  Austin Harris and
+                  Timothy Hayes and
+                  Adrian Herrera and
+                  Matthew Horsnell and
+                  Syed Ali Raza Jafri and
+                  Radhika Jagtap and
+                  Hanhwi Jang and
+                  Reiley Jeyapaul and
+                  Timothy M. Jones and
+                  Matthias Jung and
+                  Subash Kannoth and
+                  Hamidreza Khaleghzadeh and
+                  Yuetsu Kodama and
+                  Tushar Krishna and
+                  Tommaso Marinelli and
+                  Christian Menard and
+                  Andrea Mondelli and
+                  Tiago M{"{u}}ck and
+                  Omar Naji and
+                  Krishnendra Nathella and
+                  Hoa Nguyen and
+                  Nikos Nikoleris and
+                  Lena E. Olson and
+                  Marc S. Orr and
+                  Binh Pham and
+                  Pablo Prieto and
+                  Trivikram Reddy and
+                  Alec Roelke and
+                  Mahyar Samani and
+                  Andreas Sandberg and
+                  Javier Setoain and
+                  Boris Shingarov and
+                  Matthew D. Sinclair and
+                  Tuan Ta and
+                  Rahul Thakur and
+                  Giacomo Travaglini and
+                  Michael Upton and
+                  Nilay Vaish and
+                  Ilias Vougioukas and
+                  Zhengrong Wang and
+                  Norbert Wehn and
+                  Christian Weis and
+                  David A. Wood and
+                  Hongil Yoon and
+                  {'{E}}der F. Zulian},
+  title        = {{The gem5 Simulator: Version 20.0+}},
+  journal      = {CoRR},
+  volume       = {abs/2007.03152},
+  year         = {2020},
+  url          = {https://arxiv.org/abs/2007.03152},
+  eprinttype    = {arXiv},
+  eprint       = {2007.03152}
+}
+
+@inproceedings{barrier_point,
+  author={Carlson, Trevor E. and Heirman, Wim and Van Craeynest, Kenzo and Eeckhout, Lieven},
+  booktitle={2014 IEEE International Symposium on Performance Analysis of Systems and Software (ISPASS)},
+  title={{BarrierPoint: Sampled simulation of multi-threaded applications}},
+  year={2014},
+  volume={},
+  number={},
+  pages={2-12},
+  keywords={Benchmark testing;Vectors;Load modeling;Microarchitecture;Instruction sets;Synchronization},
+  doi={10.1109/ISPASS.2014.6844456}}
+
+@inproceedings{smarts,
+  author={Wunderlich, R.E. and Wenisch, T.F. and Falsafi, B. and Hoe, J.C.},
+  booktitle={30th Annual International Symposium on Computer Architecture, 2003. Proceedings.},
+  title={{SMARTS: accelerating microarchitecture simulation via rigorous statistical sampling}},
+  year={2003},
+  volume={},
+  number={},
+  pages={84-95},
+  keywords={Acceleration;Microarchitecture;Sampling methods;Computational modeling;Benchmark testing;Hardware;Computer simulation;Proposals;Computer architecture;Computer errors},
+  doi={10.1109/ISCA.2003.1206991}}
+
+@inproceedings{firesim,
+ author = {Karandikar, Sagar and Mao, Howard and Kim, Donggyu and Biancolin, David and Amid, Alon and Lee, Dayeol and Pemberton, Nathan and Amaro, Emmanuel and Schmidt, Colin and Chopra, Aditya and Huang, Qijing and Kovacs, Kyle and Nikolic, Borivoje and Katz, Randy and Bachrach, Jonathan and Asanovi\'{c}, Krste},
+ title = {{FireSim: FPGA-accelerated Cycle-exact Scale-out System Simulation in the Public Cloud}},
+ booktitle = {Proceedings of the 45th Annual International Symposium on Computer Architecture},
+ series = {ISCA '18},
+ year = {2018},
+ isbn = {978-1-5386-5984-7},
+ location = {Los Angeles, California},
+ pages = {29--42},
+ numpages = {14},
+ url = {https://doi.org/10.1109/ISCA.2018.00014},
+ doi = {10.1109/ISCA.2018.00014},
+ acmid = {3276543},
+ publisher = {IEEE Press},
+ address = {Piscataway, NJ, USA},
+ keywords = {computer architecture, computer networks, computer simulation, data centers, distributed computing, field programmable gate arrays, performance analysis, scalability},
+}
+
+@misc{pacsim,
+      title={{Pac-Sim: Simulation of Multi-threaded Workloads using Intelligent, Live Sampling}},
+      author={Changxi Liu and Alen Sabu and Akanksha Chaudhari and Qingxuan Kang and Trevor E. Carlson},
+      year={2023},
+      eprint={2310.17089},
+      archivePrefix={arXiv},
+      primaryClass={cs.AR},
+      url={https://arxiv.org/abs/2310.17089},
+}
+
+@article{exascale,
+  author={Messina, Paul},
+  journal={Computing in Science and Engineering},
+  title={{The Exascale Computing Project}},
+  year={2017},
+  volume={19},
+  number={3},
+  pages={63--67},
+  keywords={US Department of Energy, Security, Ecosystems, Mission critical systems, High performance computing, Software development, Exascale, co-design, HPC, scientific computing},
+  doi={10.1109/MCSE.2017.57}
+}
+
+@Inbook{livermore_loops,
+author="Dongarra, Jack
+and Luszczek, Piotr",
+editor="Padua, David",
+title={{Livermore Loops}},
+bookTitle="Encyclopedia of Parallel Computing",
+year="2011",
+publisher="Springer US",
+address="Boston, MA",
+pages="1041--1043",
+isbn="978-0-387-09766-4",
+doi="10.1007/978-0-387-09766-4_161",
+url="https://doi.org/10.1007/978-0-387-09766-4_161"
+}
+
+@inproceedings{risc_vs_cisc,
+  author={Blem, Emily and Menon, Jaikrishnan and Sankaralingam, Karthikeyan},
+  booktitle={2013 IEEE 19th International Symposium on High Performance Computer Architecture (HPCA)},
+  title={{Power struggles: Revisiting the RISC vs. CISC debate on contemporary ARM and x86 architectures}},
+  year={2013},
+  volume={},
+  number={},
+  pages={1-12},
+  keywords={Abstracts;Reduced instruction set computing;Mobile communication;Servers},
+  doi={10.1109/HPCA.2013.6522302}}
+
+@misc{epoch2024trackinglargescaleaimodels,
+  title={{Tracking Large-Scale AI Models}},
+  author={Rahman, Robi and Owen, David and You, Josh},
+  year={2024},
+  url={https://epochai.org/blog/tracking-large-scale-ai-models},
+  note={Accessed: 2024-10-18}
+}
+
+@article{exascale-proxy-apps,
+author = {Alexander, Francis  and Almgren, Ann  and Bell, John  and Bhattacharjee, Amitava  and Chen, Jacqueline  and Colella, Phil  and Daniel, David  and DeSlippe, Jack  and Diachin, Lori  and Draeger, Erik  and Dubey, Anshu  and Dunning, Thom  and Evans, Thomas  and Foster, Ian  and Francois, Marianne  and Germann, Tim  and Gordon, Mark  and Habib, Salman  and Halappanavar, Mahantesh  and Hamilton, Steven  and Hart, William  and (Henry) Huang, Zhenyu  and Hungerford, Aimee  and Kasen, Daniel  and Kent, Paul R. C.  and Kolev, Tzanio  and Kothe, Douglas B.  and Kronfeld, Andreas  and Luo, Ye  and Mackenzie, Paul  and McCallen, David  and Messer, Bronson  and Mniszewski, Sue  and Oehmen, Chris  and Perazzo, Amedeo  and Perez, Danny  and Richards, David  and Rider, William J.  and Rieben, Rob  and Roche, Kenneth  and Siegel, Andrew  and Sprague, Michael  and Steefel, Carl  and Stevens, Rick  and Syamlal, Madhava  and Taylor, Mark  and Turner, John  and Vay, Jean-Luc  and Voter, Artur F.  and Windus, Theresa L.  and Yelick, Katherine },
+title = {{Exascale applications: skin in the game}},
+journal = {Philosophical Transactions of the Royal Society A: Mathematical, Physical and Engineering Sciences},
+volume = {378},
+number = {2166},
+pages = {20190056},
+year = {2020},
+doi = {10.1098/rsta.2019.0056},
+
+URL = {https://royalsocietypublishing.org/doi/abs/10.1098/rsta.2019.0056},
+eprint = {https://royalsocietypublishing.org/doi/pdf/10.1098/rsta.2019.0056}
+,
+    abstract = { As noted in Wikipedia, skin in the game refers to having 'incurred risk by being involved in achieving a goal', where 'skin is a synecdoche for the person involved, and game is the metaphor for actions on the field of play under discussion'. For exascale applications under development in the US Department of Energy Exascale Computing Project, nothing could be more apt, with the skin being exascale applications and the game being delivering comprehensive science-based computational applications that effectively exploit exascale high-performance computing technologies to provide breakthrough modelling and simulation and data science solutions. These solutions will yield high-confidence insights and answers to the most critical problems and challenges for the USA in scientific discovery, national security, energy assurance, economic competitiveness and advanced healthcare. This article is part of a discussion meeting issue 'Numerical algorithms for high-performance computational science'. }
+}
+
+@inproceedings{silhouette_score,
+author={Shahapure, Ketan Rajshekhar and Nicholas, Charles},
+booktitle={2020 IEEE 7th International Conference on Data Science and Advanced Analytics (DSAA)},
+title={{Cluster Quality Analysis Using Silhouette Score}},
+year={2020},
+volume={},
+number={},
+pages={747-748},
+keywords={Clustering algorithms;Iris;Electrical engineering;Computer science;Benchmark testing;Inspection;Writing},
+doi={10.1109/DSAA49011.2020.00096}}
+
+@article{survey_phase_classification,
+  author={Criswell, Keeley and Adegbija, Tosiron},
+  journal={IEEE Transactions on Parallel and Distributed Systems},
+  title={{A Survey of Phase Classification Techniques for Characterizing Variable Application Behavior}},
+  year={2020},
+  volume={31},
+  number={1},
+  pages={224-236},
+  keywords={Optimization;Hardware;Computational modeling;Multicore processing;Big Data;Clocks;Runtime;Phase classification;adaptable computing;workload characterization;variable program behavior;dynamic optimization;edge computing;multithreaded applications;big data;emerging applications},
+  doi={10.1109/TPDS.2019.2929781}}
+
+@book{hogg2020psi,
+  author    = {Robert V. Hogg and Elliot A. Tanis and Dale L. Zimmerman},
+  title     = {{Probability and Statistical Inference}},
+  edition   = {10th},
+  publisher = {Pearson},
+  year      = {2020},
+  address   = {Boston},
+  isbn      = {978-0-13-518939-4}
+}
+
+@inproceedings{accl_warmup_sampled_simulation,
+  author={Haskins, J.W. and Skadron, K.},
+  booktitle={2003 IEEE International Symposium on Performance Analysis of Systems and Software. ISPASS 2003.},
+  title={{Memory reference reuse latency: Accelerated warmup for sampled microarchitecture simulation}},
+  year={2003},
+  volume={},
+  number={},
+  pages={195-203},
+  keywords={Delay;Acceleration;Microarchitecture;Predictive models;Computational modeling;Microprocessors;Computer simulation;Throughput;Hardware;Computer architecture},
+  doi={10.1109/ISPASS.2003.1190246}}
+
+@inproceedings{characterizing_and_comparing_prevailing_simulation_techniques,
+  author={Yi, J.J. and Kodakara, S.V. and Sendag, R. and Lilja, D.J. and Hawkins, D.M.},
+  booktitle={11th International Symposium on High-Performance Computer Architecture},
+  title={{Characterizing and comparing prevailing simulation techniques}},
+  year={2005},
+  volume={},
+  number={},
+  pages={266-277},
+  keywords={Computational modeling;Computer simulation;Sampling methods;Computer architecture;Computer networks;Statistics;Decision trees;Testing;Performance analysis;Microarchitecture},
+  doi={10.1109/HPCA.2005.8}}
+
+@inproceedings{analysis_of_statistical_sampling_in_microarchitecture_simulation,
+  author={Kodakara, Sreekumar V. and Kim, Jinpyo and Lilja, David J. and Hsu, Wei-Chung and Yew, Pen-Chung},
+  booktitle={2007 IEEE 10th International Symposium on Workload Characterization},
+  title={{Analysis of Statistical Sampling in Microarchitecture Simulation: Metric, Methodology and Program Characterization}},
+  year={2007},
+  volume={},
+  number={},
+  pages={139-148},
+  keywords={Sampling methods;Microarchitecture;Analytical models;Computer integrated manufacturing;Costs;Performance analysis;Phase estimation;Computational modeling;Size measurement;Design optimization},
+  doi={10.1109/IISWC.2007.4362190}}
+
+@phdthesis{dynamorio,
+author = {Bruening, Derek L. and Amarasinghe, Saman},
+title = {{Efficient, transparent, and comprehensive runtime code manipulation}},
+year = {2004},
+publisher = {Massachusetts Institute of Technology},
+address = {USA},
+abstract = {This thesis addresses the challenges of building a software system for general-purpose runtime code manipulation. Modern applications, with dynamically-loaded modules and dynamically-generated code, are assembled at runtime. While it was once feasible at compile time to observe and manipulate every instruction—which is critical for program analysis, instrumentation, trace gathering, optimization, and similar tools—it can now only be done at runtime. Existing runtime tools are successful at inserting instrumentation calls, but no general framework has been developed for fine-grained and comprehensive code observation and modification without high overheads. This thesis demonstrates the feasibility of building such a system in software. We present  DynamoRIO , a fully-implemented runtime code manipulation system that supports code transformations on any part of a program,  while it executes . DynamoRIO uses code caching technology to provide efficient, transparent, and comprehensive manipulation of an unmodified application running on a stock operating system and commodity hardware. DynamoRIO executes large, complex, modern applications with dynamically-loaded, generated, or even modified code. Despite the formidable obstacles inherent in the IA-32 architecture, DynamoRIO provides these capabilities efficiently, with zero to thirty percent time and memory overhead on both Windows and Linux. DynamoRIO exports an interface for building custom runtime code manipulation tools of all types. It has been used by many researchers, with several hundred downloads of our public release, and is being commercialized in a product for protection against remote security exploits, one of numerous applications of runtime code manipulation. (Copies available exclusively from MIT Libraries, Rm. 14-0551, Cambridge, MA 02139-4307. Ph. 617-253-5668; Fax 617-253-1690.)},
+note = {AAI0807735}
+}
+
+@inproceedings{sniper,
+  author={Carlson, Trevor E. and Heirman, Wim and Eeckhout, Lieven},
+  booktitle={SC '11: Proceedings of 2011 International Conference for High Performance Computing, Networking, Storage and Analysis},
+  title={{Sniper: Exploring the level of abstraction for scalable and accurate parallel multi-core simulation}},
+  year={2011},
+  volume={},
+  number={},
+  pages={1-12},
+  keywords={Multicore processing;Load modeling;Synchronization;Accuracy;Analytical models;Kernel;Interval simulation;interval model;performance modeling;multi-core processor},
+  doi={10.1145/2063384.2063454}}
+
+@inproceedings{Mosier2025PinCPU,
+  author       = {Nicholas Mosier and Hamed Nemati and John C. Mitchell and Caroline Trippel},
+  title        = {{PinCPU: Fast-Forwarding Simulations with Dynamic Binary Instrumentation}},
+  booktitle    = {Proceedings of the gem5 Workshop at the 52nd International Symposium on Computer Architecture (ISCA)},
+  series       = {ISCA '25 Workshops},
+  year         = {2025},
+  location     = {Tokyo, Japan},
+  month        = {June},
+  day          = {22},
+  publisher    = {ACM},
+  url          = {https://www.gem5.org/events/isca-2025}
+}
+
+@online{gem5-checkpoints,
+  author    = {{gem5 Project}},
+  title     = {{Checkpoints --- gem5 Documentation}},
+  year      = {2025},
+  url       = {https://www.gem5.org/documentation/general_docs/checkpoints/},
+  urldate   = {2025-07-22}
+}
+
+@inproceedings{dynamicBinaryInstrumentationForBBVGeneration,
+author="Weaver, Vincent M.
+and McKee, Sally A.",
+editor="Stenstr{\"o}m, Per
+and Dubois, Michel
+and Katevenis, Manolis
+and Gupta, Rajiv
+and Ungerer, Theo",
+title={{Using Dynamic Binary Instrumentation to Generate Multi-platform SimPoints: Methodology and Accuracy}},
+booktitle="High Performance Embedded Architectures and Compilers",
+year="2008",
+publisher="Springer Berlin Heidelberg",
+address="Berlin, Heidelberg",
+pages="305--319",
+abstract="Modern benchmark suites (e.g., SPEC CPU2006) take months to simulate. Researchers and practitioners thus use partial simulation techniques for efficiency, and hope to avoid sacrificing accuracy. SimPoint is a popular method of choosing representative parts that approximate an application's entire behavior. The approach breaks an application into intervals, generates a Basic Block Vector (BBV) to represent instructions executed in each interval, clusters the BBVs according to similarity, and chooses a representative interval from the most important clusters. Unfortunately, tools to generate BBVs efficiently have heretofore been widely unavailable for many architectures, especially embedded ones.",
+isbn="978-3-540-77560-7"
+}
+
+@book{ComputerArchitecturePerformanceEvaluationMethods,
+author = {Eeckhout, Lieven},
+title = {{Computer Architecture Performance Evaluation Methods}},
+year = {2010},
+isbn = {1608454673},
+publisher = {Morgan \& Claypool Publishers},
+edition = {1st},
+abstract = {Performance evaluation is at the foundation of computer architecture research and development. Contemporary microprocessors are so complex that architects cannot design systems based on intuition and simple models only. Adequate performance evaluation methods are absolutely crucial to steer the research and development process in the right direction. However, rigorous performance evaluation is non-trivial as there are multiple aspects to performance evaluation, such as picking workloads, selecting an appropriate modeling or simulation approach, running the model and interpreting the results using meaningful metrics. Each of these aspects is equally important and a performance evaluation method that lacks rigor in any of these crucial aspects may lead to inaccurate performance data and may drive research and development in a wrong direction. The goal of this book is to present an overview of the current state-of-the-art in computer architecture performance evaluation, with a special emphasis on methods for exploring processor architectures. The book focuses on fundamental concepts and ideas for obtaining accurate performance data. The book covers various topics in performance evaluation, ranging from performance metrics, to workload selection, to various modeling approaches including mechanistic and empirical modeling. And because simulation is by far the most prevalent modeling technique, more than half the book's content is devoted to simulation. The book provides an overview of the simulation techniques in the computer designer's toolbox, followed by various simulation acceleration techniques including sampled simulation, statistical simulation, parallel simulation and hardware-accelerated simulation.}
+}
+
+@misc{CRIU,
+      title={{CRIU -- Checkpoint Restore in Userspace for computational simulations and scientific applications}},
+      author={Fabio Andrijauskas and Igor Sfiligoi and Diego Davila and Aashay Arora and Jonathan Guiang and Brian Bockelman and Greg Thain and Frank Wurthwein},
+      year={2024},
+      eprint={2402.05244},
+      archivePrefix={arXiv},
+      primaryClass={cs.DC},
+      url={https://arxiv.org/abs/2402.05244},
+}
+
+@misc{gem5looppoint,
+  author       = {Qiu, Zhantong},
+  title        = {{The LoopPoint Methodology in the gem5 Simulator}},
+  year         = {2023},
+  note         = {Presentation slides, gem5 Workshop at International Symposium on Computer Architecture (ISCA\,2023)},
+  url          = {https://www.gem5.org/assets/files/workshop-isca-2023/slides/looppoint-in-the-gem5-simulator.pdf}
+}
+
+@online{ampere-altra,
+  author    = {{Ampere Computing}},
+  title     = {{Ampere Altra Family Product Brief}},
+  date      = {2025-08-21},
+  url       = {https://amperecomputing.com/briefs/ampere-altra-family-product-brief},
+  urldate   = {2025-10-21}
+}
+
+
+@software{vertical-microbench,
+  author       = {{Vertical Research Group}},
+  title        = {{microbench: Extremely Simple Microbenchmarks}},
+  year         = {2018},
+  url          = {https://github.com/VerticalResearchGroup/microbench},
+  version      = {c20e4a1},
+  note         = {{MIT License. Accessed 2025-10-21}}
+}
+
+@misc{MAV,
+      title={{Memory Access Vectors: Improving Sampling Fidelity for CPU Performance Simulations}}, 
+      author={Sriyash Caculo and Mahesh Madhav and Jeff Baxter},
+      year={2025},
+      eprint={2506.02344},
+      archivePrefix={arXiv},
+      primaryClass={cs.AR},
+      url={https://arxiv.org/abs/2506.02344}, 
+}
+
+@INPROCEEDINGS{wavelet-based,
+  author={Huffmire, Ted and Sherwood, Tim},
+  booktitle={2006 International Conference on Parallel Architectures and Compilation Techniques (PACT)}, 
+  title={{Wavelet-based phase classification}}, 
+  year={2006},
+  volume={},
+  number={},
+  pages={95-104},
+  keywords={Wavelet analysis;Wavelet transforms;Time-frequency analysis;Optimization;Phase detection;Computers;Optimization;Phase Analysis;Phase Classification;Phases;Program Behavior;Wavelets},
+  doi={}}
+
+@techreport{xalancbmk,
+  title        = {{Report: The 523.xalancbmk\_r Benchmark (June 2016 Development Kit)}},
+  author       = {Colp, Elliot and Amaral, J. Nelson and Benedicto, Caian and Rodrigues, Raphael Ernani and Borin, Edson},
+  institution  = {Department of Computing Science, University of Alberta},
+  year         = {2018},
+  month        = jan,
+  type         = {Technical Report},
+  url          = {https://webdocs.cs.ualberta.ca/~amaral/AlbertaWorkloadsForSPECCPU2017/reports/xalancbmk_report.html},
+  note         = {Published January 18, 2018. Part of “The Alberta Workloads for the SPEC CPU2017 Benchmark Suite.”},
+  urldate      = {2025-10-17}
+}
+
+@article{LSMS,
+  author  = {Wang, Y. and Stocks, G. M. and Shelton, W. A. and Nicholson, D. M. C. and Temmerman, W. M. and Szotek, Z.},
+  title   = {{Order-N multiple scattering approach to electronic structure calculations}},
+  journal = {Phys. Rev. Lett.},
+  volume  = {75},
+  pages   = {2867--2870},
+  year    = {1995},
+  doi     = {10.1103/PhysRevLett.75.2867}
+}
+
+@article{BLCR,
+author = {Hargrove, Paul and Duell, Jason},
+year = {2006},
+month = {09},
+pages = {494},
+title = {{Berkeley lab checkpoint/restart (BLCR) for Linux clusters}},
+volume = {46},
+journal = {Journal of Physics: Conference Series},
+doi = {10.1088/1742-6596/46/1/067}
+}
+
+@misc{spec2006,
+  author       = "{{Standard Performance Evaluation Corporation (SPEC)}}",
+  title        = "{{SPEC CPU2006 Benchmark Suite}}",
+  year         = "2006",
+  howpublished = "\url{https://www.spec.org/cpu2006/}",
+  note         = "[Online; accessed 21-Oct-2025]"
+}
+
+@misc{spec2000,
+  author       = "{{Standard Performance Evaluation Corporation (SPEC)}}",
+  title        = "{{SPEC CPU2000 Benchmark Suite}}",
+  year         = "2000",
+  howpublished = "\url{https://www.spec.org/cpu2000/}",
+  note         = "[Online; accessed 21-Oct-2025]"
+}
+
+@INPROCEEDINGS{hot-region-spec2017,
+  author={Wu, Qinzhe and Flolid, Steven and Song, Shuang and Deng, Junyong and John, Lizy K.},
+  booktitle={2018 IEEE International Symposium on Workload Characterization (IISWC)}, 
+  title={{Invited Paper for the Hot Workloads Special Session Hot Regions in SPEC CPU2017}}, 
+  year={2018},
+  volume={},
+  number={},
+  pages={71-77},
+  keywords={Benchmark testing;Mathematical model;Computational modeling;Tools;Predictive models;Runtime;Correlation},
+  doi={10.1109/IISWC.2018.8573479}}
+
+@INPROCEEDINGS{eeckhout-microarchitecture-independent-signatures,
+  author={Eeckhout, L. and Sampson, J. and Calder, B.},
+  booktitle={IEEE International. 2005 Proceedings of the IEEE Workload Characterization Symposium, 2005.}, 
+  title={{Exploiting program microarchitecture independent characteristics and phase behavior for reduced benchmark suite simulation}}, 
+  year={2005},
+  volume={},
+  number={},
+  pages={2-12},
+  keywords={Microarchitecture;Sampling methods;Computational modeling;Space exploration;Pipelines;Application software;Computer architecture;Costs},
+  doi={10.1109/IISWC.2005.1525996}}
+
+@inproceedings{variability_in_architectural_simulations_of_multithreaded_workloads,
+author = {Alameldeen, Alaa R. and Wood, David A.},
+title = {{Variability in Architectural Simulations of Multi-Threaded Workloads}},
+year = {2003},
+isbn = {0769518710},
+publisher = {IEEE Computer Society},
+address = {USA},
+abstract = {Multi-threaded commercial workloads implement many important internet services. Consequently, these workloads are increasingly used to evaluate the performance of uniprocessor and multiprocessor system designs. This paper identifies performance variability as a potentially major challenge for architectural simulation studies using these workloads. Variability refers to the differences between multiple estimates of a work-load's performance. Time variability occurs when a workload exhibits different characteristics during different phases of a single run. Space variability occurs when small variations in timing cause runs starting from the same initial condition to follow widely different execution paths.Variability is a well-known phenomenon in real systems, but is nearly universally ignored in simulation experiments. In a central result of this paper, we show that variability in multi-threaded commercial workloads can lead to incorrect architectural conclusions (e.g., 31\% of the time in one experiment). We propose a methodology, based on multiple simulations and standard statistical techniques, to compensate for variability. Our methodology greatly reduces the probability of reaching incorrect conclusions, while enabling simulations to finish within reasonable time limits.},
+booktitle = {Proceedings of the 9th International Symposium on High-Performance Computer Architecture},
+pages = {7},
+series = {HPCA '03}
+}
+
+@INPROCEEDINGS{spec2017-workload-characterization,
+  author={Limaye, Ankur and Adegbija, Tosiron},
+  booktitle={2018 IEEE International Symposium on Performance Analysis of Systems and Software (ISPASS)}, 
+  title={{A Workload Characterization of the SPEC CPU2017 Benchmark Suite}}, 
+  year={2018},
+  volume={},
+  number={},
+  pages={149-158},
+  keywords={Benchmark testing;Hardware;Optimization;Microarchitecture;Program processors;Linux;Measurement;SPEC CPU2017;workload characterization;benchmarks;computer architecture;microprocessor optimization;performance analysis},
+  doi={10.1109/ISPASS.2018.00028}}
+
+@InProceedings{simpoint-plus,
+author="Xue, Jiangying
+and Xiong, Tianyu
+and Chao, Lingwei
+and Xue, Ruini",
+editor="Nagel, Wolfgang E.
+and Goehringer, Diana
+and Diniz, Pedro C.",
+title="SimPoint+: More Stable, Accurate and Efficient Program Analysis",
+booktitle="Euro-Par 2025: Parallel Processing",
+year="2026",
+publisher="Springer Nature Switzerland",
+address="Cham",
+pages="3--17",
+abstract="This paper introduces SimPoint+, an enhanced sampled simulation methodology that addresses key limitations of the widely-used SimPoint approach. SimPoint+ achieves greater stability, accuracy, and efficiency in program analysis through three major improvements: (1) UMAP-based dimensionality reduction for Basic Block Vectors, (2) a two-stage clustering approach utilizing HDBSCAN, and (3) a lightweight cycle calibration method. Furthermore, an automated hyperparameter tuning strategy accommodates diverse program characteristics for the first two models. Evaluation of SPEC CPU 2006 benchmarks demonstrates that SimPoint+ significantly outperforms SimPoint by yielding more consistent results across runs, reducing cycle error rates by 3--5 orders of magnitude, and decreasing required simulation time by 25{\%}--55{\%} overall. SimPoint+ facilitates more reliable and efficient simulation for computer architecture research, providing a robust foundation for rapid design space exploration and performance analysis of complex processors.",
+isbn="978-3-031-99857-7"
+}
+
+@ARTICLE{survey-simulator-techniques,
+  author={Akram, Ayaz and Sawalha, Lina},
+  journal={IEEE Access}, 
+  title={A Survey of Computer Architecture Simulation Techniques and Tools}, 
+  year={2019},
+  volume={7},
+  number={},
+  pages={78120-78145},
+  keywords={Computer architecture;Computational modeling;Tools;Object oriented modeling;Microarchitecture;Timing;Adaptation models;Computer architecture simulators;simulation techniques;validation;×86 simulators;simulators evaluation},
+  doi={10.1109/ACCESS.2019.2917698}}
+
+@article{10.1145/1508284.1508255,
+author = {Devietti, Joseph and Lucia, Brandon and Ceze, Luis and Oskin, Mark},
+title = {DMP: deterministic shared memory multiprocessing},
+year = {2009},
+issue_date = {March 2009},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+volume = {44},
+number = {3},
+issn = {0362-1340},
+url = {https://doi.org/10.1145/1508284.1508255},
+doi = {10.1145/1508284.1508255},
+abstract = {Current shared memory multicore and multiprocessor systems are nondeterministic. Each time these systems execute a multithreaded application, even if supplied with the same input, they can produce a different output. This frustrates debugging and limits the ability to properly test multithreaded code, becoming a major stumbling block to the much-needed widespread adoption of parallel programming.In this paper we make the case for fully deterministic shared memory multiprocessing (DMP). The behavior of an arbitrary multithreaded program on a DMP system is only a function of its inputs. The core idea is to make inter-thread communication fully deterministic. Previous approaches to coping with nondeterminism in multithreaded programs have focused on replay, a technique useful only for debugging. In contrast, while DMP systems are directly useful for debugging by offering repeatability by default, we argue that parallel programs should execute deterministically in the field as well. This has the potential to make testing more assuring and increase the reliability of deployed multithreaded software. We propose a range of approaches to enforcing determinism and discuss their implementation trade-offs. We show that determinism can be provided with little performance cost using our architecture proposals on future hardware, and that software-only approaches can be utilized on existing systems.},
+journal = {SIGPLAN Not.},
+month = mar,
+pages = {85–96},
+numpages = {12},
+keywords = {parallel programming, multicores, determinism, debugging}
+}
+
+@inproceedings{determineistic_shared_memory_multiprocessing,
+author = {Devietti, Joseph and Lucia, Brandon and Ceze, Luis and Oskin, Mark},
+title = {{DMP: deterministic shared memory multiprocessing}},
+year = {2009},
+isbn = {9781605584065},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+url = {https://doi.org/10.1145/1508244.1508255},
+doi = {10.1145/1508244.1508255},
+abstract = {Current shared memory multicore and multiprocessor systems are nondeterministic. Each time these systems execute a multithreaded application, even if supplied with the same input, they can produce a different output. This frustrates debugging and limits the ability to properly test multithreaded code, becoming a major stumbling block to the much-needed widespread adoption of parallel programming.In this paper we make the case for fully deterministic shared memory multiprocessing (DMP). The behavior of an arbitrary multithreaded program on a DMP system is only a function of its inputs. The core idea is to make inter-thread communication fully deterministic. Previous approaches to coping with nondeterminism in multithreaded programs have focused on replay, a technique useful only for debugging. In contrast, while DMP systems are directly useful for debugging by offering repeatability by default, we argue that parallel programs should execute deterministically in the field as well. This has the potential to make testing more assuring and increase the reliability of deployed multithreaded software. We propose a range of approaches to enforcing determinism and discuss their implementation trade-offs. We show that determinism can be provided with little performance cost using our architecture proposals on future hardware, and that software-only approaches can be utilized on existing systems.},
+booktitle = {Proceedings of the 14th International Conference on Architectural Support for Programming Languages and Operating Systems},
+pages = {85–96},
+numpages = {12},
+keywords = {parallel programming, multicores, determinism, debugging},
+location = {Washington, DC, USA},
+series = {ASPLOS XIV}
+}
+
+@inproceedings{parrot,
+author = {Lavin, Patrick and Young, Jeffrey and Vuduc, Richard},
+title = {{Multifidelity Memory System Simulation in SST}},
+year = {2024},
+isbn = {9798400716447},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+url = {https://doi.org/10.1145/3631882.3631890},
+doi = {10.1145/3631882.3631890},
+abstract = {As computer systems grow larger and more complex, it takes more time to simulate their behavior in detail. Researchers interested in simulating large-scale systems must choose between less-accurate high-level models or simulating smaller portions of their benchmark suite, both of which are highly manual, offline approaches that require time-consuming analysis by experts. Multifidelity simulation aims to lessen this burden by automatically adapting the fidelity of a simulation to the complexity of the behavior occurring at any given point in time. We show how a multifidelity memory system model can be used to accelerate single node simulation by up to 2x with 1-5\% mean absolute percent error in the simulated instructions per cycle across benchmark suites.},
+booktitle = {Proceedings of the International Symposium on Memory Systems},
+articleno = {8},
+numpages = {15},
+keywords = {Architectural simulation, memory modeling, phase detection, statistical simulation},
+location = {Alexandria, VA, USA},
+series = {MEMSYS '23}
+}

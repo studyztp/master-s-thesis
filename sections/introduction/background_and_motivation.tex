@@ -1,0 +1,101 @@
+\section{Motivation and Prior Work}\label{sec:motivation_and_prior_work}
+Nugget is designed to address the following limitations of prior sampling techniques:
+
+\begin{itemize}
+    \item Samples are expensive to find.
+    \item Samples are tied to a single executable binary.
+    \item Validating the selected samples is infeasible.
+\end{itemize}
+
+In this section, we discuss each of these limitations and how prior work in sampling has or has not addressed them.
+
+\subsection{Samples Are Expensive To Find}\label{sec:finding_samples_is_expensive}
+
+Targeted sampling techniques require analyzing the entire workload execution, which is a time-consuming process.
+
+For example, the SPECspeed suite in the \revision{SPEC~CPU2017} benchmark suite~\cite{spec2017} has an average of 21.8 trillion dynamic instructions per benchmark for floating point benchmarks with reference input size, which is the only input size designed to report time metrics~\cite{spec2017-workload-characterization}.
+Functional simulators, such as the gem5 atomic model, are often limited to a simulation rate of approximately 1 Million Instructions Per Second (MIPS)~\cite{sustainable_gem5_simulations}.
+Therefore, it takes approximately 250 days of \revision{wall-clock} time to analyze an average SPECspeed benchmark with reference input size.
+More recent workloads (e.g., the forthcoming SPEC~CPUv8~\cite{spec2017v8}, HPC workloads, and machine learning workloads) are significantly larger, making functional simulation infeasible.
+
+For multi-threaded benchmarks, the analysis overhead is even worse.
+We must analyze the program once for every different thread configuration because the number of threads affects the program's execution.
+Also, if the workload undergoes any changes (e.g., new compiler, different optimizations, etc.), we must redo the analysis.
+
+Live sampling tools like Pac-Sim~\cite{pacsim} parallelize the phase analysis and detailed simulation to reduce the overall phase analysis penalty.
+However, live sampling still relies on the simulator to analyze the program's execution so this technique is constrained by the simulation speed.
+If a benchmark takes the simulator 250 days to analyze, as mentioned in the above example, then parallelizing the analysis and detailed simulation will still take at least 250 days.
+
+Tools like DynamoRIO~\cite{dynamorio} and the Intel PinPoints toolkit~\cite{pinpoints} can analyze the program's execution with dynamic binary instrumentation or binary translation.
+The instrumentation and profiling routines introduce overhead to the program's execution, but this overhead is significantly smaller than that of simulation (e.g., $4\text{-}40\times$ for QEMU with some single-threaded workloads~\cite{dynamicBinaryInstrumentationForBBVGeneration}).
+However, these tools often have restrictions on the architectures they can analyze or the host machines.
+Developing architectures that need to be analyzed with a wider range of benchmarks, such as RISC-V, often cannot use these tools because they are not supported.
+
+\begin{tcolorbox}
+\textbf{Goal 1:}
+Analyze the program's execution quickly and without any restrictions on the architecture or host machines.
+\end{tcolorbox}
+
+\subsection{Samples Are Tied To A Single Executable Binary}\label{sec:samples_dont_generalize}
+
+Most prior work relies on binary-specific information, such as the program counter, to define intervals, identify program phases, and select samples.
+Any binary change, such as recompiling with different ISA extensions or compilers, alters the static instructions and the dynamic instruction stream, invalidating previously selected samples.
+As discussed in Section~\ref{sec:finding_samples_is_expensive}, the high overhead of this analysis makes repeating it for every binary revision time-consuming.
+
+% This is a critical limitation given the growing importance of hardware-software co-design as Moore's law slows~\cite{plenty_of_room_at_the_top}.
+% Most targeted sampling techniques produce samples tied to a specific binary, preventing reuse across program binaries.
+% For example, to compare a program compiled with and without certain ISA extensions (e.g., RISC-V vector extensions), SimPoint would require rerunning the entire analysis on the new binary.
+% Additionally, architectural boundaries are increasingly blurred; ARM-based architectures, for instance, now appear in servers and desktops, emphasizing the need for architecture-independent evaluation~\cite{risc_vs_cisc}.
+
+Cross-binary simulation points~\cite{cross_binary_simpoints} represent a notable attempt to decouple samples from a specific binary.
+However, they are limited to single-threaded programs and require significant manual effort, including mapping their control flow graphs and recalculating sample weights.
+
+\begin{tcolorbox}
+\textbf{Goal 2:}
+Automatically generate samples that are independent of the binary.
+\end{tcolorbox}
+
+\subsection{Validating The Selected Samples Is Infeasible}\label{sec:validating_the_selected_samples_is_infeasible}
+
+Sampling methodologies aim to predict overall program performance by measuring only a subset of representative samples and extrapolating the full-program behavior using statistical models. 
+Most methodologies focus on predicting metrics that \revision{summarize} the entire hardware performance, such as instructions per cycle (IPC) or total runtime.
+
+To evaluate the accuracy of a set of samples selected by a sampling methodology, the predicted performance metrics are compared against ground truth measurements. 
+First, the target performance metric is measured from a full execution of the program on the experimental system, serving as the ground truth. 
+Next, the same metric is measured for the selected samples, and statistical processing is applied to estimate the full-program value. 
+Finally, the predicted value is compared to the ground truth to quantify the accuracy of the selected samples.
+
+\revision{
+The effectiveness of a sample selection method depends on benchmark characteristics. }
+\shepherd{Differences in control flow phase behavior, working set size and locality, and input sensitivity can cause a method that succeeds on one workload and input pair to misrepresent another~\cite{characterizing_and_comparing_prevailing_simulation_techniques,simpoint,hot-region-spec2017,xalancbmk,survey_phase_classification,eeckhout-microarchitecture-independent-signatures,MAV}.}
+\revision{
+For example, empirical studies (e.g., MAV~\cite{MAV}) report outliers where SimPoint fails to capture distinct memory access behavior while SimPoint reports average 3\% IPC error with SPEC~CPU2000~\cite{spec2000} programs~\cite{wavelet-based}. 
+Hence, representative intervals should be validated.
+However, the only way to validate them is to run the entire workload.
+}
+
+\shepherd{Prior sampling techniques are typically evaluated on small benchmarks or truncated runs because their validation depends on simulation~\cite{wavelet-based,taskpoint,simpoint,looppoint,smarts,fsa,cross_binary_simpoints,pacsim,barrier_point,simpoint-plus,parrot}.}
+\revision{
+A missing piece is an agile path from methodology development to real hardware level validation. 
+The intent of the sample set is to approximate the behavior of the real system, so validation by simulation is only meaningful if the simulator faithfully models the target. 
+If it does not, the validation does not transfer.
+This also leads to difficulty in comparing different methodologies as results are tied to different simulators, forcing redundant engineering effort before we can make apples-to-apples comparisons.
+}
+For example, LoopPoint is validated with \revision{SPEC~CPU2017} benchmarks using train-size input with Sniper~\cite{sniper}.  
+FSA~\cite{fsa} is validated with the first 30~billion instructions of the \revision{SPEC~CPU2006~\cite{spec2006}} benchmarks with gem5~\cite{11_gem5,20_gem5}.
+These techniques can only be validated in a limited way because they require a full detailed simulation from beginning to end of the workload to validate.
+Detailed simulation can be 2--10$\times$ slower than functional simulation, which implies that validation of full-sized workloads could take nearly a decade! 
+
+\revision{
+Lack of an agile workflow to validate quickly has led to sampling techniques being rarely validated with large benchmarks.
+}
+\shepherd{Evidence suggests that validation results from smaller benchmarks or partial executions do not generalize to larger benchmarks and realistic workloads~\cite{characterizing_and_comparing_prevailing_simulation_techniques,hot-region-spec2017,simpoint,spec2017-workload-characterization,wavelet-based}.}
+\revision{
+Moreover, the program behavior of a workload with different input can be different~\cite{xalancbmk}.
+Thus, per benchmark and input pair validation is needed.
+}
+
+\begin{tcolorbox}
+\textbf{Goal 3:}
+Quickly validating the selected samples for the targeted benchmarks and input size.
+\end{tcolorbox}

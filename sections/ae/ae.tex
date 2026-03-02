@@ -1,0 +1,190 @@
+\appendix
+\section{Artifact Appendix}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Abstract}
+
+This artifact provides the implementation of Nugget, including its LLVM-based analysis and transformation passes, benchmark harnesses, and automation scripts for the experiments in the paper. 
+
+Please find the artifact on GitHub: \url{https://github.com/darchr/nugget-AE}. 
+The Zenodo link will be added to the GitHub README.
+
+The artifact is organized around three core stages:
+(1) interval analysis to extract basic-block vectors from NAS Parallel Benchmarks (NPB);
+(2) sample selection via k-means (and random baselines) to choose representative regions; and
+(3) Nugget creation and validation, which builds and runs Nugget and naive binaries and computes program-level prediction error.
+
+We provide a Docker-based environment plus a top-level \texttt{install.sh} script to encapsulate system dependencies and toolchain setup. Together with the scripts under \texttt{nugget-protocol-NPB} and the detailed README, this enables reviewers to reproduce the main trends of the paper (prediction accuracy and runtime overhead) with minimal manual configuration.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Artifact check-list (meta-information)}
+
+{\small
+\begin{itemize}
+  \item {\bf Algorithm: } k-means-based interval clustering; prediction from sampled regions.
+  \item {\bf Program: } LLVM analysis/transformation passes; NPB-based benchmarks with Nugget instrumentation; automation scripts.
+  \item {\bf Compilation: } Custom LLVM build (with Nugget passes); \texttt{clang}/\texttt{opt}; \texttt{cmake}/\texttt{make}.
+  \item {\bf Transformations: } LLVM IR analysis; region marking; Nugget code insertion.
+  \item {\bf Binary: } Nugget-enabled and naive NPB and LSMS executables.
+  \item {\bf Model: } k-means clustering over interval basic-block vectors (constructed at evaluation time).
+  \item {\bf Data set: } NAS Parallel Benchmarks; LSMS; generated IR-level CSVs; runtime and prediction CSVs.
+  \item {\bf Run-time environment: } Linux (Ubuntu-like) inside Docker (recommended).
+  \item {\bf Hardware: } Multi-core CPU with hardware performance counters; server-class machine recommended.
+  \item {\bf Execution: } Command-line Python and shell scripts; Makefiles.
+  \item {\bf Metrics: } Runtime; prediction error vs.\ full-program execution; optional hardware counters.
+  \item {\bf Output: } CSV files for analysis, selections, measurements, and prediction error; log files and timing summaries.
+  \item {\bf How much disk space required (approximately)?: } \textasciitilde{}50--100 GB for toolchains, benchmarks, Docker image, and generated data (full runs).
+  \item {\bf How much time is needed to prepare workflow (approximately)?: } \textasciitilde{}1--2 hours with Docker on a modern server.
+  \item {\bf How much time is needed to complete experiments (approximately)?: } A few hours for minimal runs (class~A, subset of benchmarks); up to days for full-scale on hardware experiments and up to months for  simulator experiments.
+  \item {\bf Publicly available?: } Yes (repository / archive as provided with this submission).
+  \item {\bf Workflow automation framework used?: } Custom scripts, CMake scripts, and Makefiles; no external workflow engine.
+\end{itemize}
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Description}
+
+\subsubsection{How to access}
+
+The artifact is provided as a source tree whose root we denote by \texttt{[project dir]}. The main components relevant for artifact evaluation are:
+\begin{itemize}
+  \item \texttt{Docker/}: infrastructure to build and run a container with all system dependencies.
+  \item \texttt{llvm-project/}: LLVM with Nugget passes.
+  \item \texttt{nugget-protocol-NPB/}: NPB benchmarks and scripts for analysis, sample selection, and Nugget creation/validation.
+  \item \texttt{nugget\_util/}: helper tools (PAPI, gem5 m5ops, Sniper sim\_api, CPU feature detection).
+  \item \texttt{gem5-experiment/}: optional scripts for gem5-based experiments.
+  \item Top-level \texttt{install.sh}: drives the installation of LLVM, PAPI, and related tools.
+\end{itemize}
+
+The top-level README in the GitHub repository provides the concrete commands; this appendix focuses on the structure and purpose of each step rather than step-by-step instructions.
+
+\subsubsection{Hardware dependencies}
+
+The experiments are designed for a Linux server-class machine with:
+\begin{itemize}
+  \item A recent multi-core CPU (scripts tested on x86\_64 and AArch64) with hardware performance counters enabled.
+  \item Enough memory to build LLVM and run NPB/LSMS (we recommend at least 64~GB).
+  \item Sufficient disk space to hold the LLVM build, Docker image, and generated data.
+\end{itemize}
+
+The paper experiments additionally used standard noise-reduction measures (fixed CPU frequency, reduced background activity). These are optional but can help reduce variance.
+
+\subsubsection{Software dependencies}
+
+The recommended route is to use the provided Docker setup, which bundles:
+\begin{itemize}
+  \item Ubuntu 24.04.
+  \item Build tools and libraries needed for LLVM and NPB.
+  \item Python 3 and required Python packages.
+  \item \texttt{perf} and PAPI for hardware performance measurement.
+\end{itemize}
+
+\subsubsection{Data sets}
+
+The only external benchmark suite required is NAS Parallel Benchmarks (NPB) and LSMS, included or fetched by the artifact. All other data (interval analysis CSVs, measurement CSVs, prediction-error CSVs) are generated by the scripts from the code itself and from NPB runs.
+
+\subsubsection{Models}
+
+Nugget does not rely on pre-trained external models. Instead:
+\begin{itemize}
+  \item k-means clustering is run directly on the interval basic-block vectors produced by the analysis scripts;
+  \item the resulting clusters and weights are stored in CSV form and used immediately to drive sampling and prediction.
+\end{itemize}
+This design ensures that all modeling steps are visible and reproducible from the code and generated data alone.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Installation}
+
+The installation workflow is intentionally simple and centralized:
+
+\begin{enumerate}
+  \item \textbf{Container setup.} Build and run the Docker image from \texttt{Docker/}. This fixes the OS-level environment and avoids package-version drift. The Makefile in this directory also exposes a \texttt{NUM\_CORES\_TO\_USE} parameter to trade off build speed and memory use.
+  \item \textbf{Toolchain and helper installation.} Inside the container, run \texttt{install.sh} from \texttt{[project dir]}. This script:
+    \begin{itemize}
+      \item builds LLVM with Nugget passes;
+      \item installs PAPI in a known location;
+      \item sets up helper tools (e.g., CPU feature checker, optional simulator hooks);
+      \item prints the environment variables that must be exported to use this toolchain.
+    \end{itemize}
+  \item \textbf{Environment configuration.} The script prints \texttt{export} commands at the end. Copy-pasting these commands into the shell (or into a small script to source) ensures that all subsequent steps use the correct LLVM and PAPI paths.
+\end{enumerate}
+
+All low-level commands, including package lists and exact \texttt{make} invocations, are documented in the README; this appendix only captures the intent and structure of the workflow.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Experiment workflow}
+
+The experiment workflow is structured to mirror the conceptual pipeline of Nugget:
+
+\begin{enumerate}
+  \item \textbf{Preparation and interval analysis.}  
+        Scripts in \texttt{nugget-protocol-NPB} compile NPB using the Nugget-enabled LLVM toolchain and run interval analysis.  
+        The result is a set of CSV files containing basic-block vectors and timing information, organized per benchmark, input class, and thread count.  
+        This stage bridges the gap between high-level benchmark code and the IR-level representation used by Nugget.
+
+  \item \textbf{Sample selection.}  
+        A dedicated script runs k-means on the basic-block vectors to identify representative regions and optionally creates random baselines.  
+        The output is a set of selections/markers, again stored as CSV and configuration files.  
+        This stage captures the core Nugget sampling logic in a reproducible and inspectable way.
+
+  \item \textbf{Nugget creation and validation.}  
+        A third script uses the selections to build Nugget and naive binaries, executes them, and aggregates the runtimes into \texttt{measurements.csv}.  
+        It then computes program-level runtime predictions based on the sampled regions and emits \texttt{prediction-error.csv}.  
+        This stage directly corresponds to the evaluation part of the paper and provides the main numbers needed to confirm the reported trends.
+
+  \item \textbf{Optional simulator experiments.}  
+        For gem5 and Sniper, helper scripts and utilities in \texttt{nugget\_util} and \texttt{gem5-experiment} provide the glue to run Nugget inside simulators.  
+        These are not required to validate the main claims but are included for completeness and extension.
+\end{enumerate}
+
+Each stage is driven by a small number of top-level Python scripts with clearly documented command-line options. The README links these scripts directly to the corresponding sections of the paper.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Evaluation and expected results}
+
+The artifact is designed so that each stage produces a small set of key files that map directly to the paper's figures and tables:
+
+\begin{itemize}
+  \item \textbf{Interval analysis:}  
+        Per-benchmark directories under \texttt{ae-experiments/analysis} contain:
+        \begin{itemize}
+          \item \texttt{analysis-output.csv} (IR-level basic-block vectors and related data);
+          \item \texttt{execution\_time.txt} (time spent in analysis).
+        \end{itemize}
+        These files support claims about analysis cost and IR-level behavior.
+
+  \item \textbf{Sample selection:}  
+        The selection step produces cluster assignments and markers under \texttt{ae-experiments/}, making the sampling decisions explicit and inspectable.
+
+  \item \textbf{Nugget creation and validation:}  
+        \texttt{measurements.csv} and \texttt{prediction-error.csv} summarize:
+        \begin{itemize}
+          \item baseline runtimes (full naive runs);
+          \item Nugget runtimes (sampled runs);
+          \item prediction errors for both k-means-based and random sampling.
+        \end{itemize}
+        These are the primary artifacts for validating the paper's quantitative claims.
+\end{itemize}
+
+Because the artifact is evaluated on potentially different hardware and under different levels of system noise, we do not expect identical results. Instead, success is defined as:
+\begin{itemize}
+  \item the complete pipeline runs to completion following the documented workflow;
+\end{itemize}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Experiment customization}
+
+The artifact intentionally exposes key parameters as command-line options:
+\begin{itemize}
+  \item input class (NPB size), benchmark subset, and thread count;
+  \item number of clusters (\texttt{k}) and grace percentage used in selection and Nugget creation;
+  \item number and composition of hardware events (via PAPI helpers);
+  \item optional simulator-specific configuration (gem5 ISAs, cross-compilers, Sniper hooks).
+\end{itemize}
+
+This makes it straightforward to:
+\begin{itemize}
+  \item scale experiments up or down depending on available resources;
+  \item explore trade-offs between sampling cost and prediction accuracy;
+  \item port the methodology to different machines while retaining the same high-level workflow.
+\end{itemize}

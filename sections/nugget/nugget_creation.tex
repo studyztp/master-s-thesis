@@ -1,0 +1,58 @@
+\subsection{Nugget Creation}\label{sec:nugget_creation}
+
+After selecting a set of samples with a sampling algorithm, Nugget generates \textit{nuggets} based on these samples.
+We define a \textit{nugget} as an executable that marks the selected sample with a start point and an end point, enabling execution on any platform capable of running the original program, including both real hardware and simulators.
+Thus, every \textit{nugget} requires a cross-platform start marker and end marker to indicate the boundaries of the sample execution.
+In this section, we describe how Nugget creates these markers and mitigates their overhead.
+
+\subsubsection{Markers}\label{sec:markers}
+
+In Nugget, a \textit{marker} is a mechanism for identifying a specific point in program execution, defined according to our unit of work.
+Because progress is measured by the number of executed LLVM IR instructions (Section~\ref{sec:unit_of_work}), our markers are directly tied to the IR instruction count.
+
+\shepherd{We designate the last executed LLVM IR basic block (IRBB) that completes the target instruction count as a \emph{marker}.
+This marker consists of two components: the IRBB itself and the number of times it must execute. 
+The end marker for an interval is determined using the IRBB vector and count-stamp vector gathered during interval analysis (Section~\ref{sec:interval_analysis_executable}).
+Specifically, we use the count-stamp vector (Section~\ref{sec:interval_analysis_executable}) to identify the last executed IRBB of the interval, which becomes the basic block for the end marker, and the IRBB vector to determine how many times that block must execute to reach the interval's endpoint.
+Because the start of one interval corresponds to the end of the previous interval, we reuse the end marker of the preceding interval as the start marker for the next.}
+
+\shepherd{
+Nugget inserts hooks at these marker IRBBs during the nugget creation LLVM pass.
+These hooks track IRBB executions and trigger specific actions, such as resetting statistics in a simulator or starting a timer on real hardware.
+}
+
+When using \textit{nuggets} in simulation, we can also mark the start of a warmup interval.
+The warmup interval does not belong to the selected sample but is a period of execution used to warm up the microarchitectural state in simulation models, assuming functional simulation is used to fast-forward execution before the sample starts~\cite{ComputerArchitecturePerformanceEvaluationMethods}.
+\revision{
+Any contiguous and antecedent intervals of the sample interval can be used as the warmup interval, so one can choose how many intervals to use for warmup.
+} 
+
+\subsubsection{Overhead of Hooks}\label{sec:overhead_of_hooks}
+
+Hooks inserted at marker IRBBs introduce overhead due to frequent counting and condition checks, which can affect measurements if executed often.
+This overhead appears when running \textit{nuggets} on real hardware, as the hooks add extra instructions.
+
+For single-threaded programs, the overhead is typically small because hooks perform only simple operations, such as counting and checking thresholds.
+Moreover, hooks stop all counting and checks once the threshold is reached, and modern branch predictors generally handle these conditional checks efficiently.
+
+For multi-threaded programs, the overhead can be more significant because counting and threshold checks require synchronization (e.g., atomic operations).
+Although hooks still cease checking after meeting the threshold, the overhead from the end marker's hook is unavoidable.
+
+To mitigate this, we propose two strategies:
+\begin{itemize}
+    \item Identifying a lower-overhead marker.
+    \item Using the program counter to track the marker instead of hook instrumentation when running in simulation.
+\end{itemize}
+
+\paragraph*{Lower Overhead Marker}
+
+To reduce overhead on real hardware, we can trade some precision by selecting an IRBB near the end of the interval that executes less frequently than the final IRBB.
+Because hook overhead is tied to execution frequency, this choice reduces cost.
+We do this by defining a search distance in IR instructions from the interval's end, identifying candidate IRBBs within this distance using the count-stamp vector, and selecting the least frequently executed one using the IRBB vector.
+This effectively marks a point slightly before the interval's true end, reducing overhead at the cost of some precision.
+
+\paragraph*{Program Counter Tracking in Simulation}
+
+While hook instrumentation is necessary on real hardware, when running \textit{nuggets} in a simulator we can leverage simulator capabilities to eliminate hooks entirely.
+The LLVM nugget creation pass labels the marker IRBBs in the assembly, and we use the program counter addresses of these labels as inputs to the simulator to track markers.
+This completely removes marker overhead in simulation, ensuring measurements remain unaffected.

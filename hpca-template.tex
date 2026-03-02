@@ -1,0 +1,19 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Section hierarchy remapping
+%
+% The section files use \section as the top-level heading (conference paper
+% format). For the thesis, we remap the hierarchy up one level so that the
+% existing files work unchanged:
+%
+%   \section        ->  \chapter        (top-level)
+%   \subsection     ->  \section        (second-level)
+%   \subsubsection  ->  \subsection     (third-level)
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\let\origsection\section
+\let\origsubsection\subsection
+\let\origsubsubsection\subsubsection
+
+\let\section\chapter
+\let\subsection\origsection
+\let\subsubsection\origsubsection

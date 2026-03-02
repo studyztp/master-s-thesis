@@ -1,0 +1,50 @@
+\section{Introduction}
+\label{sec:introduction}
+
+Evaluating application performance on novel architectural ideas is key to computer architecture research.
+However, especially for hardware which does not yet exist, evaluating application performance can be very time consuming.
+For instance, when using cycle-level software simulation, there can be over 100,000$\times$ slowdown.
+Even using FPGA-accelerated simulation is significantly slower than \revision{wall-clock} time~\cite{firesim}.
+At the same time, modern applications are growing in their computation demands from exascale applications~\cite{exascale} to machine learning training (GPT-4 required 2,150,000 Exa- or $2.15 \times 10^{25}$ operations to complete~\cite{epoch2024trackinglargescaleaimodels}).
+
+To facilitate the evaluation of large applications, there has been a long history of reducing applications to smaller benchmarks, kernels, or short representative intervals.
+For instance, Livermore Loops provide a set of microbenchmarks that represent key computational kernels from scientific applications~\cite{livermore_loops}.
+It is also common to pull out kernels from an application or to create ``proxy applications''~\cite{exascale-proxy-apps}.
+While these methods can reduce very large applications to much more manageable benchmarks, they require application experts to manually identify the important parts of applications and create new programs.
+% This is time and human resource intensive.
+
+Another approach to reducing the size of applications is to \emph{sample} the application to automatically find \emph{representative intervals} of different application phases.
+Many techniques (i.e. SimPoint~\cite{simpoint}, BarrierPoint~\cite{barrier_point}, and LoopPoint~\cite{looppoint}) follow this approach.
+% These techniques improve over prior techniques by being \emph{automatic} and not requiring domain experts.
+
+In this paper, we focus on targeted sampling techniques, which use profiling to automatically select samples.
+Prior targeted sampling techniques have three main drawbacks that limit their applicability to modern, realistically sized applications:
+
+\begin{itemize}
+    \item \textbf{Samples are expensive to find:} Targeted sampling techniques require running the application from beginning to end once (typically via simulation or slow emulation) to define intervals, analyze program phases, and identify representative samples.
+    \item \textbf{Samples are tied to a single executable binary:} These techniques generate samples that are specific to a particular binary, so any binary change necessitates repeating the entire sampling process.
+    \item \textbf{Validating the selected samples is infeasible:} Targeted sampling techniques require running the application in detailed simulation to verify that the selected samples accurately represent the program.
+\end{itemize}
+
+\revision{
+To address these limitations, we present a framework called \emph{Nugget} for agile targeted sampling development.
+}
+Because modern applications exhibit varied characteristics, we believe there is no one-size-fits-all sampling methodology or selection algorithm~\cite{survey_phase_classification,accl_warmup_sampled_simulation,characterizing_and_comparing_prevailing_simulation_techniques,analysis_of_statistical_sampling_in_microarchitecture_simulation}.  
+\revision{
+Therefore, Nugget is designed to be flexible and extensible, allowing researchers to create new sample selection algorithms that can be tailored to their targeted workload and input without worrying about the current limitations of targeted sampling techniques.
+}
+Additionally, using Nugget for sample selection methodologies, because of its nature of cross-platform compatibility and its ability to run on real hardware, enables richer insights into the selected samples and the systems that run the samples.
+The main contributions of this paper are:
+
+\begin{itemize}
+    \item \textbf{Efficient and portable interval analysis} on real hardware using LLVM, unconstrained by the hardware's microarchitecture or ISA.
+    \item \textbf{An LLVM IR level unit of work}, enabling sample selection algorithms to create and locate samples for a program in a cross-platform manner, agnostic of machine level instructions, such as architectural specific instructions and optimizations.
+    \item \textbf{A sample creation methodology} that allows samples to run on any platform (e.g., real hardware or simulators).
+    \item \textbf{An efficient validation methodology} \revision{that validates the selected samples for the target workload and input on native hardware, integrated into the development workflow.}
+\end{itemize}
+
+% In this paper, we present the motivations behind Nugget and review prior work in Section~\ref{sec:motivation_and_prior_work}.
+% We then describe Nugget in Section~\ref{sec:the_nugget_framework}, covering its preparation, interval analysis, sample creation, and validation.
+% In Section~\ref{sec:evaluation}, we evaluate the framework against its goals, examining the efficiency of interval analysis, the automatic generation of cross-binary samples, and the validation of selected samples.
+% Section~\ref{sec:case_study} illustrates two use cases of Nugget: using nuggets on real hardware to validate the effectiveness of the sample set, and using \emph{nuggets} as microbenchmarks to verify simulation models.
+% Finally, we conclude in Section~\ref{sec:conclusion}.

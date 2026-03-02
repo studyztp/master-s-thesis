@@ -1,0 +1,19 @@
+\subsection{Preparation}\label{sec:initial_setup}
+
+In the preparation stage, we generate the optimized LLVM IR representation of the program, which is used consistently throughout all stages of the pipeline (Figure~\ref{fig:nugget_pipeline}). 
+This is because Nugget relies on a stable LLVM IR representation of the program for its unit of work, as introduced in Section~\ref{sec:unit_of_work}.
+
+Optimization is important for the program's performance.
+LLVM IR level optimizations, such as loop unrolling, can significantly affect control flow.
+To maintain consistency, Nugget applies these optimizations during the generation of the base LLVM IR representation in the preparation stage.
+In contrast, most backend optimizations, such as replacing scalar instructions with AVX vector instructions, do not alter the structure of the LLVM IR.
+While certain backend passes (e.g., late-stage loop unrolling) may modify LLVM IR layout under specific conditions, such passes are not enabled by default in LLVM.
+
+\shepherd{While build-time modes such as LTO and PGO can alter LLVM IR, they are disabled by default.}
+\revision{For our experiments, the LLVM IR structure remained stable across optimization levels, CPU-feature flags, and LLVM versions.
+}
+Therefore, we can apply the backend optimization in the final binary compilation safely.
+
+Only code included in this base LLVM IR representation of the program will be subject to analysis.
+For instance, any linked libraries must also be processed through Nugget during this preparation stage; otherwise, their contents will be excluded from the analysis.
+This selective inclusion also allows us to ignore irrelevant or non-contributory operations, such as spin loops in multithreaded libraries~\cite{looppoint}, that do not meaningfully impact program progress.

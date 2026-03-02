@@ -63,11 +63,11 @@ Replace "this paper" and "this study" with "this thesis" throughout:
 
 These are LaTeX comments that don't appear in the PDF, but should be resolved before final submission:
 
-- [ ] `main.tex` line 41: `% TODO: Update with your actual prior degree(s) and year(s)` -- confirm `B.S. (University of California Davis) 2023` is correct, then remove the TODO
-- [ ] `main.tex` line 44: `% TODO: Update with your official major` -- confirm "Computer Science" is correct, then remove
-- [ ] `main.tex` line 47: `% TODO: Update with your official graduate program name` -- confirm, then remove
-- [ ] `main.tex` line 52: `% TODO: Update with the month your degree will be officially conferred` -- confirm "June", then remove
-- [ ] `main.tex` line 55: `% TODO: Update committee members` -- confirm committee list, then remove
+- [X] `main.tex` line 41: `% TODO: Update with your actual prior degree(s) and year(s)` -- confirm `B.S. (University of California Davis) 2023` is correct, then remove the TODO
+- [X] `main.tex` line 44: `% TODO: Update with your official major` -- confirm "Computer Science" is correct, then remove
+- [X] `main.tex` line 47: `% TODO: Update with your official graduate program name` -- confirm, then remove
+- [X] `main.tex` line 52: `% TODO: Update with the month your degree will be officially conferred` -- confirm "June", then remove
+- [X] `main.tex` line 55: `% TODO: Update committee members` -- confirm committee list, then remove
 
 ### Minor Writing Improvements
 

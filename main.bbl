@@ -288,6 +288,14 @@ A.~Sabu, H.~Patil, W.~Heirman, and T.~E. Carlson, ``{LoopPoint}:
   {A}pplications,'' in \emph{2022 IEEE International Symposium on
   High-Performance Computer Architecture (HPCA)}, Apr. 2022, pp. 604--618.
 
+\bibitem{roiref}
+\BIBentryALTinterwordspacing
+A.~Sabu, Z.~Qiu, H.~Patil, C.~Liu, W.~Heirman, J.~Lowe-Power, and T.~E.
+  Carlson, ``Accelerating the simulation of parallel workloads using
+  loop-bounded checkpoints,'' \emph{ACM Trans. Archit. Code Optim.}, Feb. 2026,
+  just Accepted. [Online]. Available: \url{https://doi.org/10.1145/3799430}
+\BIBentrySTDinterwordspacing
+
 \bibitem{fsa}
 A.~Sandberg, N.~Nikoleris, T.~E. Carlson, E.~Hagersten, S.~Kaxiras, and
   D.~Black-Schaffer, ``Full {S}peed {A}head: {D}etailed {A}rchitectural

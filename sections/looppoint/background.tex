@@ -1,8 +1,20 @@
 \subsection{LoopPoint Background}\label{sec:looppoint_background}
 
-% TODO: Provide background on the LoopPoint methodology
-% - Original LoopPoint paper and its contributions
-% - Loop-based region selection for multi-threaded workloads
-% - Checkpoint-driven sampled simulation
-% - Limitations of the original user-mode-only approach
+The LoopPoint methodology~\cite{looppoint} is a targeted sampling technique for multi-threaded applications that contributes (1) repeatable, upfront application analysis, (2) a novel clustering approach that accounts for runtime parallelism, and (3) the use of loop-based simulation markers to divide execution into measurable regions, even in the presence of spin-loops.
 
+The methodology proceeds in three stages: phase analysis, checkpoint creation, and representative region simulation.
+During phase analysis, LoopPoint profiles the application to identify loop-based region boundaries and constructs basic block vectors (BBVs) for each region.
+Regions are defined using (PC, count) pairs---a program counter value and the number of times that instruction has been executed---which locate execution points in multi-threaded applications.
+Synchronization library instructions are excluded from the analysis, as they do not reflect application-level phase behavior.
+The BBVs are then clustered offline to identify groups of similar regions, and a representative region is selected from each cluster.
+
+For simulation, LoopPoint creates checkpoints at the boundaries of selected representative regions.
+While fast-forwarding can also be used to reach region boundaries, checkpoints are preferable because they allow simulations to be distributed across machines and ensure that each configuration starts from the exact same execution state.
+Each checkpoint is restored and simulated in detailed mode with appropriate warmup, and the results are weighted by cluster membership to predict full-program performance.
+
+In the original paper, LoopPoint achieves an average simulation error of 2.3\% on multi-threaded SPEC~CPU2017 benchmarks with the train input set, with speedup of up to 801$\times$ over full detailed simulation.
+When representative regions are simulated in parallel, the speedup reaches 11,587$\times$ on average and up to 31,253$\times$.
+
+Notably, the original LoopPoint methodology uses Sniper~\cite{sniper} for both analysis and simulation, operating entirely in user-mode without modeling OS-level effects.
+A follow-up paper~\cite{roiref} extends the LoopPoint methodology and proposes ROIperf, a hardware-based framework for rapid correlation of representative regions, enabling performance measurement of full workloads directly on hardware.
+This thesis contributed to that follow-up work; the full-system gem5 implementation described in Section~\ref{sec:looppoint_full_system} served as a foundation for that study.

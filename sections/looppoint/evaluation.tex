@@ -56,11 +56,11 @@ The speedup is calculated as the reduction in the number of instructions simulat
 Due to the limited number of regions discovered for Class~A benchmarks, the selected representatives constitute a large fraction of the total regions, resulting in modest speedup for this experiment.
 The speedup from the LoopPoint methodology primarily depends on the number of samples required to achieve a target accuracy, rather than on the simulator itself; larger workloads with more regions would yield greater reductions.
 
-These results demonstrate that the LoopPoint methodology can be extended to full-system simulation in gem5, but they also highlight two key limitations.
+These results demonstrate that the LoopPoint methodology can be extended to full-system simulation in gem5, but they also highlight three key limitations.
 First, validating the methodology's accuracy requires completing a full baseline simulation---the very bottleneck that sampling aims to avoid.
 Second, because LoopPoint's analysis is tied to a specific binary, each ISA produces a different set of representative samples, making cross-ISA comparison unreliable.
+Third, interval analysis via functional simulation is time-consuming; in Section~\ref{sec:comparison_with_functional_simulation}, we use the LoopPoint module to show that this overhead makes analysis impractical for realistic input sizes.
 These observations motivate the Nugget framework (Section~\ref{sec:the_nugget_framework}), which validates samples on real hardware without simulation and defines samples at the LLVM IR level so that the same set of representative regions can be used across different ISAs.
-Later in Section~\ref{sec:comparison_with_functional_simulation}, we use the LoopPoint module to show that using functional simulation to analyze a program is also a bottleneck for realistic input sizes.
 
 \begin{figure}[ht]
     \centering

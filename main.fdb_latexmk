@@ -1,13 +1,13 @@
 # Fdb version 3
-["bibtex main"] 1772472239 "main.aux" "main.bbl" "main" 1772472249
+["bibtex main"] 1772472239 "main.aux" "main.bbl" "main" 1772473752
   "./IEEEtranS.bst" 1772455511 63080 f6b8df91ee5e2e7e5da2c50696192a52 ""
-  "main.aux" 1772472239 19846 1f0c57d33d4fadf41d5f269229bc9e6f ""
+  "main.aux" 1772473752 19846 1f0c57d33d4fadf41d5f269229bc9e6f ""
   "main.bcf" 0 -1 0 ""
   "refs.bib" 1772472012 53439 d011af4bf0141aa2918e4c7ecccc1a13 ""
   (generated)
-  "main.bbl"
   "main.blg"
-["pdflatex"] 1772472239 "main.tex" "main.pdf" "main" 1772472249
+  "main.bbl"
+["pdflatex"] 1772473752 "main.tex" "main.pdf" "main" 1772473752
   "/etc/texmf/web2c/texmf.cnf" 1516619203 1101 af7716885e081ab43982cab7b4672c1a ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1272929888 3287 e6b82fe08f5336d4d5ebc73fb1152e87 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/jknappen/ec/tcrm1095.tfm" 1136768653 1536 02c06700a42be0f5a28664c7273f82e7 ""
@@ -199,13 +199,13 @@
   "images/microcode_comp.pdf" 1772455511 14638 7f757c9a9bbb3e539824e173a1edc286 ""
   "images/prediction_error_by_machine_method_2panel.pdf" 1772455511 20298 a91b77ac6c7adba3be08c0d3f8893de2 ""
   "images/simulation_interval_analysis_overhead_separated.pdf" 1772455511 16313 b2d5f25ffc86309b924868141a3320f6 ""
-  "main.aux" 1772472239 19846 1f0c57d33d4fadf41d5f269229bc9e6f ""
+  "main.aux" 1772473752 19846 1f0c57d33d4fadf41d5f269229bc9e6f ""
   "main.bbl" 1772472239 17785 17577ec9971379f0d6fb067434eb30b0 "bibtex main"
-  "main.lof" 1772472239 3058 6ba738a4914a78e1977e58b6a8fbf7e8 ""
-  "main.lot" 1772472239 651 69f6d5c7ee4c19431d5d11a0896c8e27 ""
-  "main.out" 1772472239 3291 074b885e3f082f7e32f41772fef1fd8c ""
+  "main.lof" 1772473752 3058 6ba738a4914a78e1977e58b6a8fbf7e8 ""
+  "main.lot" 1772473752 651 69f6d5c7ee4c19431d5d11a0896c8e27 ""
+  "main.out" 1772473752 3291 074b885e3f082f7e32f41772fef1fd8c ""
   "main.tex" 1772463990 3844 eacfadce67aab49c6b0b7b6f2288f21d ""
-  "main.toc" 1772472239 3977 b90906439ab290ea9aeee35f31cd8b15 ""
+  "main.toc" 1772473752 3977 b90906439ab290ea9aeee35f31cd8b15 ""
   "sections/ae/ae.tex" 1772455511 12025 6711832207aa7ccb2eb0dd69a65b3224 ""
   "sections/case_study/case_study.tex" 1772455511 428 ea3f230489fa99678089d2cc529374c0 ""
   "sections/case_study/modeling.tex" 1772471823 4346 aa1d5e6c3ba8ba02f4e21679cdea7427 ""
@@ -213,7 +213,7 @@
   "sections/conclusion/conclusion.tex" 1772455511 772 edf72f6919273e76ed200cc1c85333df ""
   "sections/evaluation/evaluation.tex" 1772455511 5248 e8601029376005fb70edbdc063fff227 ""
   "sections/evaluation/interval_analysis_overhead.tex" 1772455511 10136 5b0ffa305a080e66970fd17e733d4e75 ""
-  "sections/evaluation/sample_and_validation.tex" 1772471833 10411 53b5211ff2e9b2ff88bf0f5d9504755e ""
+  "sections/evaluation/sample_and_validation.tex" 1772473007 10412 3e80b862cde0b0d9abdb0623a854424b ""
   "sections/introduction/background_and_motivation.tex" 1772455511 8964 ed550c52a0b0602f0965cfb7243b1fea ""
   "sections/introduction/introduction.tex" 1772471822 5443 329c88d04694e844c199641d8343d95e ""
   "sections/nugget/initial_setup.tex" 1772471833 1808 cf7fa42eff2ba977c29458502cd1ce49 ""
@@ -224,9 +224,9 @@
   "sections/nugget/verification.tex" 1772455511 1512 1e60419114f282b2146ff48b96034389 ""
   (generated)
   "main.aux"
+  "main.toc"
+  "main.lot"
+  "main.log"
   "main.pdf"
   "main.lof"
-  "main.lot"
-  "main.toc"
   "main.out"
-  "main.log"

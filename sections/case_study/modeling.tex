@@ -20,7 +20,7 @@ they capture the diverse instruction mix and control flow found in the real work
 % In the following we describe how we used nuggets from the NAS Parallel benchmarks to identify a source of discrepancy in our models of Ampere Altra processor.
 
 To improve our model's accuracy, we collected hardware performance counters for 234 nuggets and compared the hardware counters to gem5 statistics for each nugget to identify the nuggets with the largest error.
-We found the data cache statistics explained most of the runtime error and for more than 97\% of the nuggets, the error in the number of accesses to the data cache could be explained by differences in the number of memory instructions.
+We found that the data cache statistics explained most of the runtime error and for more than 97\% of the nuggets, the error in the number of accesses to the data cache could be explained by differences in the number of memory instructions.
 We isolated the problem by inspecting execution traces from a small set of the nuggets. %---4 randomly selected nuggets and the nuggets with the largest and smallest error in number of memory instructions.
 We observed that the nugget with the largest error was dominated by \revision{Arm's} paired memory instructions (e.g., ldp, stp), while fewer were present in samples with small error.
 % However, our microbenchmarks did not exercise these instructions.

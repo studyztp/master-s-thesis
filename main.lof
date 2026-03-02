@@ -1,20 +1,21 @@
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {3.1}{\ignorespaces LoopPoint prediction error and speedup comparison for NPB class\nobreakspace {}A with eight threads in full-system mode.\relax }}{12}{figure.caption.4}
+\contentsline {figure}{\numberline {3.1}{\ignorespaces LoopPoint analysis flow in gem5.\relax }}{10}{figure.caption.4}
+\contentsline {figure}{\numberline {3.2}{\ignorespaces LoopPoint prediction error and speedup comparison for NPB class\nobreakspace {}A with eight threads in full-system mode.\relax }}{13}{figure.caption.6}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {4.1}{\ignorespaces Nugget pipeline. The process is divided into two main stages: (1) preparation and analysis, and (2) nugget selection and validation. The preparation and analysis stage, including base IR file creation and interval analysis execution, only needs to be performed once per program. Nugget creation and validation can be repeated to refine and select the most representative set of samples for the workload.\relax }}{15}{figure.caption.5}
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Nugget pipeline. The process is divided into two main stages: (1) preparation and analysis, and (2) nugget selection and validation. The preparation and analysis stage, including base IR file creation and interval analysis execution, only needs to be performed once per program. Nugget creation and validation can be repeated to refine and select the most representative set of samples for the workload.\relax }}{16}{figure.caption.7}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {5.1}{\ignorespaces Interval analysis overhead via Nugget and functional simulation.\relax }}{27}{figure.caption.11}
-\contentsline {figure}{\numberline {5.2}{\ignorespaces Interval analysis overhead via Nugget across different workloads.\relax }}{28}{figure.caption.12}
-\contentsline {figure}{\numberline {5.3}{\ignorespaces Interval analysis overhead via Nugget across different numbers of threads.\relax }}{30}{figure.caption.13}
-\contentsline {figure}{\numberline {5.4}{\ignorespaces Prediction error by machine and sampling method. \textbf {All results shown are obtained from executing the nuggets directly on real hardware}, without using simulation. \relax }}{31}{figure.caption.14}
-\contentsline {figure}{\numberline {5.5}{\ignorespaces \leavevmode {\color {black}The number of marker hook executions for the randomly selected nuggets shown in Figure\nobreakspace {}\ref {fig:prediction_error_by_machine_method}. The number of hook executions is normalized to the total number of IRBB executions during all nugget executions for each workload and input pair.}\relax }}{35}{figure.caption.15}
+\contentsline {figure}{\numberline {5.1}{\ignorespaces Interval analysis overhead via Nugget and functional simulation.\relax }}{28}{figure.caption.13}
+\contentsline {figure}{\numberline {5.2}{\ignorespaces Interval analysis overhead via Nugget across different workloads.\relax }}{29}{figure.caption.14}
+\contentsline {figure}{\numberline {5.3}{\ignorespaces Interval analysis overhead via Nugget across different numbers of threads.\relax }}{31}{figure.caption.15}
+\contentsline {figure}{\numberline {5.4}{\ignorespaces Prediction error by machine and sampling method. \textbf {All results shown are obtained from executing the nuggets directly on real hardware}, without using simulation. \relax }}{32}{figure.caption.16}
+\contentsline {figure}{\numberline {5.5}{\ignorespaces \leavevmode {\color {black}The number of marker hook executions for the randomly selected nuggets shown in Figure\nobreakspace {}\ref {fig:prediction_error_by_machine_method}. The number of hook executions is normalized to the total number of IRBB executions during all nugget executions for each workload and input pair.}\relax }}{36}{figure.caption.17}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {6.1}{\ignorespaces Distribution of absolute speedup prediction errors using K-means samples across simulation (blue) and hardware (orange) comparisons for selected benchmarks. ``0.1'' means 10\% difference in predicted speedup.\relax }}{39}{figure.caption.18}
-\contentsline {figure}{\numberline {6.2}{\ignorespaces Speedup: Random vs K-means samples when ISA varies and microarchitecture is fixed, Config\nobreakspace {}3 vs Config\nobreakspace {}4.\relax }}{40}{figure.caption.20}
-\contentsline {figure}{\numberline {6.3}{\ignorespaces Speedup between Random and K-means samples when microarchitecture varies and ISA is fixed: Config\nobreakspace {}4 over Config\nobreakspace {}2 for Arm, and Config\nobreakspace {}3 over Config\nobreakspace {}1 for x86.\relax }}{41}{figure.caption.21}
-\contentsline {figure}{\numberline {6.4}{\ignorespaces Speedup comparison between Random and K-means samples when both ISA and microarchitecture vary across simulation models. ``K'' indicates K-means samples, and ``R'' indicates Random samples.\relax }}{41}{figure.caption.22}
-\contentsline {figure}{\numberline {6.5}{\ignorespaces Comparison of the number of memory instructions for two different microcodings in gem5 vs real hardware.\relax }}{43}{figure.caption.23}
+\contentsline {figure}{\numberline {6.1}{\ignorespaces Distribution of absolute speedup prediction errors using K-means samples across simulation (blue) and hardware (orange) comparisons for selected benchmarks. ``0.1'' means 10\% difference in predicted speedup.\relax }}{40}{figure.caption.20}
+\contentsline {figure}{\numberline {6.2}{\ignorespaces Speedup: Random vs K-means samples when ISA varies and microarchitecture is fixed, Config\nobreakspace {}3 vs Config\nobreakspace {}4.\relax }}{41}{figure.caption.22}
+\contentsline {figure}{\numberline {6.3}{\ignorespaces Speedup between Random and K-means samples when microarchitecture varies and ISA is fixed: Config\nobreakspace {}4 over Config\nobreakspace {}2 for Arm, and Config\nobreakspace {}3 over Config\nobreakspace {}1 for x86.\relax }}{42}{figure.caption.23}
+\contentsline {figure}{\numberline {6.4}{\ignorespaces Speedup comparison between Random and K-means samples when both ISA and microarchitecture vary across simulation models. ``K'' indicates K-means samples, and ``R'' indicates Random samples.\relax }}{42}{figure.caption.24}
+\contentsline {figure}{\numberline {6.5}{\ignorespaces Comparison of the number of memory instructions for two different microcodings in gem5 vs real hardware.\relax }}{44}{figure.caption.25}
 \addvspace {10\p@ }
 \addvspace {10\p@ }

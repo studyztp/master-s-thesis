@@ -1,11 +1,12 @@
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
+\contentsline {table}{\numberline {3.1}{\ignorespaces The configuration used for the full-system simulation on gem5.\relax }}{11}{table.caption.5}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {5.1}{\ignorespaces Real Hardware Configuration\relax }}{25}{table.caption.10}
-\contentsline {table}{\numberline {5.2}{\ignorespaces Overview of Benchmark Suites Used in Evaluation\relax }}{25}{table.caption.10}
+\contentsline {table}{\numberline {5.1}{\ignorespaces Real Hardware Configuration\relax }}{26}{table.caption.12}
+\contentsline {table}{\numberline {5.2}{\ignorespaces Overview of Benchmark Suites Used in Evaluation\relax }}{26}{table.caption.12}
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {6.1}{\ignorespaces gem5 Simulation Model Configuration. \leavevmode {\color {black}The large, small, and base out-of-order cores are internal models that target different performance characteristics.}\relax }}{38}{table.caption.16}
+\contentsline {table}{\numberline {6.1}{\ignorespaces gem5 Simulation Model Configuration. \leavevmode {\color {black}The large, small, and base out-of-order cores are internal models that target different performance characteristics.}\relax }}{39}{table.caption.18}
 \addvspace {10\p@ }
 \addvspace {10\p@ }

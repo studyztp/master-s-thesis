@@ -1,5 +1,38 @@
 \subsection{Evaluation}\label{sec:looppoint_evaluation}
 
+\begin{table}[ht]
+  \centering
+  \scriptsize
+  \setlength{\tabcolsep}{3pt}
+  \renewcommand{\arraystretch}{1.2}
+
+  \begin{tabular}{|c|c|c|}
+    \hline
+    \textbf{Component}
+      & \textbf{Config 1}
+      & \textbf{Config 2} \\ \hline
+    Architecture
+      & x86
+      & Arm \\ \hline
+    Core
+      & \makecell[l]{8-core OoO\\@ 4 GHz}
+      & \makecell[l]{8-core OoO\\@ 3 GHz} \\ \hline
+    Cache Hierarchy
+      & \makecell[l]{L1d: 64 KiB L1i: 64 KiB\\L2: 1 MiB}
+      & \makecell[l]{L1d: 64 KiB L1i: 64 KiB\\L2: 1 MiB SLC: 32 MiB} \\ \hline
+    Memory
+      & \makecell[l]{DDR4 2400 MHz\\38.4 GB/s}
+      & \makecell[l]{DDR4 2400 MHz\\76.8 GiB/s} \\ \hline
+    OS
+      & Ubuntu 24.04
+      & Ubuntu 24.04 \\ \hline
+  \end{tabular}
+
+  \caption{The configuration used for the full-system simulation on gem5.}
+  \label{tab:gem5-config}
+\end{table}
+\FloatBarrier
+
 To evaluate the effectiveness of the LoopPoint methodology in full-system simulation, we apply the complete sampling pipeline---using both the LoopPoint Analysis and PcCount Tracker modules---to the NPB benchmark suite.
 We use class~A input size with eight threads for our experiments, as larger input sizes (class~B and above) do not complete baseline full-system simulation within a reasonable time frame.
 In addition to evaluating in a full-system environment, we test the methodology across different ISAs and system configurations, as detailed in Table~\ref{tab:gem5-config}.
@@ -24,21 +57,23 @@ This observation motivates the Nugget framework's approach of validating samples
 
 \begin{figure}[ht]
     \centering
-    \begin{subfigure}[b]{0.32\linewidth}
+    \begin{subfigure}[b]{0.65\linewidth}
         \centering
         \includegraphics[width=\linewidth]{images/gem5_fs_err.pdf}
         \caption{Prediction error}
         \label{fig:gem5_fs_npb_A}
     \end{subfigure}
-    \hfill
-    \begin{subfigure}[b]{0.32\linewidth}
+
+    \vspace{1em}
+
+    \begin{subfigure}[b]{0.48\linewidth}
         \centering
         \includegraphics[width=\linewidth]{images/gem5_fs_speedup.pdf}
         \caption{Serial Speedup}
         \label{fig:gem5_npb_ser}
     \end{subfigure}
     \hfill
-    \begin{subfigure}[b]{0.32\linewidth}
+    \begin{subfigure}[b]{0.48\linewidth}
         \centering
         \includegraphics[width=\linewidth]{images/gem5_fs_par_speedup.pdf}
         \caption{Parallel Speedup}

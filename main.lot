@@ -3,9 +3,9 @@
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {5.1}{\ignorespaces Real Hardware Configuration\relax }}{21}{table.caption.9}
-\contentsline {table}{\numberline {5.2}{\ignorespaces Overview of Benchmark Suites Used in Evaluation\relax }}{21}{table.caption.9}
+\contentsline {table}{\numberline {5.1}{\ignorespaces Real Hardware Configuration\relax }}{25}{table.caption.10}
+\contentsline {table}{\numberline {5.2}{\ignorespaces Overview of Benchmark Suites Used in Evaluation\relax }}{25}{table.caption.10}
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {6.1}{\ignorespaces gem5 Simulation Model Configuration. \leavevmode {\color {black}The large, small, and base out-of-order cores are internal models that target different performance characteristics.}\relax }}{34}{table.caption.15}
+\contentsline {table}{\numberline {6.1}{\ignorespaces gem5 Simulation Model Configuration. \leavevmode {\color {black}The large, small, and base out-of-order cores are internal models that target different performance characteristics.}\relax }}{38}{table.caption.16}
 \addvspace {10\p@ }
 \addvspace {10\p@ }

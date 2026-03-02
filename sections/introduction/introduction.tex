@@ -11,13 +11,12 @@ To facilitate the evaluation of large applications, there has been a long histor
 For instance, Livermore Loops provide a set of microbenchmarks that represent key computational kernels from scientific applications~\cite{livermore_loops}.
 It is also common to pull out kernels from an application or to create ``proxy applications''~\cite{exascale-proxy-apps}.
 While these methods can reduce very large applications to much more manageable benchmarks, they require application experts to manually identify the important parts of applications and create new programs.
-% This is time and human resource intensive.
 
 Another approach to reducing the size of applications is to \emph{sample} the application to automatically find \emph{representative intervals} of different application phases.
 Many techniques (e.g., SimPoint~\cite{simpoint}, BarrierPoint~\cite{barrier_point}, and LoopPoint~\cite{looppoint}) follow this approach.
-% These techniques improve over prior techniques by being \emph{automatic} and not requiring domain experts.
 
-In this paper, we focus on targeted sampling techniques, which use profiling to automatically select samples.
+In this study, we focus on targeted sampling techniques, which use profiling to automatically select samples.
+
 Prior targeted sampling techniques have three main drawbacks that limit their applicability to modern, realistically sized applications:
 
 \begin{itemize}
@@ -26,15 +25,12 @@ Prior targeted sampling techniques have three main drawbacks that limit their ap
     \item \textbf{Validating the selected samples is infeasible:} Targeted sampling techniques require running the application in detailed simulation to verify that the selected samples accurately represent the program.
 \end{itemize}
 
-\revision{
 To address these limitations, we present a framework called \emph{Nugget} for agile targeted sampling development.
-}
 Because modern applications exhibit varied characteristics, we believe there is no one-size-fits-all sampling methodology or selection algorithm~\cite{survey_phase_classification,accl_warmup_sampled_simulation,characterizing_and_comparing_prevailing_simulation_techniques,analysis_of_statistical_sampling_in_microarchitecture_simulation}.  
-\revision{
 Therefore, Nugget is designed to be flexible and extensible, allowing researchers to create new sample selection algorithms that can be tailored to their targeted workload and input without worrying about the current limitations of targeted sampling techniques.
-}
 Additionally, using Nugget for sample selection methodologies, because of its nature of cross-platform compatibility and its ability to run on real hardware, enables richer insights into the selected samples and the systems that run the samples.
-The main contributions of this paper are:
+However, before validating samples on real hardware, we need to understand how well can existing techiniques predict on real hardware, so we implemented the state-of-the-art LoopPoint methodology in gem5 simulator to evaluate the sampling methodlogy with NPB benchmark on the gem5 simulator in full-system simulation, which was not done before.
+The main contributions of this study are:
 
 \begin{itemize}
     \item \textbf{Efficient and portable interval analysis} on real hardware using LLVM, unconstrained by the hardware's microarchitecture or ISA.

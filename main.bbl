@@ -336,6 +336,11 @@ V.~M. Weaver and S.~A. McKee, ``Using {D}ynamic {B}inary {I}nstrumentation to
   Eds.\hskip 1em plus 0.5em minus 0.4em\relax Berlin, Heidelberg: Springer
   Berlin Heidelberg, Jan. 2008, pp. 305--319.
 
+\bibitem{simflex}
+T.~F. Wenisch, R.~E. Wunderlich, M.~Ferdman, A.~Ailamaki, B.~Falsafi, and J.~C.
+  Hoe, ``{SimFlex}: {S}tatistical {S}ampling of {C}omputer {S}ystem
+  {S}imulation,'' \emph{IEEE Micro}, vol.~26, no.~4, pp. 18--31, 2006.
+
 \bibitem{hot-region-spec2017}
 Q.~Wu, S.~Flolid, S.~Song, J.~Deng, and L.~K. John, ``Invited {P}aper for the
   {H}ot {W}orkloads {S}pecial {S}ession {H}ot {R}egions in {SPEC} {CPU2017},''

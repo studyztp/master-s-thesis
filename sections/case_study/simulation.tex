@@ -11,7 +11,7 @@ The goal of computer architecture analysis is often to compare the performance o
 Therefore, to investigate the usefulness of nuggets, we run both the entire workload and the nuggets and compare the speedup between different systems.
 We compare four different systems \emph{in simulation} to eliminate the potential inaccuracies from the interval selection marker in hardware.
 We also compare four different hardware systems.
-With these eight systems, we can make two conclusions.
+With these eight systems, we can draw two conclusions.
 (1) We can use hardware to provide increased confidence in the selected intervals, but we cannot prove or bound the error due to the overheads discussed in Section~\ref{sec:case_study_simulation_results}.
 (2) We find that Random and basic-block vector approaches to interval selection are not microarchitecturally independent.
 In fact, we find that microarchitectural differences affect the accuracy of the selection methodology more than the ISA.
@@ -56,7 +56,7 @@ We found that in cases with modest absolute error the predicted speedup (or rela
       & x86
       & \makecell[l]{4-core Large OOO\\@ 4~GHz}
       & \makecell[l]{L1d: 64~KiB L1i: 64~KiB\\L2: 1~MiB}
-      & \makecell[l]{DDR4 2400~MHz\\38.4~GB/s} \\ \hline
+      & \makecell[l]{DDR4 2400~MHz\\38.4~GiB/s} \\ \hline
 
     Config 2
       & Arm
@@ -68,7 +68,7 @@ We found that in cases with modest absolute error the predicted speedup (or rela
       & x86
       & \makecell[l]{4-core Base OOO\\@ 4~GHz}
       & \makecell[l]{L1d: 64~KiB L1i: 64~KiB\\L2: 1~MiB}
-      & \makecell[l]{DDR4 2400~MHz\\38.4~GB/s} \\ \hline
+      & \makecell[l]{DDR4 2400~MHz\\38.4~GiB/s} \\ \hline
 
     Config 4
       & Arm
@@ -155,7 +155,7 @@ Among all benchmarks, ``ft'' exhibits the highest K-means error (6.5\%), likely 
 A linear regression of nugget runtimes across the two ISAs explains 94.5\% of the variance, indicating that the selected samples capture similar execution phases across architectures.
 The K-means speedup error for ``ft'' is consistent with its runtime prediction errors on Config~3 (4.9\%) and Config~4 (--1.5\%), suggesting the overestimation stems from sample imbalance.
 This implies that certain performance-critical phases were not captured by the selected nuggets.
-The Random-selected samples show a similar pattern for both the ``ft'' and ``is''.
+The Random-selected samples show a similar pattern for both ``ft'' and ``is''.
 
 \begin{figure}[!t]
   \centering

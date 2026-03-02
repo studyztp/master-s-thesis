@@ -6,3 +6,50 @@
 % - Handling OS interactions, interrupts, and system calls
 % - Checkpoint and restore in full-system context
 
+Full-system simulation models the entire software stack---from applications through the operating system down to microarchitecture and devices---providing deeper insights into system behavior within a realistic environment.
+However, the involvement of the operating system introduces new challenges for sampling methodologies.
+The address space must remain stable throughout the application's execution to ensure accurate profiling, and kernel-level instructions, which can vary significantly across microarchitectures, should be excluded from application phase analysis.
+
+We implement the LoopPoint methodology in gem5~\cite{11_gem5,20_gem5}, a cycle-level simulator widely used in both academia and industry that supports full-system simulation.
+To support the methodology, we introduce two new probe modules: the LoopPoint Analysis module and the PcCount Tracker module.
+
+The LoopPoint methodology involves three primary steps: phase analysis, checkpoint creation, and representative region simulation, as described in Section~\ref{sec:looppoint_background}.
+The LoopPoint Analysis module performs phase analysis to identify recurring loops and characterize application behavior.
+Representative regions are then selected based on offline clustering of the phase analysis results, and gem5 checkpoints are created at the corresponding region boundaries.
+Finally, the PcCount Tracker module drives detailed simulation of these checkpoints with appropriate warmup.
+As of gem5 version 24.1, this LoopPoint functionality has been upstreamed and is readily available.
+
+\subsubsection{Phase Analysis}
+
+To accurately capture application phases, the LoopPoint methodology requires a stable address space and must exclude all kernel instructions~\cite{simflex}.
+Before starting the simulation, we disable Address Space Layout Randomization (ASLR) in the kernel and obtain the address mapping of the application.
+A stable address mapping is critical because LoopPoint uses virtual addresses to mark region boundaries and to identify synchronization library calls that should be excluded from phase analysis.
+The entire phase analysis is conducted in gem5's functional mode using the atomic CPU.
+
+The LoopPoint Analysis module filters out all kernel instructions to prevent them from affecting application phase analysis.
+Synchronization library instructions are also excluded, as they do not directly contribute to the application's phase behavior (see Section~\ref{sec:looppoint_background}).
+Only loops within the application code are considered as candidates for region markers.
+The analysis produces a list of regions with their basic block vectors (BBVs) and region boundaries expressed as (PC, count) pairs that serve as markers for each region.
+
+\ignore{
+\begin{figure}
+    \centering
+    \rotatebox{90}{\includegraphics[width=0.4\linewidth]{images/gem5-looppoint-analysis-flow.pdf}}
+    \caption{LoopPoint analysis flow in gem5}
+    \label{fig:gem5-looppoint-analysis-flow}
+\end{figure}
+}
+
+\subsubsection{Checkpoint Creation and Representative Region Simulation}
+
+After clustering the BBVs and selecting representative regions, we create gem5 checkpoints using the respective (PC, count) pairs.
+These pairs serve as markers that identify the warmup start, simulation start, and end points of each representative region.
+The PcCount Tracker module maintains a list of these markers and monitors committed instructions during simulation, ensuring precise control over checkpoint creation and region boundaries.
+
+Checkpoints are placed at the start of each warmup region.
+Upon restoring a checkpoint, gem5 executes the warmup instructions before collecting statistics in the representative region.
+By the time simulation reaches the region of interest, key microarchitectural structures (such as caches and branch predictors) have been warmed up, yielding more accurate performance measurements.
+
+Since checkpoints are self-contained, simulations of representative regions can execute in parallel, significantly reducing overall simulation time.
+The PcCount Tracker module continuously monitors committed instructions to precisely detect the end of the warmup region and the end of each representative region, enabling accurate performance measurements.
+

@@ -8,12 +8,11 @@
 \contentsline {section}{\numberline {2.2}Samples Are Tied To A Single Executable Binary}{5}{section.2.2}
 \contentsline {section}{\numberline {2.3}Validating The Selected Samples Is Infeasible}{6}{section.2.3}
 \contentsline {chapter}{\numberline {3}Full-System LoopPoint}{8}{chapter.3}
-\contentsline {section}{\numberline {3.1}Implementation}{8}{section.3.1}
-\contentsline {subsection}{\numberline {3.1.1}Phase Analysis}{9}{subsection.3.1.1}
-\contentsline {subsection}{\numberline {3.1.2}Checkpoint Creation and Representative Region Simulation}{10}{subsection.3.1.2}
-\contentsline {section}{\numberline {3.2}LoopPoint Background}{10}{section.3.2}
-\contentsline {section}{\numberline {3.3}Full-System Implementation}{10}{section.3.3}
-\contentsline {section}{\numberline {3.4}Evaluation}{10}{section.3.4}
+\contentsline {section}{\numberline {3.1}LoopPoint Background}{8}{section.3.1}
+\contentsline {section}{\numberline {3.2}Full-System Implementation}{8}{section.3.2}
+\contentsline {subsection}{\numberline {3.2.1}Phase Analysis}{9}{subsection.3.2.1}
+\contentsline {subsection}{\numberline {3.2.2}Checkpoint Creation and Representative Region Simulation}{10}{subsection.3.2.2}
+\contentsline {section}{\numberline {3.3}Evaluation}{10}{section.3.3}
 \contentsline {chapter}{\numberline {4}The Nugget Framework}{13}{chapter.4}
 \contentsline {section}{\numberline {4.1}Unit of Work}{15}{section.4.1}
 \contentsline {section}{\numberline {4.2}Preparation}{16}{section.4.2}

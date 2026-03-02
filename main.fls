@@ -277,11 +277,11 @@ INPUT sections/introduction/background_and_motivation.tex
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmbx12.tfm
 INPUT sections/looppoint/looppoint.tex
 INPUT sections/looppoint/looppoint.tex
+INPUT sections/looppoint/background.tex
+INPUT sections/looppoint/background.tex
+INPUT sections/looppoint/full_system.tex
+INPUT sections/looppoint/full_system.tex
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmbx12.tfm
-INPUT sections/looppoint/background.tex
-INPUT sections/looppoint/background.tex
-INPUT sections/looppoint/full_system.tex
-INPUT sections/looppoint/full_system.tex
 INPUT sections/looppoint/evaluation.tex
 INPUT sections/looppoint/evaluation.tex
 INPUT images/gem5_fs_err.pdf

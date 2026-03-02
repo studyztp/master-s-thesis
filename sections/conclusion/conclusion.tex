@@ -1,13 +1,8 @@
 \section{Conclusion}\label{sec:conclusion}
 
-In this thesis we presented Nugget: a framework for building program snippets
-that can be used for evaluating architectural ideas using full-system simulators.
-Nugget enables automatic instrumentation of a workload's binary for analysis, and for measurement.
-Binaries used for analysis can be run on real hardware much faster than prior work while
-the binaries used for measurement can be run on real hardware and simulators alike.
-Lastly, Nugget allows users to leverage real hardware to evaluate how well the selected samples represent the original workload.
-
-Nugget is positioned to allow researchers to simulate workloads larger than the traditional sizes, enabling them to gain insights that were not possible before.
+This thesis addressed three limitations of existing targeted sampling techniques: the high cost of finding samples via simulation, the coupling of samples to a specific binary, and the lack of a practical path to validation without full-program simulation.
+We took a two-part approach: first implementing and evaluating the LoopPoint methodology in gem5's full-system mode to establish a baseline, then presenting Nugget, a portable framework for agile targeted sampling development.
+Nugget uses LLVM IR to perform binary-independent interval analysis on real hardware, generates cross-platform executable samples---nuggets---that can be validated natively, and enables researchers to iterate on sampling methodologies at scale without relying on simulation.
 
 \subsection{LoopPoint Full-System Evaluation}
 
@@ -25,8 +20,9 @@ This efficiency enables analysis of reference-sized workloads that would otherwi
 Because nuggets are defined at the LLVM IR level, the same set of representative samples can be compiled and validated across different ISAs and machines without repeating the analysis (Section~\ref{sec:sampling_methodology_validation}).
 Our evaluation showed that cross-platform consistency in prediction error is a stronger indicator of sample quality than achieving low error on any single platform, underscoring the value of binary-independent, cross-platform validation.
 
+In a case study, we found that microarchitectural differences affect prediction accuracy more significantly than ISA differences, underscoring the need to validate sampling methodologies across diverse microarchitectures.
 Beyond sampling validation, nuggets serve as lightweight microbenchmarks for assessing simulation model accuracy (Section~\ref{sec:model_accuracy_evaluation}).
-In a case study, we used nuggets from the NPB suite to identify a microcoding discrepancy in gem5's handling of Arm paired memory instructions---a modeling error that traditional hand-crafted microbenchmarks had failed to expose.
+In a separate case study, we used nuggets from the NPB suite to identify a microcoding discrepancy in gem5's handling of Arm paired memory instructions---a modeling error that traditional hand-crafted microbenchmarks had failed to expose.
 
 \subsection{Limitations}
 

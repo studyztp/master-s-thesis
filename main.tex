@@ -63,11 +63,11 @@ This thesis takes a two-part approach.
 First, we implement the state-of-the-art LoopPoint sampling methodology in gem5's full-system mode---the first such implementation---and evaluate it with the NAS Parallel Benchmarks across x86 and Arm configurations.
 This investigation confirms that LoopPoint generalizes to full-system simulation but highlights that analysis remains time-consuming, validation still depends on full baseline simulation, and prediction errors are inconsistent across ISAs because each configuration selects a different set of representative samples.
 
-Motivated by these findings, we present Nugget, a portable framework for agile targeted sampling development.
+Motivated by these findings, we present Nugget, an open-source, portable framework for agile targeted sampling development.
 Nugget leverages LLVM IR to perform binary-independent interval analysis on real hardware, then generates lightweight, cross-platform executable snippets---\emph{nuggets}---that can be validated natively without simulation.
 Because Nugget defines samples at the LLVM IR level, the same set of samples can be used across different ISAs, eliminating the cross-ISA inconsistency observed with LoopPoint.
-We evaluate Nugget with SPEC~CPU2017, NPB, and LSMS workloads on AMD Ryzen and Ampere Altra hardware, demonstrating $577\times$ reduction in analysis overhead compared to functional simulation.
-We further show that nuggets can serve as organic microbenchmarks for identifying simulation model inaccuracies, enabling researchers to iterate on both sampling methodologies and simulation models using real hardware.
+We evaluate Nugget with SPEC~CPU2017, NPB, and LSMS workloads on AMD Ryzen and Ampere Altra hardware, demonstrating $54\times$ average overhead for multi-threaded and $3\times$ for single-threaded workloads---a $577\times$ reduction over functional simulation.
+Through case studies, we find that microarchitectural differences affect prediction accuracy more significantly than ISA differences, and we show that nuggets can serve as organic microbenchmarks for identifying simulation model inaccuracies---one such finding led to a fix now merged into mainstream gem5---enabling researchers to iterate on both sampling methodologies and simulation models using real hardware.
 }
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

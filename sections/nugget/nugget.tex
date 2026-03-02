@@ -1,6 +1,6 @@
 \section{The Nugget Framework}\label{sec:the_nugget_framework}
 
-Nugget is designed to address the limitations of the prior sampling techniques, specifically focusing on 1) the high cost of finding samples, 2) the coupling of the samples to a specific executable binary, and 3) the infeasibility of validating the selected samples.
+Nugget\footnote{The Nugget framework is open source and publicly available at \url{https://github.com/studyztp/Nugget-LLVM-passes}.} is designed to address the limitations of the prior sampling techniques, specifically focusing on 1) the high cost of finding samples, 2) the coupling of the samples to a specific executable binary, and 3) the infeasibility of validating the selected samples.
 Nugget leverages LLVM passes to statically insert annotations to analyze the program's execution on real hardware without the need for simulation, emulation, or binary translation.
 By using LLVM intermediate representation (IR) to define program progress and intervals, the samples become independent of the binary and can be reused across different executable versions of the same program, since LLVM IR abstracts away details of the final binary.
 Lastly, Nugget provides a method to create portable samples to be executed on any platform, such as real hardware or simulators, so that the samples can be validated in native time with real hardware before running them on a simulator.
@@ -25,4 +25,3 @@ Next, we describe the preparation required by Nugget to guarantee the LLVM IR of
 Then, we introduce our novel interval analysis methodology, which leverages LLVM passes, enabling comprehensive program analysis directly on real hardware without imposing hardware-specific constraints in Section~\ref{sec:interval_analysis}.
 Following that, we present the nugget creation process, which allows for the generation of portable samples that can be executed on any platform, including real hardware and simulators, in Section~\ref{sec:nugget_creation}.
 Finally, we describe the sample selection validation process, which enables efficient validation of the selected samples for specific workloads in native time, ensuring that the samples accurately represent the program's execution in Section~\ref{sec:verification}.
-

@@ -91,13 +91,13 @@ This leads to substantial overhead and results in inaccurate prediction errors.
 \shepherd{
 For other workloads, the number of hook executions does not show a clear correlation with the prediction error observed in Figure~\ref{fig:prediction_error_by_machine_method}.
 Cleanly separating the impact of hook overhead from other sources of prediction error is still challenging.
-The number of hook executions and the prediction errors observed suggest that the cutoff line for a good marker should be executing lower than 10\% for single-threaded workloads and lower than 1\% for multithreaded workloads, in terms of the total IRBBs executed in the nugget, to avoid significant overhead impacting the validation results.
+The number of hook executions and the prediction errors observed suggest that the cutoff line for a good marker should be executing lower than 10\% for single-threaded workloads and lower than 1\% for multi-threaded workloads, in terms of the total IRBBs executed in the nugget, to avoid significant overhead impacting the validation results.
 Multithreaded workloads are more sensitive to hook overhead due to the synchronization required for counting and threshold checks, as discussed in Section~\ref{sec:overhead_of_hooks}.
 }
 
 This behavior highlights a limitation of the current hook-based interval marking approach.
 Future work could explore alternative mechanisms to reduce this overhead or to decouple it from the validation results.
-However, addressing this issue is nontrivial, especially for multithreaded workloads: overhead in parallel regions can differ significantly from that in serial regions, and parallelism may sometimes mask or amplify hook-related costs, complicating the isolation of their impact.
+However, addressing this issue is nontrivial, especially for multi-threaded workloads: overhead in parallel regions can differ significantly from that in serial regions, and parallelism may sometimes mask or amplify hook-related costs, complicating the isolation of their impact.
 
 It is important to note that this overhead is unique to real hardware execution.
 In simulation, as discussed in Section~\ref{sec:overhead_of_hooks}, sample intervals can be marked directly by the simulator without introducing runtime overhead.

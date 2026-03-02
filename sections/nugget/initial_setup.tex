@@ -16,4 +16,4 @@ Therefore, we can apply the backend optimization in the final binary compilation
 
 Only code included in this base LLVM IR representation of the program will be subject to analysis.
 For instance, any linked libraries must also be processed through Nugget during this preparation stage; otherwise, their contents will be excluded from the analysis.
-This selective inclusion also allows us to ignore irrelevant or non-contributory operations, such as spin loops in multithreaded libraries~\cite{looppoint}, that do not meaningfully impact program progress.
+This selective inclusion also allows us to ignore irrelevant or non-contributory operations, such as spin loops in multi-threaded libraries~\cite{looppoint}, that do not meaningfully impact program progress.

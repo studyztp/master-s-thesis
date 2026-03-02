@@ -8,54 +8,50 @@ Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 Database file #1: refs.bib
-Warning--entry type for "vertical-microbench" isn't style-file defined
---line 588 of file refs.bib
 -- IEEEtranS.bst version 1.13 (2008/09/30) by Michael Shell.
 -- http://www.michaelshell.org/tex/ieeetran/bibtex/
 -- See the "IEEEtran_bst_HOWTO.pdf" manual for usage information.
 ** Sorting version - not for normal IEEE work.
-Warning--missing school in dynamorio
 
 Done.
 You've used 51 entries,
             4498 wiz_defined-function locations,
-            1209 strings with 22702 characters,
-and the built_in function-call counts, 52103 in all, are:
-= -- 4378
-> -- 2195
-< -- 258
-+ -- 1092
+            1200 strings with 22596 characters,
+and the built_in function-call counts, 52250 in all, are:
+= -- 4339
+> -- 2200
+< -- 263
++ -- 1100
 - -- 634
-* -- 2875
-:= -- 7656
+* -- 2890
+:= -- 7547
 add.period$ -- 112
 call.type$ -- 51
 change.case$ -- 473
-chr.to.int$ -- 627
-cite$ -- 52
-duplicate$ -- 3119
-empty$ -- 3674
+chr.to.int$ -- 642
+cite$ -- 51
+duplicate$ -- 3183
+empty$ -- 3720
 format.name$ -- 671
-if$ -- 11561
+if$ -- 11611
 int.to.chr$ -- 0
 int.to.str$ -- 51
-missing$ -- 674
-newline$ -- 216
+missing$ -- 697
+newline$ -- 196
 num.names$ -- 106
-pop$ -- 2099
+pop$ -- 2168
 preamble$ -- 1
 purify$ -- 412
 quote$ -- 2
-skip$ -- 3505
+skip$ -- 3434
 stack$ -- 0
-substring$ -- 1784
-swap$ -- 2410
+substring$ -- 1821
+swap$ -- 2488
 text.length$ -- 49
 text.prefix$ -- 0
 top$ -- 6
-type$ -- 534
-warning$ -- 1
-while$ -- 226
+type$ -- 533
+warning$ -- 0
+while$ -- 229
 width$ -- 53
-write$ -- 546
-(There were 2 warnings)
+write$ -- 517

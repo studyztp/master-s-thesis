@@ -13,7 +13,7 @@ Using microbenchmarks has two main limitations.
 % Disabling the compiler optimization is not feasible since it causes other performance regressions such as register pressure.
 (2) Even when preserved after compiler optimizations, these microbenchmarks often exercise a narrow slice of the design space, missing the complex interactions between microarchitectural components present in real programs.
 
-While it is possible to develop more sophisticated microbenchmarks, this approach is labor intensive and does not scale well as architectures develop.
+While it is possible to develop more sophisticated microbenchmarks, this approach is labor-intensive and does not scale well as architectures develop.
 Nuggets are an organic alternative to microbenchmarks;
 they capture the diverse instruction mix and control flow found in the real workloads and they are small enough to provide a focused window for manual inspection by the users.
 

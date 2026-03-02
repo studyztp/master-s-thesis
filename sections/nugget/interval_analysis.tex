@@ -42,7 +42,7 @@ Whereas the interval's definition specifies its location in the program's execut
 For example, SimPoint defines intervals by instruction count but represents each interval's signature as a basic block vector that tracks how often each basic block is executed.
 
 A signature is closely tied to the chosen sample selection algorithm.
-Since this paper does not propose a new selection algorithm, we do not introduce a new signature.
+Since this thesis does not propose a new selection algorithm, we do not introduce a new signature.
 However, we demonstrate how our hook-based approach can flexibly collect different types of signatures by constructing both LLVM IRBB vectors and count-stamp vectors.
 The LLVM IRBB vector tracks the frequency of entering each IRBB, while the count-stamp vector records the global IR instruction counter value when each IRBB is last entered.
 These will later be used to create markers (Section~\ref{sec:nugget_creation}).

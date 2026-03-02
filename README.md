@@ -21,15 +21,15 @@ make clean
 
 Replace "this paper" and "this study" with "this thesis" throughout:
 
-- [ ] `sections/introduction/introduction.tex` line 18: "In this study" -> "In this thesis"
-- [ ] `sections/introduction/introduction.tex` line 28: "This study takes" -> "This thesis takes"
-- [ ] `sections/introduction/introduction.tex` line 37: "contributions of this study" -> "contributions of this thesis"
-- [ ] `sections/nugget/nugget.tex` line 9: "this paper" -> "this thesis"
-- [ ] `sections/nugget/interval_analysis.tex` line 45: "this paper" -> "this thesis"
-- [ ] `sections/evaluation/sample_and_validation.tex` line 17: "this paper" -> "this thesis"
-- [ ] `sections/case_study/simulation.tex` line 30: "this study" -> "this thesis"
-- [ ] `sections/case_study/simulation.tex` line 185: "this paper" -> "this thesis"
-- [ ] `sections/conclusion/conclusion.tex` line 2: "this paper" -> "this thesis"
+- [X] `sections/introduction/introduction.tex` line 18: "In this study" -> "In this thesis"
+- [X] `sections/introduction/introduction.tex` line 28: "This study takes" -> "This thesis takes"
+- [X] `sections/introduction/introduction.tex` line 37: "contributions of this study" -> "contributions of this thesis"
+- [X] `sections/nugget/nugget.tex` line 9: "this paper" -> "this thesis"
+- [X] `sections/nugget/interval_analysis.tex` line 45: "this paper" -> "this thesis"
+- [X] `sections/evaluation/sample_and_validation.tex` line 17: "this paper" -> "this thesis"
+- [X] `sections/case_study/simulation.tex` line 30: "this study" -> "this thesis"
+- [X] `sections/case_study/simulation.tex` line 185: "this paper" -> "this thesis"
+- [X] `sections/conclusion/conclusion.tex` line 2: "this paper" -> "this thesis"
 
 ### Grammar Fixes
 

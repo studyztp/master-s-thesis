@@ -15,7 +15,7 @@ While these methods can reduce very large applications to much more manageable b
 Another approach to reducing the size of applications is to \emph{sample} the application to automatically find \emph{representative intervals} of different application phases.
 Many techniques (e.g., SimPoint~\cite{simpoint}, BarrierPoint~\cite{barrier_point}, and LoopPoint~\cite{looppoint}) follow this approach.
 
-In this study, we focus on targeted sampling techniques, which use profiling to automatically select samples.
+In this thesis, we focus on targeted sampling techniques, which use profiling to automatically select samples.
 
 Prior targeted sampling techniques have three main drawbacks that limit their applicability to modern, realistically sized applications:
 
@@ -25,7 +25,7 @@ Prior targeted sampling techniques have three main drawbacks that limit their ap
     \item \textbf{Validating the selected samples is infeasible:} Targeted sampling techniques require running the application in detailed simulation to verify that the selected samples accurately represent the program.
 \end{itemize}
 
-This study takes a two-part approach.
+This thesis takes a two-part approach.
 First, because existing sampling methodologies have mostly been validated in user-mode simulation, we implement the state-of-the-art LoopPoint methodology in gem5's full-system mode and evaluate it with the NPB benchmark suite.
 This investigation confirms that LoopPoint can be extended to full-system simulation, but also highlights that the analysis remains time-consuming, that validating sampling accuracy still requires a full baseline simulation---the very bottleneck that sampling aims to avoid---and that prediction errors are inconsistent across ISAs because each ISA-specific binary produces different representative samples.
 
@@ -34,7 +34,7 @@ Because modern applications exhibit varied characteristics, we believe there is 
 Therefore, Nugget is designed to be flexible and extensible, allowing researchers to create new sample selection algorithms tailored to their targeted workload and input without the current limitations of targeted sampling techniques.
 Nugget's cross-platform compatibility and ability to run on real hardware enable richer insights into both the selected samples and the systems that run them.
 
-The main contributions of this study are:
+The main contributions of this thesis are:
 
 \begin{itemize}
     \item \textbf{A full-system LoopPoint implementation in gem5}, providing the first evaluation of LoopPoint with the NPB benchmark suite in full-system simulation, establishing a simulation-based baseline for sampling methodology validation.

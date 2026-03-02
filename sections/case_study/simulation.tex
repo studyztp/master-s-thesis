@@ -127,7 +127,7 @@ Each point is the absolute value of the error of one pair of configurations' (in
 % We focus on absolute error because the direction of the prediction error can vary depending on the system pair being compared, and our goal is to capture the magnitude of error regardless of direction.
 The hardware results allow us to quickly identify benchmarks with high variability in prediction error, such as ``cg'', ``ep'', and ``is'', which exhibit wide error ranges across different platforms.
 For these workloads with large variations or large errors on hardware, we find the intervals are \emph{not representative of the true speedup}.
-However, we cannot use the error on hardware to bound the error in simulation (e.g., the error for ft in simulation is larger than on hardware).
+However, we cannot use the error on hardware to bound the error in simulation (e.g., the error for ``ft'' in simulation is larger than on hardware).
 The main reason we cannot use the hardware error to bound the simulation error is that the error is strongly affected by the underlying microarchitecture.
 % We observe a broader distribution of prediction errors in hardware because the real systems used exhibit greater microarchitectural diversity than the simulation models we use for this experiment.
 In the next section, we analyze the sources of prediction error in more detail using simulation data and controlled case studies.

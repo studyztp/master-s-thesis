@@ -26,15 +26,15 @@ A.~Akram and L.~Sawalha, ``A survey of computer architecture simulation
   techniques and tools,'' \emph{IEEE Access}, vol.~7, pp. 78\,120--78\,145,
   2019.
 
+\bibitem{ipc_considered_harmful}
+A.~R. Alameldeen and D.~A. Wood, ``{IPC Considered Harmful for Multiprocessor
+  Workloads},'' \emph{IEEE Micro}, vol.~26, no.~4, pp. 8--17, 2006.
+
 \bibitem{variability_in_architectural_simulations_of_multithreaded_workloads}
 A.~R. Alameldeen and D.~A. Wood, ``{Variability in Architectural Simulations of
   Multi-Threaded Workloads},'' in \emph{Proceedings of the 9th International
   Symposium on High-Performance Computer Architecture}, ser. HPCA '03.\hskip
   1em plus 0.5em minus 0.4em\relax USA: IEEE Computer Society, 2003, p.~7.
-
-\bibitem{ipc_considered_harmful}
-A.~Alameldeen and D.~Wood, ``{IPC Considered Harmful for Multiprocessor
-  Workloads},'' \emph{IEEE Micro}, vol.~26, no.~4, pp. 8--17, 2006.
 
 \bibitem{exascale-proxy-apps}
 \BIBentryALTinterwordspacing
@@ -74,10 +74,11 @@ F.~Andrijauskas, I.~Sfiligoi, D.~Davila, A.~Arora, J.~Guiang, B.~Bockelman,
 
 \bibitem{npb}
 \BIBentryALTinterwordspacing
-D.~Bailey, E.~Barszcz, J.~Barton, D.~Browning, R.~Carter, L.~Dagum, R.~Fatoohi,
-  P.~Frederickson, T.~Lasinski, R.~Schreiber, H.~Simon, V.~Venkatakrishnan, and
-  S.~Weeratunga, ``{The NAS Parallel Benchmarks},'' \emph{Int. J. High Perform.
-  Comput. Appl.}, vol.~5, no.~3, pp. 63--73, Sep. 1991. [Online]. Available:
+D.~H. Bailey, E.~Barszcz, J.~T. Barton, D.~S. Browning, R.~L. Carter, L.~Dagum,
+  R.~A. Fatoohi, P.~O. Frederickson, T.~A. Lasinski, R.~S. Schreiber, H.~D.
+  Simon, V.~Venkatakrishnan, and S.~K. Weeratunga, ``{The NAS Parallel
+  Benchmarks},'' \emph{Int. J. High Perform. Comput. Appl.}, vol.~5, no.~3, pp.
+  63--73, Sep. 1991. [Online]. Available:
   \url{https://doi.org/10.1177/109434209100500306}
 \BIBentrySTDinterwordspacing
 
@@ -138,13 +139,13 @@ K.~Criswell and T.~Adegbija, ``{A Survey of Phase Classification Techniques for
   Characterizing Variable Application Behavior},'' \emph{IEEE Transactions on
   Parallel and Distributed Systems}, vol.~31, no.~1, pp. 224--236, 2020.
 
-\bibitem{determineistic_shared_memory_multiprocessing}
+\bibitem{deterministic_shared_memory_multiprocessing}
 \BIBentryALTinterwordspacing
 J.~Devietti, B.~Lucia, L.~Ceze, and M.~Oskin, ``{DMP: deterministic shared
   memory multiprocessing},'' in \emph{Proceedings of the 14th International
   Conference on Architectural Support for Programming Languages and Operating
   Systems}, ser. ASPLOS XIV.\hskip 1em plus 0.5em minus 0.4em\relax New York,
-  NY, USA: Association for Computing Machinery, 2009, p. 85–96. [Online].
+  NY, USA: Association for Computing Machinery, 2009, pp. 85--96. [Online].
   Available: \url{https://doi.org/10.1145/1508244.1508255}
 \BIBentrySTDinterwordspacing
 
@@ -181,10 +182,10 @@ T.~Grass, A.~Rico, M.~Casas, M.~Moreto, and E.~Ayguadé, ``{TaskPoint: Sampled
 \bibitem{BLCR}
 P.~Hargrove and J.~Duell, ``{Berkeley lab checkpoint/restart (BLCR) for Linux
   clusters},'' \emph{Journal of Physics: Conference Series}, vol.~46, p. 494,
-  09 2006.
+  Sep. 2006.
 
 \bibitem{accl_warmup_sampled_simulation}
-J.~Haskins and K.~Skadron, ``{Memory reference reuse latency: Accelerated
+J.~W. Haskins and K.~Skadron, ``{Memory reference reuse latency: Accelerated
   warmup for sampled microarchitecture simulation},'' in \emph{2003 IEEE
   International Symposium on Performance Analysis of Systems and Software.
   ISPASS 2003.}, 2003, pp. 195--203.
@@ -320,12 +321,12 @@ T.~Sherwood, E.~Perelman, G.~Hamerly, and B.~Calder, ``{Automatically
 \BIBentrySTDinterwordspacing
 
 \bibitem{spec2000}
-{{Standard Performance Evaluation Corporation (SPEC)}}, ``{{SPEC CPU2000
+{Standard Performance Evaluation Corporation (SPEC)}, ``{{SPEC CPU2000
   Benchmark Suite}},'' \url{https://www.spec.org/cpu2000/}, 2000, [Online;
   accessed 21-Oct-2025].
 
 \bibitem{spec2006}
-{{Standard Performance Evaluation Corporation (SPEC)}}, ``{{SPEC CPU2006
+{Standard Performance Evaluation Corporation (SPEC)}, ``{{SPEC CPU2006
   Benchmark Suite}},'' \url{https://www.spec.org/cpu2006/}, 2006, [Online;
   accessed 21-Oct-2025].
 
@@ -360,10 +361,10 @@ Q.~Wu, S.~Flolid, S.~Song, J.~Deng, and L.~K. John, ``{Invited Paper for the
   71--77.
 
 \bibitem{smarts}
-R.~Wunderlich, T.~Wenisch, B.~Falsafi, and J.~Hoe, ``{SMARTS: accelerating
-  microarchitecture simulation via rigorous statistical sampling},'' in
-  \emph{30th Annual International Symposium on Computer Architecture, 2003.
-  Proceedings.}, 2003, pp. 84--95.
+R.~E. Wunderlich, T.~F. Wenisch, B.~Falsafi, and J.~C. Hoe, ``{SMARTS:
+  accelerating microarchitecture simulation via rigorous statistical
+  sampling},'' in \emph{30th Annual International Symposium on Computer
+  Architecture, 2003. Proceedings.}, 2003, pp. 84--95.
 
 \bibitem{simpoint-plus}
 J.~Xue, T.~Xiong, L.~Chao, and R.~Xue, ``Simpoint+: More stable, accurate and
@@ -372,8 +373,9 @@ J.~Xue, T.~Xiong, L.~Chao, and R.~Xue, ``Simpoint+: More stable, accurate and
   0.4em\relax Cham: Springer Nature Switzerland, 2026, pp. 3--17.
 
 \bibitem{characterizing_and_comparing_prevailing_simulation_techniques}
-J.~Yi, S.~Kodakara, R.~Sendag, D.~Lilja, and D.~Hawkins, ``{Characterizing and
-  comparing prevailing simulation techniques},'' in \emph{11th International
-  Symposium on High-Performance Computer Architecture}, 2005, pp. 266--277.
+J.~J. Yi, S.~V. Kodakara, R.~Sendag, D.~J. Lilja, and D.~M. Hawkins,
+  ``{Characterizing and comparing prevailing simulation techniques},'' in
+  \emph{11th International Symposium on High-Performance Computer
+  Architecture}, 2005, pp. 266--277.
 
 \end{thebibliography}

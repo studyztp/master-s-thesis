@@ -27,7 +27,7 @@ For the random sampling approach, we randomly select a set of intervals from the
 This selection method is based on statistical sampling methods~\cite{smarts}.
 
 For the clustering approach, we use the k-means algorithm to cluster the IRBB vectors, select ``k'' samples to represent the program phases of the workload, and use the cluster weights to estimate the average or cumulative properties of the program execution.
-This approach is based on basic block vector (BBV) phase-identification techniques~\cite{survey_phase_classification} (e.g. SimPoint) and on the fact that the IRBB vector is an abstraction of the actual BBV.
+This approach is based on basic block vector (BBV) phase-identification techniques~\cite{survey_phase_classification} (e.g., SimPoint) and on the fact that the IRBB vector is an abstraction of the actual BBV.
 
 We refer to the random approach as ``Random'' and the clustering approach as ``K-means''.
 We use 50 samples as the target number for both methodologies, which is statistically large enough to approximate the population distribution~\cite{hogg2020psi}.
@@ -49,7 +49,7 @@ Several factors contribute to these elevated errors.
 (1) The sampling methodologies are naively designed. For example, the Random approach relies heavily on luck and the specific composition of the interval pool.
 \shepherd{
 (2) Previous work rarely validates samples on real hardware~\cite{wavelet-based,taskpoint,simpoint,looppoint,smarts,fsa,cross_binary_simpoints,pacsim,barrier_point,simpoint-plus,parrot}.
-Instead, they mostly rely on user-mode-only simulation, which is typically less noisy due to more controllable thread interleaving compared to actual hardware~\cite{variability_in_architectural_simulations_of_multithreaded_workloads,11_gem5,survey-simulator-techniques,determineistic_shared_memory_multiprocessing}. 
+Instead, they mostly rely on user-mode-only simulation, which is typically less noisy due to more controllable thread interleaving compared to actual hardware~\cite{variability_in_architectural_simulations_of_multithreaded_workloads,11_gem5,survey-simulator-techniques,deterministic_shared_memory_multiprocessing}. 
 In Section~\ref{sec:model_performance_evaluation}, we further analyze the sources of prediction error using smaller workloads in simulation.
 (3) Prior work rarely validates large workloads as we used in our experiments (e.g., reference input sizes for CPU2017). 
 Larger and more realistic applications exhibit increasingly complex behaviors~\cite{characterizing_and_comparing_prevailing_simulation_techniques,hot-region-spec2017, simpoint,spec2017-workload-characterization,wavelet-based,looppoint}, which demand more representative sample sets, as discussed in Section~\ref{sec:validating_the_selected_samples_is_infeasible}. 

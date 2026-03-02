@@ -2,7 +2,7 @@
 
 Full-system simulation models the entire software stack---from applications through the operating system down to microarchitecture and devices---providing deeper insights into system behavior within a realistic environment.
 However, the involvement of the operating system introduces new challenges for sampling methodologies.
-The address space must remain stable throughout the application's execution to ensure accurate profiling, and kernel-level instructions, which can vary significantly across microarchitectures, should be excluded from application phase analysis.
+The address space must remain stable throughout the application's execution to ensure accurate profiling, and kernel-level instructions should be excluded from application phase analysis.
 
 We implement the LoopPoint methodology in gem5~\cite{11_gem5,20_gem5}, a cycle-level simulator widely used in both academia and industry that supports full-system simulation.
 Following the three-stage pipeline described in Section~\ref{sec:looppoint_background}, our implementation maps each stage to gem5 through two new probe modules: the LoopPoint Analysis module, which handles phase analysis, and the PcCount Tracker module, which drives checkpoint creation and representative region simulation.
@@ -22,7 +22,7 @@ The analysis produces a list of regions with their basic block vectors (BBVs) an
 
 \begin{figure}[ht]
     \centering
-    \includegraphics[height=0.84\textheight]{images/gem5-looppoint-analysis-flow.pdf}
+    \includegraphics[height=\textheight]{images/gem5-looppoint-analysis-flow.pdf}
     \caption{LoopPoint analysis flow in gem5.}
     \label{fig:gem5-looppoint-analysis-flow}
 \end{figure}

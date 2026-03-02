@@ -9,7 +9,7 @@ Synchronization library instructions are excluded from the analysis, as they do 
 The BBVs are then clustered offline to identify groups of similar regions, and a representative region is selected from each cluster.
 
 For simulation, LoopPoint creates checkpoints at the boundaries of selected representative regions.
-While fast-forwarding can also be used to reach region boundaries, checkpoints are preferable because they allow simulations to be distributed across machines and ensure that each configuration starts from the exact same execution state.
+While fast-forwarding can also be used to reach region boundaries, checkpoints are preferable because they allow simulations to be distributed across simulation configurations and ensure that each configuration starts from the exact same execution state.
 Each checkpoint is restored and simulated in detailed mode with appropriate warmup, and the results are weighted by cluster membership to predict full-program performance.
 
 In the original paper, LoopPoint achieves an average simulation error of 2.3\% on multi-threaded SPEC~CPU2017 benchmarks with the train input set, with speedup of up to 801$\times$ over full detailed simulation.

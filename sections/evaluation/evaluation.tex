@@ -25,13 +25,13 @@ We then address the second and third goal by employing two simple sample selecti
       \hline
       \textbf{Model} & \textbf{Core} & \textbf{Cache Hierarchy} & \textbf{Memory} \\ \hline
       \makecell[l]{AMD Ryzen\\Threadripper 3960X}
-        & \makecell[l]{24-core OOO\\@ 3.8 GHz}
-        & \makecell[l]{L1d:32 KiB L1i:32 KiB\\L2:512 KiB L3:128 MiB}
-        & \makecell[l]{DDR4 2133 MHz\\136.5 GiB/s} \\ \hline
+        & \makecell[l]{24-core OOO\\@ 3.8~GHz}
+        & \makecell[l]{L1d:32~KiB L1i:32~KiB\\L2:512~KiB L3:128~MiB}
+        & \makecell[l]{DDR4 2133~MHz\\136.5~GiB/s} \\ \hline
       \makecell[l]{Ampere Altra}
-        & \makecell[l]{160-core OOO\\@ 2.8 GHz}
-        & \makecell[l]{L1d:64 KiB L1i:64 KiB\\L2:1 MiB SLC:64 MiB}
-        & \makecell[l]{DDR4 3200 MHz\\409.6 GiB/s} \\ \hline
+        & \makecell[l]{160-core OOO\\@ 2.8~GHz}
+        & \makecell[l]{L1d:64~KiB L1i:64~KiB\\L2:1~MiB SLC:64~MiB}
+        & \makecell[l]{DDR4 3200~MHz\\409.6~GiB/s} \\ \hline
     \end{tabular}
 
     \caption{Real Hardware Configuration}
@@ -80,9 +80,9 @@ We evaluate Nugget using the SPEC CPU~2017 benchmark suite, the NAS Parallel Ben
 \revision{We use the ``-O2'' optimization level for the compilation.}
 The input chosen for each benchmark is too large to be simulated in feasible time (except for NPB class ``A'').
 
-For SPEC~CPU2017, we use the reference input sizes, which require between 198 billion and 9{,}897 billion instructions.
-For NPB, we use class ``C'' and ``D'' inputs, with class ``C'' requiring between 24 billion and 2{,}714 billion instructions and class ``D'' ranging from 1{,}217 billion to 37{,}533 billion instructions. 
-For LSMS, we use the Fe input, which requires between 28{,}484 billion and 198{,}885 billion instructions (one binary per ISA).
+For SPEC~CPU2017, we use the reference input sizes, which require between 198~billion and 9{,}897~billion instructions.
+For NPB, we use class ``C'' and ``D'' inputs, with class ``C'' requiring between 24~billion and 2{,}714~billion instructions and class ``D'' ranging from 1{,}217~billion to 37{,}533~billion instructions. 
+For LSMS, we use the Fe input, which requires between 28{,}484~billion and 198{,}885~billion instructions (one binary per ISA).
 
 
 \shepherd{We used SPEC~CPU2017 Integer suite, except for ``619.lbm\_s'' and ``644.nab\_s'', which are from the Floating-Point suite.}

@@ -41,7 +41,7 @@ By comparison, LoopPoint's average overhead is $31,\!343\times$, peaking at $55,
 
 Overall, multi-threaded workloads amplify interval analysis overhead because their baseline execution times are significantly \revision{shorter (due to parallelism) while} the analysis itself incurs greater cost from synchronization requirements.
 The single-threaded workloads in Figure~\ref{fig:interval_analysis_overhead} exhibit much lower overheads, which we discuss further in Section~\ref{sec:mix_of_workload_types}.
-The ``cg'' benchmark has the shortest execution time in this experiment (0.28 seconds), which further amplifies the measured overhead for both methods.
+The ``cg'' benchmark has the shortest execution time in this experiment (0.28~seconds), which further amplifies the measured overhead for both methods.
 The ``is'' benchmark exhibits the lowest overhead under functional simulation but still incurs a $95\times$ slowdown with Nugget, primarily due to the frequent executions of interval analysis hooks, as discussed in Section~\ref{sec:hook_overhead}.
 The ``mg'' and ``ft'' benchmarks show relatively high overhead for both methods because their parallel regions increase synchronization costs during interval analysis, which in turn adds further simulation overhead.
 We examine the relationship between synchronization and overhead in more detail in Section~\ref{sec:scaling_with_number_of_threads}.
@@ -96,7 +96,7 @@ However, this growth is not uniform across all workloads because not all of them
 For ``bt'', ``cg'', ``lu'', and ``sp'', the consistently low slowdown as the thread count increases suggests that hooks are not frequently executed within parallel regions for these benchmarks.
 In contrast, ``mg'' and ``ft'' show a significant increase in overhead with more threads, indicating that these benchmarks require more synchronization during interval analysis---likely due to the complexity of their parallel regions.
 
-Even at higher thread counts (up to $16\times$), Nugget maintains overheads that are orders of magnitude lower than those of functional simulation-based interval analysis (Figure~\ref{fig:simulation_interval_analysis_overhead}).
+Even at higher thread counts (up to $16\times$), Nugget maintains overheads that are orders-of-magnitude lower than those of functional simulation-based interval analysis (Figure~\ref{fig:simulation_interval_analysis_overhead}).
 
 \subsubsection{Summary}\label{sec:interval_analysis_overhead_summary}
 

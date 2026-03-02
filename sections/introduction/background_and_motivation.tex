@@ -60,10 +60,10 @@ Automatically generate samples that are independent of the binary.
 Sampling methodologies aim to predict overall program performance by measuring only a subset of representative samples and extrapolating the full-program behavior using statistical models. 
 Most methodologies focus on predicting metrics that \revision{summarize} the entire hardware performance, such as instructions per cycle (IPC) or total runtime.
 
-To evaluate the accuracy of a set of samples selected by a sampling methodology, the predicted performance metrics are compared against ground truth measurements. 
-First, the target performance metric is measured from a full execution of the program on the experimental system, serving as the ground truth. 
-Next, the same metric is measured for the selected samples, and statistical processing is applied to estimate the full-program value. 
-Finally, the predicted value is compared to the ground truth to quantify the accuracy of the selected samples.
+To evaluate the accuracy of a set of samples selected by a sampling methodology, we compare the predicted performance metrics against ground truth measurements. 
+First, we measure the target performance metric from a full execution of the program on the experimental system, which serves as the ground truth. 
+Next, we measure the same metric for the selected samples and apply statistical processing to estimate the full-program value. 
+Finally, we compare the predicted value to the ground truth to quantify the accuracy of the selected samples.
 
 \revision{
 The effectiveness of a sample selection method depends on benchmark characteristics. }
@@ -76,7 +76,7 @@ However, the only way to validate them is to run the entire workload.
 
 \shepherd{Prior sampling techniques are typically evaluated on small benchmarks or truncated runs because their validation depends on simulation~\cite{wavelet-based,taskpoint,simpoint,looppoint,smarts,fsa,cross_binary_simpoints,pacsim,barrier_point,simpoint-plus,parrot}.}
 \revision{
-A missing piece is an agile path from methodology development to real hardware level validation. 
+A missing piece is an agile path from methodology development to real-hardware-level validation. 
 The intent of the sample set is to approximate the behavior of the real system, so validation by simulation is only meaningful if the simulator faithfully models the target. 
 If it does not, the validation does not transfer.
 This also leads to difficulty in comparing different methodologies as results are tied to different simulators, forcing redundant engineering effort before we can make apples-to-apples comparisons.

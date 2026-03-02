@@ -54,27 +54,27 @@ We found that in cases with modest absolute error the predicted speedup (or rela
 
     Config 1
       & x86
-      & \makecell[l]{4-core Large OOO\\@ 4 GHz}
-      & \makecell[l]{L1d: 64 KiB L1i: 64 KiB\\L2: 1 MiB}
-      & \makecell[l]{DDR4 2400 MHz\\38.4 GB/s} \\ \hline
+      & \makecell[l]{4-core Large OOO\\@ 4~GHz}
+      & \makecell[l]{L1d: 64~KiB L1i: 64~KiB\\L2: 1~MiB}
+      & \makecell[l]{DDR4 2400~MHz\\38.4~GB/s} \\ \hline
 
     Config 2
       & Arm
-      & \makecell[l]{8-core Small OOO\\N1 @ 3 GHz}
-      & \makecell[l]{L1d: 64 KiB L1i: 64 KiB\\L2: 1 MiB SLC: 32 MiB}
-      & \makecell[l]{DDR4 2400 MHz\\76.8 GiB/s} \\ \hline
+      & \makecell[l]{8-core Small OOO\\N1 @ 3~GHz}
+      & \makecell[l]{L1d: 64~KiB L1i: 64~KiB\\L2: 1~MiB SLC: 32~MiB}
+      & \makecell[l]{DDR4 2400~MHz\\76.8~GiB/s} \\ \hline
 
     Config 3
       & x86
-      & \makecell[l]{4-core Base OOO\\@ 4 GHz}
-      & \makecell[l]{L1d: 64 KiB L1i: 64 KiB\\L2: 1 MiB}
-      & \makecell[l]{DDR4 2400 MHz\\38.4 GB/s} \\ \hline
+      & \makecell[l]{4-core Base OOO\\@ 4~GHz}
+      & \makecell[l]{L1d: 64~KiB L1i: 64~KiB\\L2: 1~MiB}
+      & \makecell[l]{DDR4 2400~MHz\\38.4~GB/s} \\ \hline
 
     Config 4
       & Arm
-      & \makecell[l]{8-core Base OOO\\@ 4 GHz}
-      & \makecell[l]{L1d: 64 KiB L1i: 64 KiB\\L2: 1 MiB}
-      & \makecell[l]{DDR4 2400 MHz\\76.8 GiB/s} \\ \hline
+      & \makecell[l]{8-core Base OOO\\@ 4~GHz}
+      & \makecell[l]{L1d: 64~KiB L1i: 64~KiB\\L2: 1~MiB}
+      & \makecell[l]{DDR4 2400~MHz\\76.8~GiB/s} \\ \hline
 
   \end{tabular}
 
@@ -143,11 +143,11 @@ To isolate the sources of prediction error, we compare three types of platform p
   \centering
 
   \includegraphics[width=\linewidth]{images/case_study_3.pdf}
-  \caption{Speedup: Random vs K-means samples when ISA varies and microarchitecture is fixed, Config~3 vs Config~4.}
+  \caption{Speedup: Random vs.\ K-means samples when ISA varies and microarchitecture is fixed, Config~3 vs.\ Config~4.}
   \label{fig:case_study_3}
 \end{figure}
 
-Figure~\ref{fig:case_study_3} shows the speedup prediction error when the main difference between platforms is the ISA (Config~3 vs Config~4).
+Figure~\ref{fig:case_study_3} shows the speedup prediction error when the main difference between platforms is the ISA (Config~3 vs.\ Config~4).
 % These configurations share similar microarchitectures but differ in ISA (x86 vs. Arm).
 In this experiment, the ISA has a noticeable impact on the binaries: for instance, the Arm binaries have vectorization enabled, whereas the x86 binary does not.
 The average absolute speedup prediction error is 5\% for Random-selected nuggets and 2.0\% for K-means-selected nuggets.
@@ -179,7 +179,7 @@ The comparison between Config~4 and Config~2 for Arm results in higher error in 
 Figure~\ref{fig:case_study_5} presents the speedup prediction error when both ISA and microarchitecture vary across simulation models.
 The average absolute error rises to 10.8\% for Random-selected nuggets and 7.9\% for K-means-selected nuggets.
 The lowest errors occur in comparisons between Config~1 and Config~4 (7.7\% for Random, 5\% for K-means), where microarchitectural differences are relatively minor.
-In contrast, larger errors are observed in comparisons involving Config~2, which diverges significantly from other configurations in both ISA and microarchitecture.
+In contrast, we observe larger errors in comparisons involving Config~2, which diverges significantly from other configurations in both ISA and microarchitecture.
 These findings highlight the sensitivity of prediction accuracy to microarchitectural differences more than to ISA variation.
 
 \textbf{In summary}, while this thesis does not propose a new method for selecting representative intervals, we show the importance of comparing different interval selection techniques across a wide variety of architectures and microarchitectures.

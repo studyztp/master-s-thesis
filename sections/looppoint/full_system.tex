@@ -13,7 +13,7 @@ As of gem5 version 24.1, this LoopPoint functionality has been upstreamed and is
 To accurately capture application phases, the LoopPoint methodology requires a stable address space and must exclude all kernel instructions~\cite{simflex}.
 Before starting the simulation, we disable Address Space Layout Randomization (ASLR) in the kernel and obtain the address mapping of the application.
 A stable address mapping is critical because LoopPoint uses virtual addresses to mark region boundaries and to identify synchronization library calls that should be excluded from phase analysis.
-The entire phase analysis is conducted in gem5's functional mode using the atomic CPU.
+We conduct the entire phase analysis in gem5's functional mode using the atomic CPU.
 
 The LoopPoint Analysis module filters out all kernel instructions to prevent them from affecting application phase analysis.
 Synchronization library instructions are also excluded, as they do not directly contribute to the application's phase behavior (see Section~\ref{sec:looppoint_background}).

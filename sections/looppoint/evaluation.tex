@@ -15,14 +15,14 @@
       & x86
       & Arm \\ \hline
     Core
-      & \makecell[l]{8-core OoO\\@ 4 GHz}
-      & \makecell[l]{8-core OoO\\@ 3 GHz} \\ \hline
+      & \makecell[l]{8-core OoO\\@ 4~GHz}
+      & \makecell[l]{8-core OoO\\@ 3~GHz} \\ \hline
     Cache Hierarchy
-      & \makecell[l]{L1d: 64 KiB L1i: 64 KiB\\L2: 1 MiB}
-      & \makecell[l]{L1d: 64 KiB L1i: 64 KiB\\L2: 1 MiB SLC: 32 MiB} \\ \hline
+      & \makecell[l]{L1d: 64~KiB L1i: 64~KiB\\L2: 1~MiB}
+      & \makecell[l]{L1d: 64~KiB L1i: 64~KiB\\L2: 1~MiB SLC: 32~MiB} \\ \hline
     Memory
-      & \makecell[l]{DDR4 2400 MHz\\38.4 GB/s}
-      & \makecell[l]{DDR4 2400 MHz\\76.8 GiB/s} \\ \hline
+      & \makecell[l]{DDR4 2400~MHz\\38.4~GB/s}
+      & \makecell[l]{DDR4 2400~MHz\\76.8~GiB/s} \\ \hline
     OS
       & Ubuntu 24.04
       & Ubuntu 24.04 \\ \hline
@@ -38,7 +38,7 @@ We use Class~A input size with eight threads for our experiments, as larger inpu
 In addition to evaluating in a full-system environment, we test the methodology across different ISAs and system configurations, as detailed in Table~\ref{tab:gem5-config}.
 We use Ubuntu 24.04 as the guest operating system in all experiments.
 
-Phase analysis and checkpoint creation are conducted in gem5's functional mode.
+We conduct phase analysis and checkpoint creation in gem5's functional mode.
 The checkpoints of selected representative regions are then simulated in detailed mode using the configurations shown in Table~\ref{tab:gem5-config}.
 We evaluate the accuracy of the LoopPoint methodology by comparing the predicted runtimes against baseline full simulations.
 Figure~\ref{fig:gem5_fs_npb_A} shows the relative prediction error for the NPB Class~A benchmarks.

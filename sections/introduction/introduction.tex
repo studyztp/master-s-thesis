@@ -25,14 +25,19 @@ Prior targeted sampling techniques have three main drawbacks that limit their ap
     \item \textbf{Validating the selected samples is infeasible:} Targeted sampling techniques require running the application in detailed simulation to verify that the selected samples accurately represent the program.
 \end{itemize}
 
-To address these limitations, we present a framework called \emph{Nugget} for agile targeted sampling development.
-Because modern applications exhibit varied characteristics, we believe there is no one-size-fits-all sampling methodology or selection algorithm~\cite{survey_phase_classification,accl_warmup_sampled_simulation,characterizing_and_comparing_prevailing_simulation_techniques,analysis_of_statistical_sampling_in_microarchitecture_simulation}.  
-Therefore, Nugget is designed to be flexible and extensible, allowing researchers to create new sample selection algorithms that can be tailored to their targeted workload and input without worrying about the current limitations of targeted sampling techniques.
-Additionally, using Nugget for sample selection methodologies, because of its nature of cross-platform compatibility and its ability to run on real hardware, enables richer insights into the selected samples and the systems that run the samples.
-However, before validating samples on real hardware, we need to understand how well can existing techiniques predict on real hardware, so we implemented the state-of-the-art LoopPoint methodology in gem5 simulator to evaluate the sampling methodlogy with NPB benchmark on the gem5 simulator in full-system simulation, which was not done before.
+This study takes a two-part approach.
+First, because existing sampling methodologies have only been validated in user-mode simulation, we implement the state-of-the-art LoopPoint methodology in gem5's full-system mode and evaluate it with the NPB benchmark suite---the first such full-system evaluation.
+This investigation confirms that LoopPoint can be extended to full-system simulation, but also highlights that validating sampling accuracy still requires a full baseline simulation, the very bottleneck that sampling aims to avoid.
+
+Motivated by this observation, we present \emph{Nugget}, a framework for agile targeted sampling development.
+Because modern applications exhibit varied characteristics, we believe there is no one-size-fits-all sampling methodology or selection algorithm~\cite{survey_phase_classification,accl_warmup_sampled_simulation,characterizing_and_comparing_prevailing_simulation_techniques,analysis_of_statistical_sampling_in_microarchitecture_simulation}.
+Therefore, Nugget is designed to be flexible and extensible, allowing researchers to create new sample selection algorithms tailored to their targeted workload and input without the current limitations of targeted sampling techniques.
+Nugget's cross-platform compatibility and ability to run on real hardware enable richer insights into both the selected samples and the systems that run them.
+
 The main contributions of this study are:
 
 \begin{itemize}
+    \item \textbf{A full-system LoopPoint implementation in gem5}, providing the first evaluation of LoopPoint with the NPB benchmark suite in full-system simulation, establishing a simulation-based baseline for sampling methodology validation.
     \item \textbf{Efficient and portable interval analysis} on real hardware using LLVM, unconstrained by the hardware's microarchitecture or ISA.
     \item \textbf{An LLVM IR-level unit of work}, enabling sample selection algorithms to create and locate samples for a program in a cross-platform manner, agnostic of machine-level instructions, such as architecture-specific instructions and optimizations.
     \item \textbf{A sample creation methodology} that allows samples to run on any platform (e.g., real hardware or simulators).

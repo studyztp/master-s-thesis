@@ -11,44 +11,44 @@
 \contentsline {section}{\numberline {3.1}LoopPoint Background}{8}{section.3.1}
 \contentsline {section}{\numberline {3.2}Full-System Implementation}{10}{section.3.2}
 \contentsline {subsection}{\numberline {3.2.1}Phase Analysis}{10}{subsection.3.2.1}
-\contentsline {subsection}{\numberline {3.2.2}Checkpoint Creation and Representative Region Simulation}{13}{subsection.3.2.2}
-\contentsline {section}{\numberline {3.3}Evaluation}{13}{section.3.3}
-\contentsline {chapter}{\numberline {4}The Nugget Framework}{16}{chapter.4}
-\contentsline {section}{\numberline {4.1}Unit of Work}{18}{section.4.1}
-\contentsline {section}{\numberline {4.2}Preparation}{19}{section.4.2}
-\contentsline {section}{\numberline {4.3}Interval Analysis}{20}{section.4.3}
-\contentsline {subsection}{\numberline {4.3.1}Interval Analysis LLVM Pass}{21}{subsection.4.3.1}
-\contentsline {subsection}{\numberline {4.3.2}Interval Analysis Executable}{21}{subsection.4.3.2}
-\contentsline {section}{\numberline {4.4}Nugget Creation}{23}{section.4.4}
-\contentsline {subsection}{\numberline {4.4.1}Markers}{23}{subsection.4.4.1}
-\contentsline {subsection}{\numberline {4.4.2}Overhead of Hooks}{24}{subsection.4.4.2}
-\contentsline {section}{\numberline {4.5}Sample Validating}{25}{section.4.5}
-\contentsline {chapter}{\numberline {5}Evaluation}{27}{chapter.5}
-\contentsline {section}{\numberline {5.1}Interval Analysis Efficiency (Goal 1)}{29}{section.5.1}
-\contentsline {subsection}{\numberline {5.1.1}Comparison with Functional Simulation}{29}{subsection.5.1.1}
-\contentsline {subsection}{\numberline {5.1.2}Mix of Workload Types}{31}{subsection.5.1.2}
-\contentsline {subsection}{\numberline {5.1.3}Scaling with Number of Threads}{32}{subsection.5.1.3}
-\contentsline {subsection}{\numberline {5.1.4}Summary}{34}{subsection.5.1.4}
-\contentsline {section}{\numberline {5.2}Applying Sampling Methodologies to the Nugget Framework and Validating the Selected Samples (Goals 2 \& 3)}{35}{section.5.2}
-\contentsline {subsection}{\numberline {5.2.1}Sampling Methodologies}{35}{subsection.5.2.1}
-\contentsline {subsection}{\numberline {5.2.2}Sample Validation}{36}{subsection.5.2.2}
-\contentsline {subsection}{\numberline {5.2.3}Hook Overhead}{37}{subsection.5.2.3}
-\contentsline {chapter}{\numberline {6}Case Studies}{40}{chapter.6}
-\contentsline {section}{\numberline {6.1}Nuggets in Simulation and on Hardware}{40}{section.6.1}
-\contentsline {subsection}{\numberline {6.1.1}Experimental Setup}{41}{subsection.6.1.1}
-\contentsline {subsection}{\numberline {6.1.2}Results}{42}{subsection.6.1.2}
-\contentsline {section}{\numberline {6.2}Model Accuracy Evaluation}{45}{section.6.2}
-\contentsline {chapter}{\numberline {7}Conclusion}{47}{chapter.7}
-\contentsline {chapter}{\numberline {A}Artifact Appendix}{54}{appendix.A}
-\contentsline {section}{\numberline {A.1}Abstract}{54}{section.A.1}
-\contentsline {section}{\numberline {A.2}Artifact check-list (meta-information)}{54}{section.A.2}
-\contentsline {section}{\numberline {A.3}Description}{56}{section.A.3}
-\contentsline {subsection}{\numberline {A.3.1}How to access}{56}{subsection.A.3.1}
-\contentsline {subsection}{\numberline {A.3.2}Hardware dependencies}{56}{subsection.A.3.2}
-\contentsline {subsection}{\numberline {A.3.3}Software dependencies}{57}{subsection.A.3.3}
-\contentsline {subsection}{\numberline {A.3.4}Data sets}{57}{subsection.A.3.4}
-\contentsline {subsection}{\numberline {A.3.5}Models}{57}{subsection.A.3.5}
-\contentsline {section}{\numberline {A.4}Installation}{57}{section.A.4}
-\contentsline {section}{\numberline {A.5}Experiment workflow}{58}{section.A.5}
-\contentsline {section}{\numberline {A.6}Evaluation and expected results}{59}{section.A.6}
-\contentsline {section}{\numberline {A.7}Experiment customization}{60}{section.A.7}
+\contentsline {subsection}{\numberline {3.2.2}Checkpoint Creation and Representative Region Simulation}{12}{subsection.3.2.2}
+\contentsline {section}{\numberline {3.3}Evaluation}{12}{section.3.3}
+\contentsline {chapter}{\numberline {4}The Nugget Framework}{15}{chapter.4}
+\contentsline {section}{\numberline {4.1}Unit of Work}{17}{section.4.1}
+\contentsline {section}{\numberline {4.2}Preparation}{18}{section.4.2}
+\contentsline {section}{\numberline {4.3}Interval Analysis}{19}{section.4.3}
+\contentsline {subsection}{\numberline {4.3.1}Interval Analysis LLVM Pass}{20}{subsection.4.3.1}
+\contentsline {subsection}{\numberline {4.3.2}Interval Analysis Executable}{20}{subsection.4.3.2}
+\contentsline {section}{\numberline {4.4}Nugget Creation}{22}{section.4.4}
+\contentsline {subsection}{\numberline {4.4.1}Markers}{22}{subsection.4.4.1}
+\contentsline {subsection}{\numberline {4.4.2}Overhead of Hooks}{23}{subsection.4.4.2}
+\contentsline {section}{\numberline {4.5}Sample Validating}{24}{section.4.5}
+\contentsline {chapter}{\numberline {5}Evaluation}{26}{chapter.5}
+\contentsline {section}{\numberline {5.1}Interval Analysis Efficiency (Goal 1)}{28}{section.5.1}
+\contentsline {subsection}{\numberline {5.1.1}Comparison with Functional Simulation}{28}{subsection.5.1.1}
+\contentsline {subsection}{\numberline {5.1.2}Mix of Workload Types}{30}{subsection.5.1.2}
+\contentsline {subsection}{\numberline {5.1.3}Scaling with Number of Threads}{31}{subsection.5.1.3}
+\contentsline {subsection}{\numberline {5.1.4}Summary}{33}{subsection.5.1.4}
+\contentsline {section}{\numberline {5.2}Applying Sampling Methodologies to the Nugget Framework and Validating the Selected Samples (Goals 2 \& 3)}{34}{section.5.2}
+\contentsline {subsection}{\numberline {5.2.1}Sampling Methodologies}{34}{subsection.5.2.1}
+\contentsline {subsection}{\numberline {5.2.2}Sample Validation}{35}{subsection.5.2.2}
+\contentsline {subsection}{\numberline {5.2.3}Hook Overhead}{36}{subsection.5.2.3}
+\contentsline {chapter}{\numberline {6}Case Studies}{39}{chapter.6}
+\contentsline {section}{\numberline {6.1}Nuggets in Simulation and on Hardware}{39}{section.6.1}
+\contentsline {subsection}{\numberline {6.1.1}Experimental Setup}{40}{subsection.6.1.1}
+\contentsline {subsection}{\numberline {6.1.2}Results}{41}{subsection.6.1.2}
+\contentsline {section}{\numberline {6.2}Model Accuracy Evaluation}{44}{section.6.2}
+\contentsline {chapter}{\numberline {7}Conclusion}{46}{chapter.7}
+\contentsline {chapter}{\numberline {A}Artifact Appendix}{53}{appendix.A}
+\contentsline {section}{\numberline {A.1}Abstract}{53}{section.A.1}
+\contentsline {section}{\numberline {A.2}Artifact check-list (meta-information)}{53}{section.A.2}
+\contentsline {section}{\numberline {A.3}Description}{55}{section.A.3}
+\contentsline {subsection}{\numberline {A.3.1}How to access}{55}{subsection.A.3.1}
+\contentsline {subsection}{\numberline {A.3.2}Hardware dependencies}{55}{subsection.A.3.2}
+\contentsline {subsection}{\numberline {A.3.3}Software dependencies}{56}{subsection.A.3.3}
+\contentsline {subsection}{\numberline {A.3.4}Data sets}{56}{subsection.A.3.4}
+\contentsline {subsection}{\numberline {A.3.5}Models}{56}{subsection.A.3.5}
+\contentsline {section}{\numberline {A.4}Installation}{56}{section.A.4}
+\contentsline {section}{\numberline {A.5}Experiment workflow}{57}{section.A.5}
+\contentsline {section}{\numberline {A.6}Evaluation and expected results}{58}{section.A.6}
+\contentsline {section}{\numberline {A.7}Experiment customization}{59}{section.A.7}

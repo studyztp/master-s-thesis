@@ -5,12 +5,7 @@ However, the involvement of the operating system introduces new challenges for s
 The address space must remain stable throughout the application's execution to ensure accurate profiling, and kernel-level instructions, which can vary significantly across microarchitectures, should be excluded from application phase analysis.
 
 We implement the LoopPoint methodology in gem5~\cite{11_gem5,20_gem5}, a cycle-level simulator widely used in both academia and industry that supports full-system simulation.
-To support the methodology, we introduce two new probe modules: the LoopPoint Analysis module and the PcCount Tracker module.
-
-The LoopPoint methodology involves three primary steps: phase analysis, checkpoint creation, and representative region simulation, as described in Section~\ref{sec:looppoint_background}.
-The LoopPoint Analysis module performs phase analysis to identify recurring loops and characterize application behavior.
-Representative regions are then selected based on offline clustering of the phase analysis results, and gem5 checkpoints are created at the corresponding region boundaries.
-Finally, the PcCount Tracker module drives detailed simulation of these checkpoints with appropriate warmup.
+Following the three-stage pipeline described in Section~\ref{sec:looppoint_background}, our implementation maps each stage to gem5 through two new probe modules: the LoopPoint Analysis module, which handles phase analysis, and the PcCount Tracker module, which drives checkpoint creation and representative region simulation.
 As of gem5 version 24.1, this LoopPoint functionality has been upstreamed and is readily available.
 
 \subsubsection{Phase Analysis}
@@ -32,8 +27,6 @@ The analysis produces a list of regions with their basic block vectors (BBVs) an
     \label{fig:gem5-looppoint-analysis-flow}
 \end{figure}
 \FloatBarrier
-
-\newpage
 
 \subsubsection{Checkpoint Creation and Representative Region Simulation}
 

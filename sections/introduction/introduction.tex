@@ -26,8 +26,8 @@ Prior targeted sampling techniques have three main drawbacks that limit their ap
 \end{itemize}
 
 This study takes a two-part approach.
-First, because existing sampling methodologies have only been validated in user-mode simulation, we implement the state-of-the-art LoopPoint methodology in gem5's full-system mode and evaluate it with the NPB benchmark suite---the first such full-system evaluation.
-This investigation confirms that LoopPoint can be extended to full-system simulation, but also highlights that validating sampling accuracy still requires a full baseline simulation, the very bottleneck that sampling aims to avoid.
+First, because existing sampling methodologies have mostly been validated in user-mode simulation, we implement the state-of-the-art LoopPoint methodology in gem5's full-system mode and evaluate it with the NPB benchmark suite.
+This investigation confirms that LoopPoint can be extended to full-system simulation, but also highlights that the analysis remains time-consuming and that validating sampling accuracy still requires a full baseline simulation---the very bottleneck that sampling aims to avoid.
 
 Motivated by this observation, we present \emph{Nugget}, a framework for agile targeted sampling development.
 Because modern applications exhibit varied characteristics, we believe there is no one-size-fits-all sampling methodology or selection algorithm~\cite{survey_phase_classification,accl_warmup_sampled_simulation,characterizing_and_comparing_prevailing_simulation_techniques,analysis_of_statistical_sampling_in_microarchitecture_simulation}.
@@ -44,8 +44,3 @@ The main contributions of this study are:
     \item \textbf{An efficient validation methodology} \revision{that validates the selected samples for the target workload and input on native hardware, integrated into the development workflow.}
 \end{itemize}
 
-% In this paper, we present the motivations behind Nugget and review prior work in Section~\ref{sec:motivation_and_prior_work}.
-% We then describe Nugget in Section~\ref{sec:the_nugget_framework}, covering its preparation, interval analysis, sample creation, and validation.
-% In Section~\ref{sec:evaluation}, we evaluate the framework against its goals, examining the efficiency of interval analysis, the automatic generation of cross-binary samples, and the validation of selected samples.
-% Section~\ref{sec:case_study} illustrates two use cases of Nugget: using nuggets on real hardware to validate the effectiveness of the sample set, and using \emph{nuggets} as microbenchmarks to verify simulation models.
-% Finally, we conclude in Section~\ref{sec:conclusion}.

@@ -46,16 +46,20 @@ Figure~\ref{fig:gem5_fs_npb_A} shows the relative prediction error for the NPB c
 The prediction errors for class~A benchmarks are somewhat elevated because the benchmarks do not contain enough regions for the methodology to build an accurate sample set.
 For example, only eight total regions are discovered for \textit{cg} (from which two representatives are selected) and three for \textit{is} (from which one is selected).
 With so few regions, the clustering and selection process has limited statistical power.
-The prediction errors are not consistent across the x86 and Arm configurations, meaning that using predicted runtimes to compare performance across ISAs can compound the error beyond the absolute error of each individual prediction.
-This underscores the need for apples-to-apples samples---the same set of representative regions used across different ISAs---to avoid the additional error introduced by independently selecting samples for each configuration.
+The prediction errors are not consistent across the x86 and Arm configurations.
+Because LoopPoint constructs BBVs from machine-level basic blocks and defines region boundaries with ISA-specific (PC, count) pairs, each ISA binary produces a different set of regions, clusters, and representative samples.
+As a result, using predicted runtimes to compare performance across ISAs can compound the error beyond the absolute error of each individual prediction.
+This underscores the need for ISA-independent samples---the same set of representative regions used across different ISAs---to avoid the additional error introduced by independently selecting samples for each configuration.
 
 Figure~\ref{fig:gem5_npb_A_all} also shows the speedup achieved by sampled simulation.
 The speedup is calculated as the reduction in the number of instructions simulated in detailed mode compared to the full baseline.
 Due to the limited number of regions discovered for class~A benchmarks, the selected representatives constitute a large fraction of the total regions, resulting in modest speedup for this experiment.
 The speedup from the LoopPoint methodology primarily depends on the number of samples required to achieve a target accuracy, rather than on the simulator itself; larger workloads with more regions would yield greater reductions.
 
-These results demonstrate that the LoopPoint methodology can be extended to full-system simulation in gem5, but they also highlight a key limitation: validating the methodology's accuracy requires completing a full baseline simulation, which is the very bottleneck that sampling aims to avoid.
-This observation motivates the Nugget framework's approach of validating samples on real hardware, which we present in Section~\ref{sec:the_nugget_framework}.
+These results demonstrate that the LoopPoint methodology can be extended to full-system simulation in gem5, but they also highlight two key limitations.
+First, validating the methodology's accuracy requires completing a full baseline simulation---the very bottleneck that sampling aims to avoid.
+Second, because LoopPoint's analysis is tied to a specific binary, each ISA produces a different set of representative samples, making cross-ISA comparison unreliable.
+These observations motivate the Nugget framework (Section~\ref{sec:the_nugget_framework}), which validates samples on real hardware without simulation and defines samples at the LLVM IR level so that the same set of representative regions can be used across different ISAs.
 
 \begin{figure}[ht]
     \centering

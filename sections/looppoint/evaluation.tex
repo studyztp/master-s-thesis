@@ -38,6 +38,34 @@ We use Class~A input size with eight threads for our experiments, as larger inpu
 In addition to evaluating in a full-system environment, we test the methodology across different ISAs and system configurations, as detailed in Table~\ref{tab:gem5-config}.
 We use Ubuntu 24.04 as the guest operating system in all experiments.
 
+\begin{figure}[ht]
+  \centering
+  \begin{subfigure}[b]{0.65\linewidth}
+      \centering
+      \includegraphics[width=\linewidth]{images/gem5_fs_err.pdf}
+      \caption{Prediction error}
+      \label{fig:gem5_fs_npb_A}
+  \end{subfigure}
+
+  \vspace{1em}
+
+  \begin{subfigure}[b]{0.48\linewidth}
+      \centering
+      \includegraphics[width=\linewidth]{images/gem5_fs_speedup.pdf}
+      \caption{Serial Speedup}
+      \label{fig:gem5_npb_ser}
+  \end{subfigure}
+  \hfill
+  \begin{subfigure}[b]{0.48\linewidth}
+      \centering
+      \includegraphics[width=\linewidth]{images/gem5_fs_par_speedup.pdf}
+      \caption{Parallel Speedup}
+      \label{fig:gem5_npb_par}
+  \end{subfigure}
+  \caption{LoopPoint prediction error and speedup comparison for NPB Class~A with eight threads in full-system mode.}
+  \label{fig:gem5_npb_A_all}
+\end{figure}
+
 We conduct phase analysis and checkpoint creation in gem5's functional mode.
 The checkpoints of selected representative regions are then simulated in detailed mode using the configurations shown in Table~\ref{tab:gem5-config}.
 We evaluate the accuracy of the LoopPoint methodology by comparing the predicted runtimes against baseline full simulations.
@@ -61,31 +89,3 @@ First, validating the methodology's accuracy requires completing a full baseline
 Second, because LoopPoint's analysis is tied to a specific binary, each ISA produces a different set of representative samples, making cross-ISA comparison unreliable.
 Third, interval analysis via functional simulation is time-consuming; in Section~\ref{sec:comparison_with_functional_simulation}, we use the LoopPoint module to show that this overhead makes analysis impractical for realistic input sizes.
 These observations motivate the Nugget framework (Section~\ref{sec:the_nugget_framework}), which validates samples on real hardware without simulation and defines samples at the LLVM IR level so that the same set of representative regions can be used across different ISAs.
-
-\begin{figure}[ht]
-    \centering
-    \begin{subfigure}[b]{0.65\linewidth}
-        \centering
-        \includegraphics[width=\linewidth]{images/gem5_fs_err.pdf}
-        \caption{Prediction error}
-        \label{fig:gem5_fs_npb_A}
-    \end{subfigure}
-
-    \vspace{1em}
-
-    \begin{subfigure}[b]{0.48\linewidth}
-        \centering
-        \includegraphics[width=\linewidth]{images/gem5_fs_speedup.pdf}
-        \caption{Serial Speedup}
-        \label{fig:gem5_npb_ser}
-    \end{subfigure}
-    \hfill
-    \begin{subfigure}[b]{0.48\linewidth}
-        \centering
-        \includegraphics[width=\linewidth]{images/gem5_fs_par_speedup.pdf}
-        \caption{Parallel Speedup}
-        \label{fig:gem5_npb_par}
-    \end{subfigure}
-    \caption{LoopPoint prediction error and speedup comparison for NPB Class~A with eight threads in full-system mode.}
-    \label{fig:gem5_npb_A_all}
-\end{figure}

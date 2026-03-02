@@ -2,7 +2,7 @@
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {3.1}{\ignorespaces LoopPoint analysis flow in gem5.\relax }}{11}{figure.caption.4}
-\contentsline {figure}{\numberline {3.2}{\ignorespaces LoopPoint prediction error and speedup comparison for NPB Class\nobreakspace {}A with eight threads in full-system mode.\relax }}{14}{figure.caption.6}
+\contentsline {figure}{\numberline {3.2}{\ignorespaces LoopPoint prediction error and speedup comparison for NPB Class\nobreakspace {}A with eight threads in full-system mode.\relax }}{13}{figure.caption.6}
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {4.1}{\ignorespaces Nugget pipeline. The process is divided into two main stages: (1) preparation and analysis, and (2) nugget selection and validation. The preparation and analysis stage, including base IR file creation and interval analysis execution, needs to be performed only once per program. Nugget creation and validation can be repeated to refine and select the most representative set of samples for the workload.\relax }}{16}{figure.caption.7}
 \addvspace {10\p@ }

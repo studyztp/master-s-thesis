@@ -19,12 +19,12 @@ Warning--missing school in dynamorio
 Done.
 You've used 51 entries,
             4498 wiz_defined-function locations,
-            1209 strings with 22700 characters,
-and the built_in function-call counts, 52105 in all, are:
+            1209 strings with 22702 characters,
+and the built_in function-call counts, 52103 in all, are:
 = -- 4378
 > -- 2195
 < -- 258
-+ -- 1093
++ -- 1092
 - -- 634
 * -- 2875
 := -- 7656
@@ -48,7 +48,7 @@ purify$ -- 412
 quote$ -- 2
 skip$ -- 3505
 stack$ -- 0
-substring$ -- 1785
+substring$ -- 1784
 swap$ -- 2410
 text.length$ -- 49
 text.prefix$ -- 0

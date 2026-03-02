@@ -340,6 +340,9 @@ INPUT sections/evaluation/sample_and_validation.tex
 INPUT images/prediction_error_by_machine_method_2panel.pdf
 INPUT ./images/prediction_error_by_machine_method_2panel.pdf
 INPUT ./images/prediction_error_by_machine_method_2panel.pdf
+INPUT images/speedup_vs_runtime_prediction_error.pdf
+INPUT ./images/speedup_vs_runtime_prediction_error.pdf
+INPUT ./images/speedup_vs_runtime_prediction_error.pdf
 INPUT images/marker_executions_2panel.pdf
 INPUT ./images/marker_executions_2panel.pdf
 INPUT ./images/marker_executions_2panel.pdf

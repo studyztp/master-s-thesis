@@ -32,14 +32,14 @@
 \contentsline {section}{\numberline {5.2}Applying Sampling Methodologies to the Nugget Framework and Validating the Selected Samples (Goals 2 \& 3)}{33}{section.5.2}
 \contentsline {subsection}{\numberline {5.2.1}Sampling Methodologies}{33}{subsection.5.2.1}
 \contentsline {subsection}{\numberline {5.2.2}Sample Validation}{34}{subsection.5.2.2}
-\contentsline {subsection}{\numberline {5.2.3}Hook Overhead}{35}{subsection.5.2.3}
-\contentsline {chapter}{\numberline {6}Case Studies}{38}{chapter.6}
-\contentsline {section}{\numberline {6.1}Nuggets in Simulation and on Hardware}{39}{section.6.1}
-\contentsline {subsection}{\numberline {6.1.1}Experimental Setup}{39}{subsection.6.1.1}
-\contentsline {subsection}{\numberline {6.1.2}Results}{40}{subsection.6.1.2}
-\contentsline {section}{\numberline {6.2}Model Accuracy Evaluation}{43}{section.6.2}
-\contentsline {chapter}{\numberline {7}Conclusion}{46}{chapter.7}
-\contentsline {section}{\numberline {7.1}LoopPoint Full-System Evaluation}{46}{section.7.1}
-\contentsline {section}{\numberline {7.2}Nugget Framework Contributions}{47}{section.7.2}
-\contentsline {section}{\numberline {7.3}Limitations}{47}{section.7.3}
-\contentsline {section}{\numberline {7.4}Future Work}{48}{section.7.4}
+\contentsline {subsection}{\numberline {5.2.3}Hook Overhead}{36}{subsection.5.2.3}
+\contentsline {chapter}{\numberline {6}Case Studies}{39}{chapter.6}
+\contentsline {section}{\numberline {6.1}Nuggets in Simulation and on Hardware}{40}{section.6.1}
+\contentsline {subsection}{\numberline {6.1.1}Experimental Setup}{40}{subsection.6.1.1}
+\contentsline {subsection}{\numberline {6.1.2}Results}{41}{subsection.6.1.2}
+\contentsline {section}{\numberline {6.2}Model Accuracy Evaluation}{44}{section.6.2}
+\contentsline {chapter}{\numberline {7}Conclusion}{47}{chapter.7}
+\contentsline {section}{\numberline {7.1}LoopPoint Full-System Evaluation}{47}{section.7.1}
+\contentsline {section}{\numberline {7.2}Nugget Framework Contributions}{48}{section.7.2}
+\contentsline {section}{\numberline {7.3}Limitations}{48}{section.7.3}
+\contentsline {section}{\numberline {7.4}Future Work}{49}{section.7.4}

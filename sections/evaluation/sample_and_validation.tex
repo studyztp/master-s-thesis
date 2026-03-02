@@ -62,6 +62,21 @@ As the figure shows, the sampling approach that yields the lowest prediction err
 For example, for ``sp,'' the ``Random'' approach with 50 samples achieves the lowest prediction error across all methods, and this holds on both machines, suggesting that this sample set is architecturally and microarchitecturally independent.
 In contrast, for ``lbm,'' the ``K-means'' approach consistently yields the lowest prediction error.
 
+\begin{figure}[!t]
+    \centering
+    \includegraphics[width=\linewidth]{images/speedup_vs_runtime_prediction_error.pdf}
+    \caption{Comparison of average absolute runtime prediction error and speedup prediction error for the nuggets shown in Figure~\ref{fig:prediction_error_by_machine_method}. Speedup is computed as the ratio of predicted runtimes between two machines.}
+    \label{fig:speedup_vs_runtime_error}
+\end{figure}
+
+Although the absolute runtime prediction errors can be large for some workloads, a more practically relevant question is whether these errors are consistent across machines.
+To investigate this, we use the predicted runtimes from our nuggets to compute predicted speedup between the two hardware platforms and compare the resulting speedup prediction error against the individual runtime prediction errors.
+Figure~\ref{fig:speedup_vs_runtime_error} presents this comparison.
+As shown, the average speedup prediction error is significantly smaller than the average runtime prediction error, even when the outlier workload ``is'' is included in the data set.
+For example, the K-means approach yields an average runtime prediction error of 70.13\% but a speedup prediction error of only 7.58\%, while the Random approach with 50 samples yields 126.90\% for runtime but only 8.92\% for speedup.
+This occurs because when the prediction error is consistent across machines---that is, the predicted runtime on both machines deviates from the true runtime in the same direction and by a similar proportion---the errors cancel out in the speedup ratio, yielding an accurate relative performance prediction.
+This observation indicates that \emph{consistency} of prediction error across platforms matters more than minimizing the absolute prediction error on any single machine.
+
 We focus on demonstrating Nugget's ability to validate samples on distinct machines in this section.
 In Section~\ref{sec:model_performance_evaluation}, we will further analyze how to utilize the hardware validation data with a case study.
 We also find that maintaining consistency across machines is a stronger indicator of sample quality than minimizing prediction error on any single platform.

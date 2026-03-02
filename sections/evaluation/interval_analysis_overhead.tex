@@ -2,8 +2,8 @@
 
 In this section, we evaluate the efficiency of Nugget's interval analysis.
 We define efficiency using two criteria:
-(1) \textit{low slowdown}, quantified as the ratio between the time spent on interval analysis and the time required for executing the full workload; and
-(2) \textit{flexibility}, meaning the ability to perform the analysis across different host machines.
+(1) \emph{low slowdown}, quantified as the ratio between the time spent on interval analysis and the time required for executing the full workload; and
+(2) \emph{flexibility}, meaning the ability to perform the analysis across different host machines.
 
 During interval analysis, we identify all valid intervals and collect two key artifacts: the LLVM IR Basic Block (IRBB) vector and the count-stamp vector (Section~\ref{sec:interval_analysis_executable}).
 These outputs are later used to generate nuggets.

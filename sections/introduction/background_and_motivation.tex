@@ -13,10 +13,10 @@ In this section, we discuss each of these limitations and how prior work in samp
 
 Targeted sampling techniques require analyzing the entire workload execution, which is a time-consuming process.
 
-For example, the SPECspeed suite in the \revision{SPEC~CPU2017} benchmark suite~\cite{spec2017} has an average of 21.8 trillion dynamic instructions per benchmark for floating point benchmarks with reference input size, which is the only input size designed to report time metrics~\cite{spec2017-workload-characterization}.
+For example, the SPECspeed suite in the \revision{SPEC~CPU2017} benchmark suite~\cite{spec2017} has an average of 21.8 trillion dynamic instructions per benchmark for floating-point benchmarks with reference input size, which is the only input size designed to report time metrics~\cite{spec2017-workload-characterization}.
 Functional simulators, such as the gem5 atomic model, are often limited to a simulation rate of approximately 1 Million Instructions Per Second (MIPS)~\cite{sustainable_gem5_simulations}.
 Therefore, it takes approximately 250 days of \revision{wall-clock} time to analyze an average SPECspeed benchmark with reference input size.
-More recent workloads (e.g., the forthcoming SPEC~CPUv8~\cite{spec2017v8}, HPC workloads, and machine learning workloads) are significantly larger, making functional simulation infeasible.
+More recent workloads (e.g., the forthcoming SPEC~CPUv8~\cite{spec2017v8}, HPC workloads, and machine-learning workloads) are significantly larger, making functional simulation infeasible.
 
 For multi-threaded benchmarks, the analysis overhead is even worse.
 We must analyze the program once for every different thread configuration because the number of threads affects the program's execution.

@@ -17,5 +17,5 @@
 \contentsline {figure}{\numberline {6.2}{\ignorespaces Speedup: Random vs.\ K-means samples when ISA varies and microarchitecture is fixed, Config\nobreakspace {}3 vs.\ Config\nobreakspace {}4.\relax }}{42}{figure.caption.23}
 \contentsline {figure}{\numberline {6.3}{\ignorespaces Speedup between Random and K-means samples when microarchitecture varies and ISA is fixed: Config\nobreakspace {}4 over Config\nobreakspace {}2 for Arm, and Config\nobreakspace {}3 over Config\nobreakspace {}1 for x86.\relax }}{43}{figure.caption.24}
 \contentsline {figure}{\numberline {6.4}{\ignorespaces Speedup comparison between Random and K-means samples when both ISA and microarchitecture vary across simulation models. ``K'' indicates K-means samples, and ``R'' indicates Random samples.\relax }}{44}{figure.caption.25}
-\contentsline {figure}{\numberline {6.5}{\ignorespaces Comparison of the number of memory instructions for two different microcodings in gem5 vs.\ real hardware.\relax }}{46}{figure.caption.26}
+\contentsline {figure}{\numberline {6.5}{\ignorespaces Comparison of the number of memory instructions for two different microcodings in gem5 vs.\ real hardware.\relax }}{45}{figure.caption.26}
 \addvspace {10\p@ }

@@ -19,18 +19,18 @@ they capture the diverse instruction mix and control flow found in the real work
 
 % In the following we describe how we used nuggets from the NAS Parallel benchmarks to identify a source of discrepancy in our models of Ampere Altra processor.
 
-To improve our model's accuracy, we collected hardware performance counters for 234 nuggets and compared the hardware counters to gem5 statistics for each nugget to identify the nuggets with the largest error.
-We found that the data cache statistics explained most of the runtime error and for more than 97\% of the nuggets, the error in the number of accesses to the data cache could be explained by differences in the number of memory instructions.
-We isolated the problem by inspecting execution traces from a small set of the nuggets. %---4 randomly selected nuggets and the nuggets with the largest and smallest error in number of memory instructions.
-We observed that the nugget with the largest error was dominated by Arm's paired memory instructions (e.g., ldp, stp), while fewer were present in samples with small error.
-% However, our microbenchmarks did not exercise these instructions.
-
 \begin{figure}[!t]
   \centering
   \includegraphics[width=\linewidth]{images/microcode_comp.pdf}
   \caption{Comparison of the number of memory instructions for two different microcodings in gem5 vs.\ real hardware.}
   \label{fig:microcode_comp}
 \end{figure}
+
+To improve our model's accuracy, we collected hardware performance counters for 234 nuggets and compared the hardware counters to gem5 statistics for each nugget to identify the nuggets with the largest error.
+We found that the data cache statistics explained most of the runtime error and for more than 97\% of the nuggets, the error in the number of accesses to the data cache could be explained by differences in the number of memory instructions.
+We isolated the problem by inspecting execution traces from a small set of the nuggets. %---4 randomly selected nuggets and the nuggets with the largest and smallest error in number of memory instructions.
+We observed that the nugget with the largest error was dominated by Arm's paired memory instructions (e.g., ldp, stp), while fewer were present in samples with small error.
+% However, our microbenchmarks did not exercise these instructions.
 
 Figure~\ref{fig:microcode_comp} shows a comparison of the number of memory instructions in our selected nuggets for three different microcodings.
 The orange bars show the number of memory instructions with the default microcoding of gem5;

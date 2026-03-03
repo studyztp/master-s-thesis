@@ -17,6 +17,5 @@ LLVM~\cite{llvm} is an open-source compiler infrastructure that transforms sourc
 LLVM IR instructions abstract away the underlying machine-level instructions, so as long as the control flow remains the same at the LLVM IR level, the definition of all intervals of program execution remains consistent across different binaries.
 Since LLVM IR instructions are an abstraction of machine-level instructions, the number of executed LLVM IR instructions reflects the progress of program execution just as the number of executed machine-level instructions does.
 
-\shepherd{
 Therefore, Nugget's unit of work is suitable for applications that have stable control flow across different platforms.
-Applications such as gradient descent, where floating-point precision might affect the control flow, are not suitable for Nugget or for any sampling methodologies that rely on the application having stable control flows across microarchitectures~\cite{wavelet-based,simpoint,looppoint,cross_binary_simpoints,pacsim,barrier_point,simpoint-plus,parrot}.}
+Applications such as gradient descent, where floating-point precision might affect the control flow, are not suitable for Nugget or for any sampling methodologies that rely on the application having stable control flows across microarchitectures~\cite{wavelet-based,simpoint,looppoint,cross_binary_simpoints,pacsim,barrier_point,simpoint-plus,parrot}.

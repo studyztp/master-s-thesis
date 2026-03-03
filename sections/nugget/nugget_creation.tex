@@ -10,22 +10,18 @@ In this section, we describe how Nugget creates these markers and mitigates thei
 In Nugget, a \emph{marker} is a mechanism for identifying a specific point in program execution, defined according to our unit of work.
 Because progress is measured by the number of executed LLVM IR instructions (Section~\ref{sec:unit_of_work}), our markers are directly tied to the IR instruction count.
 
-\shepherd{We designate the last executed LLVM IR basic block (IRBB) that completes the target instruction count as a \emph{marker}.
+We designate the last executed LLVM IR basic block (IRBB) that completes the target instruction count as a \emph{marker}.
 This marker consists of two components: the IRBB itself and the number of times it must execute. 
 The end marker for an interval is determined using the IRBB vector and count-stamp vector gathered during interval analysis (Section~\ref{sec:interval_analysis_executable}).
 Specifically, we use the count-stamp vector (Section~\ref{sec:interval_analysis_executable}) to identify the last executed IRBB of the interval, which becomes the basic block for the end marker, and the IRBB vector to determine how many times that block must execute to reach the interval's endpoint.
-Because the start of one interval corresponds to the end of the previous interval, we reuse the end marker of the preceding interval as the start marker for the next.}
+Because the start of one interval corresponds to the end of the previous interval, we reuse the end marker of the preceding interval as the start marker for the next.
 
-\shepherd{
 Nugget inserts hooks at these marker IRBBs during the nugget creation LLVM pass.
 These hooks track IRBB executions and trigger specific actions, such as resetting statistics in a simulator or starting a timer on real hardware.
-}
 
 When using \emph{nuggets} in simulation, we can also mark the start of a warmup interval.
 The warmup interval does not belong to the selected sample but is a period of execution used to warm up the microarchitectural state in simulation models, assuming functional simulation is used to fast-forward execution before the sample starts~\cite{ComputerArchitecturePerformanceEvaluationMethods}.
-\revision{
 Any contiguous and antecedent intervals of the sample interval can be used as the warmup interval, so one can choose how many intervals to use for warmup.
-} 
 
 \subsubsection{Overhead of Hooks}\label{sec:overhead_of_hooks}
 

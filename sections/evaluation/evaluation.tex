@@ -73,11 +73,9 @@ We then address the second and third goals by employing two simple sample select
 Table~\ref{tab:system-configuration} presents the detailed configurations of the real hardware used in our evaluation. 
 For the simulation models, we employ a basic generic functional model using the ATOMIC CPU in gem5, running a guest Ubuntu~24.04 environment, to perform interval analysis on both x86 and Arm architectures.
 
-\revision{
-We evaluate Nugget using the SPEC CPU~2017 benchmark suite, the NAS Parallel Benchmarks (NPB) suite~\cite{npb}, and the LSMS benchmark~\cite{LSMS}, covering a wide range of realistic workloads as summarized in Table~\ref{tab:benchmark-suites}. 
-}
+We evaluate Nugget using the SPEC CPU~2017 benchmark suite, the NAS Parallel Benchmarks (NPB) suite~\cite{npb}, and the LSMS benchmark~\cite{LSMS}, covering a wide range of realistic workloads as summarized in Table~\ref{tab:benchmark-suites}.
 
-\revision{We use the ``-O2'' optimization level for the compilation.}
+We use the ``-O2'' optimization level for the compilation.
 The input chosen for each benchmark is too large to be simulated in feasible time (except for NPB class ``A'').
 
 For SPEC~CPU2017, we use the reference input sizes, which require between 198~billion and 9{,}897~billion instructions.
@@ -85,15 +83,13 @@ For NPB, we use class ``C'' and ``D'' inputs, with class ``C'' requiring between
 For LSMS, we use the Fe input, which requires between 28{,}484~billion and 198{,}885~billion instructions (one binary per ISA).
 
 
-\shepherd{We used SPEC~CPU2017 Integer suite, except for ``619.lbm\_s'' and ``644.nab\_s'', which are from the Floating-Point suite.}
-\revision{
-  We do not include CPU~2017 benchmarks that failed to compile with the original SPEC~CPU2017 GCC build system (6 benchmarks) or encountered Fortran linking issues (5 benchmarks).
+We used SPEC~CPU2017 Integer suite, except for ``619.lbm\_s'' and ``644.nab\_s'', which are from the Floating-Point suite.
+We do not include CPU~2017 benchmarks that failed to compile with the original SPEC~CPU2017 GCC build system (6 benchmarks) or encountered Fortran linking issues (5 benchmarks).
   We did not encounter the same Fortran linking issues with any NPB Fortran benchmarks.
 % All the SPEC CPU~2017 workloads used here, expect for ``619.lbm\_s'' and ``644.nab\_s'', are from the Integer suite.
 % The benchmarks not included from the suite either failed to compile with the original SPEC CPU~2017 GCC build system (6 benchmarks) or encountered Fortran linking issues with the LLVM workflow we used (5 benchmarks) while not having issues with NPB's Fortran benchmarks.
 % The benchmarks that only has ``x86'' but not ``Arm'' result are crashed due to LLVM backend produces ``x86'' datalayout on ``AArch64''.
 % This is a limitation of the LLVM version we used on cross-compiling from an existing LLVM IR file.
-}
 
 To accurately measure hardware performance, we employ \textit{cpuset} to strictly bind workloads to specific cores and memory nodes. 
 We also disable CPU frequency scaling and fix the CPU at a constant frequency. 

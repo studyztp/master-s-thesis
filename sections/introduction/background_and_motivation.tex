@@ -13,9 +13,9 @@ In this section, we discuss each of these limitations and how prior work in samp
 
 Targeted sampling techniques require analyzing the entire workload execution, which is a time-consuming process.
 
-For example, the SPECspeed suite in the \revision{SPEC~CPU2017} benchmark suite~\cite{spec2017} has an average of 21.8 trillion dynamic instructions per benchmark for floating-point benchmarks with reference input size, which is the only input size designed to report time metrics~\cite{spec2017-workload-characterization}.
+For example, the SPECspeed suite in the SPEC~CPU2017 benchmark suite~\cite{spec2017} has an average of 21.8 trillion dynamic instructions per benchmark for floating-point benchmarks with reference input size, which is the only input size designed to report time metrics~\cite{spec2017-workload-characterization}.
 Functional simulators, such as the gem5 atomic model, are often limited to a simulation rate of approximately 1 Million Instructions Per Second (MIPS)~\cite{sustainable_gem5_simulations}.
-Therefore, it takes approximately 250 days of \revision{wall-clock} time to analyze an average SPECspeed benchmark with reference input size.
+Therefore, it takes approximately 250 days of wall-clock time to analyze an average SPECspeed benchmark with reference input size.
 More recent workloads (e.g., the forthcoming SPEC~CPUv8~\cite{spec2017v8}, HPC workloads, and machine-learning workloads) are significantly larger, making functional simulation infeasible.
 
 For multi-threaded benchmarks, the analysis overhead is even worse.
@@ -58,42 +58,33 @@ Automatically generate samples that are independent of the binary.
 \subsection{Validating The Selected Samples Is Infeasible}\label{sec:validating_the_selected_samples_is_infeasible}
 
 Sampling methodologies aim to predict overall program performance by measuring only a subset of representative samples and extrapolating the full-program behavior using statistical models. 
-Most methodologies focus on predicting metrics that \revision{summarize} the entire hardware performance, such as instructions per cycle (IPC) or total runtime.
+Most methodologies focus on predicting metrics that summarize the entire hardware performance, such as instructions per cycle (IPC) or total runtime.
 
 To evaluate the accuracy of a set of samples selected by a sampling methodology, we compare the predicted performance metrics against ground truth measurements. 
 First, we measure the target performance metric from a full execution of the program on the experimental system, which serves as the ground truth. 
 Next, we measure the same metric for the selected samples and apply statistical processing to estimate the full-program value. 
 Finally, we compare the predicted value to the ground truth to quantify the accuracy of the selected samples.
 
-\revision{
-The effectiveness of a sample selection method depends on benchmark characteristics. }
-\shepherd{Differences in control flow phase behavior, working set size and locality, and input sensitivity can cause a method that succeeds on one workload and input pair to misrepresent another~\cite{characterizing_and_comparing_prevailing_simulation_techniques,simpoint,hot-region-spec2017,xalancbmk,survey_phase_classification,eeckhout-microarchitecture-independent-signatures,MAV}.}
-\revision{
+The effectiveness of a sample selection method depends on benchmark characteristics.
+Differences in control flow phase behavior, working set size and locality, and input sensitivity can cause a method that succeeds on one workload and input pair to misrepresent another~\cite{characterizing_and_comparing_prevailing_simulation_techniques,simpoint,hot-region-spec2017,xalancbmk,survey_phase_classification,eeckhout-microarchitecture-independent-signatures,MAV}.
 For example, empirical studies (e.g., MAV~\cite{MAV}) report outliers where SimPoint fails to capture distinct memory access behavior while SimPoint reports an average 3\% IPC error with SPEC~CPU2000~\cite{spec2000} programs~\cite{wavelet-based}. 
 Hence, representative intervals should be validated.
 However, the only way to validate them is to run the entire workload.
-}
 
-\shepherd{Prior sampling techniques are typically evaluated on small benchmarks or truncated runs because their validation depends on simulation~\cite{wavelet-based,taskpoint,simpoint,looppoint,smarts,fsa,cross_binary_simpoints,pacsim,barrier_point,simpoint-plus,parrot}.}
-\revision{
+Prior sampling techniques are typically evaluated on small benchmarks or truncated runs because their validation depends on simulation~\cite{wavelet-based,taskpoint,simpoint,looppoint,smarts,fsa,cross_binary_simpoints,pacsim,barrier_point,simpoint-plus,parrot}.
 A missing piece is an agile path from methodology development to real-hardware-level validation. 
 The intent of the sample set is to approximate the behavior of the real system, so validation by simulation is only meaningful if the simulator faithfully models the target. 
 If it does not, the validation does not transfer.
 This also leads to difficulty in comparing different methodologies as results are tied to different simulators, forcing redundant engineering effort before we can make apples-to-apples comparisons.
-}
-For example, LoopPoint is validated with \revision{SPEC~CPU2017} benchmarks using train-size input with Sniper~\cite{sniper}.  
-FSA~\cite{fsa} is validated with the first 30~billion instructions of the \revision{SPEC~CPU2006~\cite{spec2006}} benchmarks with gem5~\cite{11_gem5,20_gem5}.
+For example, LoopPoint is validated with SPEC~CPU2017 benchmarks using train-size input with Sniper~\cite{sniper}.  
+FSA~\cite{fsa} is validated with the first 30~billion instructions of the SPEC~CPU2006~\cite{spec2006} benchmarks with gem5~\cite{11_gem5,20_gem5}.
 These techniques can only be validated in a limited way because they require a full detailed simulation from beginning to end of the workload to validate.
 Detailed simulation can be 2--10$\times$ slower than functional simulation, which implies that validation of full-sized workloads could take nearly a decade! 
 
-\revision{
 Lack of an agile workflow to validate quickly has led to sampling techniques being rarely validated with large benchmarks.
-}
-\shepherd{Evidence suggests that validation results from smaller benchmarks or partial executions do not generalize to larger benchmarks and realistic workloads~\cite{characterizing_and_comparing_prevailing_simulation_techniques,hot-region-spec2017,simpoint,spec2017-workload-characterization,wavelet-based}.}
-\revision{
+Evidence suggests that validation results from smaller benchmarks or partial executions do not generalize to larger benchmarks and realistic workloads~\cite{characterizing_and_comparing_prevailing_simulation_techniques,hot-region-spec2017,simpoint,spec2017-workload-characterization,wavelet-based}.
 Moreover, the program behavior of a workload with different input can be different~\cite{xalancbmk}.
 Thus, per benchmark and input pair validation is needed.
-}
 
 \begin{tcolorbox}
 \textbf{Goal 3:}

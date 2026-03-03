@@ -1,16 +1,6 @@
 \subsection{Applying Sampling Methodologies to the Nugget Framework and Validating the Selected Samples (Goals 2 \& 3)}
 \label{sec:sampling_methodology_validation}
 
-\begin{figure*}[t]
-    \centering
-    \includegraphics[width=\textwidth]{images/prediction_error_by_machine_method_2panel.pdf}
-      \caption{
-        Prediction error by machine and sampling method.
-        \textbf{All results shown are obtained from executing the nuggets directly on real hardware}, without using simulation.
-    }
-    \label{fig:prediction_error_by_machine_method}
-\end{figure*}
-
 The primary objective of Nugget is to support diverse sample selection methodologies while providing efficient interval analysis, binary-independent samples, and scalable validation capabilities.
 In this section, we leverage these features to execute the selected samples, \emph{nuggets}, directly on real hardware, enabling us to assess whether different sampling strategies can accurately predict full workload performance \emph{without relying on simulation}.
 
@@ -37,6 +27,17 @@ We assign equal weights to all intervals in the ``Random'' approach, whereas the
 \subsubsection{Sample Validation}
 \label{sec:sample_validation}
 
+\FloatBarrier
+\begin{figure*}[!t]
+    \centering
+    \includegraphics[width=\textwidth]{images/prediction_error_by_machine_method_2panel.pdf}
+      \caption{
+        Prediction error by machine and sampling method.
+        \textbf{All results shown are obtained from executing the nuggets directly on real hardware}, without using simulation.
+    }
+    \label{fig:prediction_error_by_machine_method}
+\end{figure*}
+
 We use the analysis information collected in Section~\ref{sec:mix_of_workload_types} to select samples with the ``Random'' and ``K-means'' approaches.
 We then generate nuggets for the selected samples and validate them as described in the Sample Creation and Validation step in Figure~\ref{fig:nugget_pipeline}.
 The nuggets are used to predict the runtime of each workload, with the runtime of the full execution serving as the baseline for calculating prediction error.
@@ -47,13 +48,11 @@ As shown, many workloads exhibit significant errors, often exceeding the accurac
 
 Several factors contribute to these elevated errors.
 (1) The sampling methodologies are naively designed. For example, the Random approach relies heavily on luck and the specific composition of the interval pool.
-\shepherd{
 (2) Previous work rarely validates samples on real hardware~\cite{wavelet-based,taskpoint,simpoint,looppoint,smarts,fsa,cross_binary_simpoints,pacsim,barrier_point,simpoint-plus,parrot}.
 Instead, they mostly rely on user-mode-only simulation, which is typically less noisy due to more controllable thread interleaving compared to actual hardware~\cite{variability_in_architectural_simulations_of_multithreaded_workloads,11_gem5,survey-simulator-techniques,deterministic_shared_memory_multiprocessing}. 
 In Section~\ref{sec:model_performance_evaluation}, we further analyze the sources of prediction error using smaller workloads in simulation.
 (3) Prior work rarely validates large workloads as we used in our experiments (e.g., reference input sizes for CPU2017). 
-Larger and more realistic applications exhibit increasingly complex behaviors~\cite{characterizing_and_comparing_prevailing_simulation_techniques,hot-region-spec2017, simpoint,spec2017-workload-characterization,wavelet-based,looppoint}, which demand more representative sample sets, as discussed in Section~\ref{sec:validating_the_selected_samples_is_infeasible}. 
-}
+Larger and more realistic applications exhibit increasingly complex behaviors~\cite{characterizing_and_comparing_prevailing_simulation_techniques,hot-region-spec2017, simpoint,spec2017-workload-characterization,wavelet-based,looppoint}, which demand more representative sample sets, as discussed in Section~\ref{sec:validating_the_selected_samples_is_infeasible}.
 In such cases, large program phases can amplify prediction error.
 (4) Hardware-based nuggets incur additional overhead for the begin and end interval markers, particularly in multi-threaded contexts, which further inflates prediction error. We provide a detailed discussion of this overhead in Section~\ref{sec:hook_overhead}.
 
@@ -88,27 +87,23 @@ This insight further underscores the importance of efficient, cross-platform val
 \begin{figure}[!t]
     \centering
     \includegraphics[width=\linewidth]{images/marker_executions_2panel.pdf}
-    \caption{\shepherd{The number of marker hook executions for the randomly selected nuggets shown in Figure~\ref{fig:prediction_error_by_machine_method}. The number of hook executions is normalized to the total number of IRBB executions during all nugget executions for each workload and input pair.}}
+    \caption{The number of marker hook executions for the randomly selected nuggets shown in Figure~\ref{fig:prediction_error_by_machine_method}. The number of hook executions is normalized to the total number of IRBB executions during all nugget executions for each workload and input pair.}
     \label{fig:marker_executions_combined}
 \end{figure}
 
 Nugget uses hook instructions to mark sample intervals, which can introduce runtime overhead during workload execution.
-\shepherd{
 In Figure~\ref{fig:marker_executions_combined}, we present the number of times the marker hooks are executed for the randomly selected nuggets shown in Figure~\ref{fig:prediction_error_by_machine_method}.
 The number of hook executions is normalized to the total number of IRBB executions during all nugget executions for each workload and input pair.
 As shown, ``is'' exhibits a significantly higher number of hook executions compared to other workloads, indicating that the prediction error observed for ``is'' in Figure~\ref{fig:prediction_error_by_machine_method} is influenced by the excessive overhead from hook executions.
-}
 Because ``is'' frequently executes only a small number of IRBBs within a parallel region, it triggers an excessive number of hook invocations.
 ``is'' was also one of the workloads with the largest overheads for analysis as shown in Figure~\ref{fig:simulation_interval_analysis_overhead}.
 This leads to substantial overhead and results in inaccurate prediction errors.
-\shepherd{Hook overhead can only slow execution, so it can cause false negatives (rejecting good samples) but is unlikely to cause false-positive conclusions.}
+Hook overhead can only slow execution, so it can cause false negatives (rejecting good samples) but is unlikely to cause false-positive conclusions.
 
-\shepherd{
 For other workloads, the number of hook executions does not show a clear correlation with the prediction error observed in Figure~\ref{fig:prediction_error_by_machine_method}.
 Cleanly separating the impact of hook overhead from other sources of prediction error is still challenging.
 The number of hook executions and the prediction errors observed suggest that the cutoff line for a good marker should be executing lower than 10\% for single-threaded workloads and lower than 1\% for multi-threaded workloads, in terms of the total IRBBs executed in the nugget, to avoid significant overhead impacting the validation results.
 Multi-threaded workloads are more sensitive to hook overhead due to the synchronization required for counting and threshold checks, as discussed in Section~\ref{sec:overhead_of_hooks}.
-}
 
 This behavior highlights a limitation of the current hook-based interval marking approach.
 Future work could explore alternative mechanisms to reduce this overhead or to decouple it from the validation results.

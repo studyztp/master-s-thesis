@@ -39,7 +39,7 @@ The overhead on the order of tens of thousands in functional simulation highligh
 On average, Nugget incurs a slowdown of $54\times$, with a maximum of $118\times$ for the ``cg'' benchmark.
 By comparison, LoopPoint's average overhead is $31,\!343\times$, peaking at $55,\!497\times$ for ``cg-x86.''
 
-Overall, multi-threaded workloads amplify interval analysis overhead because their baseline execution times are significantly \revision{shorter (due to parallelism) while} the analysis itself incurs greater cost from synchronization requirements.
+Overall, multi-threaded workloads amplify interval analysis overhead because their baseline execution times are significantly shorter (due to parallelism) while the analysis itself incurs greater cost from synchronization requirements.
 The single-threaded workloads in Figure~\ref{fig:interval_analysis_overhead} exhibit much lower overheads, which we discuss further in Section~\ref{sec:mix_of_workload_types}.
 The ``cg'' benchmark has the shortest execution time in this experiment (0.28~seconds), which further amplifies the measured overhead for both methods.
 The ``is'' benchmark exhibits the lowest overhead under functional simulation but still incurs a $95\times$ slowdown with Nugget, primarily due to the frequent executions of interval analysis hooks, as discussed in Section~\ref{sec:hook_overhead}.
@@ -52,16 +52,16 @@ In contrast, LoopPoint must repeat interval analysis for every binary variant or
 \subsubsection{Mix of Workload Types}
 \label{sec:mix_of_workload_types}
 
+We also evaluate overhead across a mix of workload types.
+For single-threaded workloads, we use the SPEC~CPU2017 suite with the \texttt{ref} input size and the LSMS benchmark with the \texttt{Fe} input size.
+For multi-threaded workloads, we use the NPB suite with Class ``C'' in this experiment.
+
 \begin{figure}[!t]
     \centering
     \includegraphics[width=\linewidth]{images/interval_analysis_overhead_2panel.pdf}
     \caption{Interval analysis overhead via Nugget across different workloads.}
     \label{fig:interval_analysis_overhead}
 \end{figure}
-
-We also evaluate overhead across a mix of workload types.
-For single-threaded workloads, we use the SPEC~CPU2017 suite with the \texttt{ref} input size and the LSMS benchmark with the \texttt{Fe} input size.
-For multi-threaded workloads, we use the NPB suite with Class ``C'' in this experiment.
 
 Figure~\ref{fig:interval_analysis_overhead} shows the interval analysis slowdown across the evaluated workloads and demonstrates that \textbf{the overhead varies significantly depending on the level of synchronization}.
 The average observed overhead is \(3\times\) for SPEC~CPU2017, \(2\times\) for LSMS, and \(34\times\) for NPB.

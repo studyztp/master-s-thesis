@@ -8,7 +8,7 @@ While tools that rely on dynamic instrumentation and binary translation exist to
 By embedding interval analysis directly into the program's execution, Nugget achieves near-native speed without introducing hardware-specific constraints: any machine capable of running the program can execute the interval analysis.
 
 Because our unit of work is defined at the LLVM IR level and is independent of the final binary, all discovered intervals remain consistent regardless of the host machine's ISA or microarchitecture.
-For example, we can analyze a program on an x86 system and then use the resulting intervals to drive sampling on an \revision{Arm} system.
+For example, we can analyze a program on an x86 system and then use the resulting intervals to drive sampling on an Arm system.
 
 In this section, we describe (1) how Nugget uses LLVM passes to generate an interval analysis executable, and (2) how this executable is used to discover and profile intervals.
 

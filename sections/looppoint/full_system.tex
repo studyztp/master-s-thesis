@@ -20,7 +20,7 @@ Synchronization library instructions are also excluded, as they do not directly 
 Only loops within the application code are considered as candidates for region markers.
 The analysis produces a list of regions with their basic block vectors (BBVs) and region boundaries expressed as (PC, count) pairs that serve as markers for each region.
 
-\begin{figure}[ht]
+\begin{figure}[!t]
     \centering
     \includegraphics[height=\textheight]{images/gem5-looppoint-analysis-flow.pdf}
     \caption{LoopPoint analysis flow in gem5.}

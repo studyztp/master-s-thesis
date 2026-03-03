@@ -1,6 +1,6 @@
 \subsection{Evaluation}\label{sec:looppoint_evaluation}
 
-\begin{table}[ht]
+\begin{table}[!t]
   \centering
   \scriptsize
   \setlength{\tabcolsep}{3pt}
@@ -38,7 +38,7 @@ We use Class~A input size with eight threads for our experiments, as larger inpu
 In addition to evaluating in a full-system environment, we test the methodology across different ISAs and system configurations, as detailed in Table~\ref{tab:gem5-config}.
 We use Ubuntu 24.04 as the guest operating system in all experiments.
 
-\begin{figure}[ht]
+\begin{figure}[!t]
   \centering
   \begin{subfigure}[b]{0.65\linewidth}
       \centering
@@ -85,7 +85,7 @@ Due to the limited number of regions discovered for Class~A benchmarks, the sele
 The speedup from the LoopPoint methodology primarily depends on the number of samples required to achieve a target accuracy, rather than on the simulator itself; larger workloads with more regions would yield greater reductions.
 
 These results demonstrate that the LoopPoint methodology can be extended to full-system simulation in gem5, but they also highlight three key limitations.
-First, validating the methodology's accuracy requires completing a full baseline simulation---the very bottleneck that sampling aims to avoid.
+First, validating the methodology's accuracy requires completing a full baseline simulation.
 Second, because LoopPoint's analysis is tied to a specific binary, each ISA produces a different set of representative samples, making cross-ISA comparison unreliable.
 Third, interval analysis via functional simulation is time-consuming; in Section~\ref{sec:comparison_with_functional_simulation}, we use the LoopPoint module to show that this overhead makes analysis impractical for realistic input sizes.
-These observations motivate the Nugget framework (Section~\ref{sec:the_nugget_framework}), which performs interval analysis on real hardware, validates samples without simulation, and defines samples at the LLVM IR level so that the same set of representative regions can be used across different binaries.
+These observations motivate the Nugget framework (Section~\ref{sec:the_nugget_framework}), which performs interval analysis on real hardware, validates samples without simulation, and defines samples at the LLVM IR level so that the same set of samples can be used across different binaries.

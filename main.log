@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2018.1.22)  2 MAR 2026 23:56
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2018.1.22)  3 MAR 2026 00:25
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1000,26 +1000,26 @@ Package: placeins 2005/04/18  v 2.2
 ) (./template.tex) (./main.aux)
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 89.
-LaTeX Font Info:    ... okay on input line 89.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 89.
-LaTeX Font Info:    ... okay on input line 89.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 89.
-LaTeX Font Info:    ... okay on input line 89.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 89.
-LaTeX Font Info:    ... okay on input line 89.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 89.
-LaTeX Font Info:    ... okay on input line 89.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 89.
-LaTeX Font Info:    ... okay on input line 89.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 89.
-LaTeX Font Info:    Try loading font information for TS1+cmr on input line 89.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 87.
+LaTeX Font Info:    ... okay on input line 87.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 87.
+LaTeX Font Info:    ... okay on input line 87.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 87.
+LaTeX Font Info:    ... okay on input line 87.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 87.
+LaTeX Font Info:    ... okay on input line 87.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 87.
+LaTeX Font Info:    ... okay on input line 87.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 87.
+LaTeX Font Info:    ... okay on input line 87.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 87.
+LaTeX Font Info:    Try loading font information for TS1+cmr on input line 87.
  (/usr/share/texlive/texmf-dist/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 89.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 89.
-LaTeX Font Info:    ... okay on input line 89.
+LaTeX Font Info:    ... okay on input line 87.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 87.
+LaTeX Font Info:    ... okay on input line 87.
 
 (/usr/share/texlive/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
@@ -1050,7 +1050,7 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
 \AtBeginShipoutBox=\box69
-Package hyperref Info: Link coloring OFF on input line 89.
+Package hyperref Info: Link coloring OFF on input line 87.
 
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
@@ -1060,9 +1060,9 @@ Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 )
 \c@section@level=\count198
 )
-LaTeX Info: Redefining \ref on input line 89.
-LaTeX Info: Redefining \pageref on input line 89.
-LaTeX Info: Redefining \nameref on input line 89.
+LaTeX Info: Redefining \ref on input line 87.
+LaTeX Info: Redefining \pageref on input line 87.
+LaTeX Info: Redefining \nameref on input line 87.
 
 (./main.out) (./main.out)
 \@outlinefile=\write6
@@ -1081,12 +1081,12 @@ Dictionary: translator-basic-dictionary, Language: English
 File: siunitx-abbreviations.cfg 2016/03/01 v2.6q siunitx: Abbreviated units
 )
 \c__siunitx_mathsf_int=\count266
-LaTeX Font Info:    Try loading font information for U+msa on input line 89.
+LaTeX Font Info:    Try loading font information for U+msa on input line 87.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 89.
+LaTeX Font Info:    Try loading font information for U+msb on input line 87.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
@@ -1100,7 +1100,7 @@ ination with the same identifier (name{page.i}) has been already used, duplicat
 e ignored
 <to be read again> 
                    \relax 
-l.95 \makeintropages
+l.93 \makeintropages
                      [1
 
 ] (./main.toc [2
@@ -1245,7 +1245,7 @@ t>
 File: images/interval_analysis_overhead_2panel.pdf Graphic file (type pdf)
  <use images/interval_analysis_overhead_2panel.pdf>
 Package pdftex.def Info: images/interval_analysis_overhead_2panel.pdf used on i
-nput line 57.
+nput line 61.
 (pdftex.def)             Requested size: 455.30121pt x 218.52242pt.
  [29 <./images/interval_analysis_overhead_2panel.pdf>]
 <images/class_d_overhead_analysis_2panel.pdf, id=886, 269.01526pt x 190.02556pt
@@ -1268,22 +1268,23 @@ Overfull \hbox (3.16626pt too wide) in paragraph at lines 106--107
 even for large work-loads, Nugget
  []
 
-) (./sections/evaluation/sample_and_validation.tex
-<images/prediction_error_by_machine_method_2panel.pdf, id=925, 718.3638pt x 329
+) (./sections/evaluation/sample_and_validation.tex [32]
+<images/prediction_error_by_machine_method_2panel.pdf, id=932, 718.3638pt x 329
 .95004pt>
 File: images/prediction_error_by_machine_method_2panel.pdf Graphic file (type p
 df)
  <use images/prediction_error_by_machine_method_2panel.pdf>
 Package pdftex.def Info: images/prediction_error_by_machine_method_2panel.pdf u
-sed on input line 6.
+sed on input line 33.
 (pdftex.def)             Requested size: 455.30121pt x 209.12828pt.
- [32 <./images/prediction_error_by_machine_method_2panel.pdf>] [33] [34]
+ [33]
+[34 <./images/prediction_error_by_machine_method_2panel.pdf>]
 <images/speedup_vs_runtime_prediction_error.pdf, id=1023, 289.08pt x 144.54pt>
 File: images/speedup_vs_runtime_prediction_error.pdf Graphic file (type pdf)
 
 <use images/speedup_vs_runtime_prediction_error.pdf>
 Package pdftex.def Info: images/speedup_vs_runtime_prediction_error.pdf used on
- input line 67.
+ input line 66.
 (pdftex.def)             Requested size: 455.30121pt x 227.6627pt.
  [35 <./images/speedup_vs_runtime_prediction_error.pdf>]
 <images/marker_executions_2panel.pdf, id=1068, 295.06549pt x 246.31554pt>
@@ -1291,7 +1292,7 @@ File: images/marker_executions_2panel.pdf Graphic file (type pdf)
 
 <use images/marker_executions_2panel.pdf>
 Package pdftex.def Info: images/marker_executions_2panel.pdf used on input line
- 90.
+ 89.
 (pdftex.def)             Requested size: 455.30121pt x 380.07878pt.
  [36] [37 <./images/marker_executions_2panel.pdf>]) (./sections/case_study/case
 _study.tex [38]
@@ -1329,13 +1330,13 @@ Package pdftex.def Info: images/case_study_5.pdf used on input line 173.
 (pdftex.def)             Requested size: 455.30121pt x 144.74934pt.
  [43 <./images/case_study_4.pdf>])
 (./sections/case_study/modeling.tex [44 <./images/case_study_5.pdf>]
-<images/microcode_comp.pdf, id=1358, 498.2226pt x 142.1285pt>
+<images/microcode_comp.pdf, id=1357, 498.2226pt x 142.1285pt>
 File: images/microcode_comp.pdf Graphic file (type pdf)
 
 <use images/microcode_comp.pdf>
-Package pdftex.def Info: images/microcode_comp.pdf used on input line 41.
+Package pdftex.def Info: images/microcode_comp.pdf used on input line 30.
 (pdftex.def)             Requested size: 455.30121pt x 129.88362pt.
- [45]) (./sections/conclusion/conclusion.tex
+) (./sections/conclusion/conclusion.tex [45]
 [46 <./images/microcode_comp.pdf>]
 Chapter 7.
 [47
@@ -1364,11 +1365,11 @@ Missing character: There is no ® in font cmr12!
 Missing character: There is no Â in font cmr12!
 Missing character: There is no ® in font cmr12!
  [53] [54]) [55]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 126.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 126.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 124.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 124.
  (./main.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 126.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 126.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 124.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 124.
 Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: 4F3290DF982FACED6CBE090988AFD2B7;3120.
 
@@ -1376,13 +1377,13 @@ Package rerunfilecheck Info: File `main.out' has not changed.
 LaTeX Font Warning: Size substitutions with differences
 (Font)              up to 4.98pt have occurred.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 126.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 124.
  ) 
 Here is how much of TeX's memory you used:
- 28654 strings out of 493029
- 560619 string characters out of 6136234
- 573762 words of memory out of 5000000
- 31551 multiletter control sequences out of 15000+600000
+ 28652 strings out of 493029
+ 560603 string characters out of 6136234
+ 572726 words of memory out of 5000000
+ 31549 multiletter control sequences out of 15000+600000
  16226 words of font info for 63 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  54i,19n,73p,10376b,854s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1400,7 +1401,7 @@ b></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr
 /texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/share/texli
 ve/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb></usr/share/texmf/fonts
 /type1/public/cm-super/sfrm1200.pfb>
-Output written on main.pdf (64 pages, 1492590 bytes).
+Output written on main.pdf (64 pages, 1492159 bytes).
 PDF statistics:
  1569 PDF objects out of 1728 (max. 8388607)
  966 compressed objects within 10 object streams

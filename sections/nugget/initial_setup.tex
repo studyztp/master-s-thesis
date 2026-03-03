@@ -9,9 +9,8 @@ To maintain consistency, Nugget applies these optimizations during the generatio
 In contrast, most backend optimizations, such as replacing scalar instructions with AVX vector instructions, do not alter the structure of the LLVM IR.
 While certain backend passes (e.g., late-stage loop unrolling) may modify LLVM IR layout under specific conditions, such passes are not enabled by default in LLVM.
 
-\shepherd{While build-time modes such as LTO and PGO can alter LLVM IR, they are disabled by default.}
-\revision{For our experiments, the LLVM IR structure remained stable across optimization levels, CPU-feature flags, and LLVM versions.
-}
+While build-time modes such as LTO and PGO can alter LLVM IR, they are disabled by default.
+For our experiments, the LLVM IR structure remained stable across optimization levels, CPU-feature flags, and LLVM versions.
 Therefore, we can apply the backend optimization in the final binary compilation safely.
 
 Only code included in this base LLVM IR representation of the program will be subject to analysis.
